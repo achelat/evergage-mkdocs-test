@@ -1,0 +1,3167 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://developer.evergage.com/web-integ/site-map-getting-started/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Get Started with Sitemapping - Salesforce Interaction Studio Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sitemap-development-process" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-header__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Salesforce Interaction Studio Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Get Started with Sitemapping
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-nav__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    Salesforce Interaction Studio Developer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About us
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Additional apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional apis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Additional apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/additional-apis/" class="md-nav__link">
+        Additional Interaction Studio APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/user-look-up-deletion-api/" class="md-nav__link">
+        User Look-Up & Deletion API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Campaign development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-development/" class="md-nav__link">
+        Campaign Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Advanced use case apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Advanced use case apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced use case apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/advanced-use-case-apis/" class="md-nav__link">
+        Advanced Use-Case APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2_2">
+        Is trends
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Is trends" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Is trends
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/is-trends/is-trends/" class="md-nav__link">
+        ISTrends
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_3" type="checkbox" id="__nav_4_2_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_3">
+        Web surveys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web surveys" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web surveys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/web-surveys/web-surveys/" class="md-nav__link">
+        Web Surveys
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Campaign template apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign template apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign template apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/campaign-template-apis/" class="md-nav__link">
+        Campaign Template APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      <label class="md-nav__link" for="__nav_4_3_2">
+        Corvus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Corvus" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corvus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/corvus/corvus/" class="md-nav__link">
+        Corvus
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_3" type="checkbox" id="__nav_4_3_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3_3">
+        Recommendations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Recommendations" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/recommendations/recommendations/" class="md-nav__link">
+        Recommendations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Email campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Email campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Email campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/capture-email-campaign-url/" class="md-nav__link">
+        Capture an Open-Time Email Campaign URL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/overview/" class="md-nav__link">
+        Open-time Email Campaigns and Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/render-non-western-characters/" class="md-nav__link">
+        Render Non-Western Characters in OTE Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/third-party-tracking-for-email-campaigns/" class="md-nav__link">
+        Add Third Party Tracking Parameters to Open-Time Email Campaigns
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Server side campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Server side campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Server side campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/contentzones/" class="md-nav__link">
+        Server Side Campaigns and Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/einstein-decisions/" class="md-nav__link">
+        Einstein Decisions - Server-Side Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/mutiplecampaigns/" class="md-nav__link">
+        Multiple Server Side Campaign Responses in a Single Call
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/server-side-templates/" class="md-nav__link">
+        Server-Side Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      <label class="md-nav__link" for="__nav_4_6">
+        Templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/campaign-stats/" class="md-nav__link">
+        Campaign Stats Tracking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/modify-global-templates/" class="md-nav__link">
+        Modify Global templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-client-javascript/" class="md-nav__link">
+        Template Client JavaScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-global-templates/" class="md-nav__link">
+        Get Started with Global Web Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-handlebars/" class="md-nav__link">
+        Web Template Handlebars
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-html-classes-and-css/" class="md-nav__link">
+        Web Template CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-response-simulator/" class="md-nav__link">
+        Template Response Simulator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-server-typescript/" class="md-nav__link">
+        Template Server TypeScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      <label class="md-nav__link" for="__nav_4_7">
+        Web campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Web campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/display-utilities/" class="md-nav__link">
+        Web Template Display Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/flicker-defender/" class="md-nav__link">
+        Flicker Defender
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/template-development-checklist/" class="md-nav__link">
+        Web Template Building Best Practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/templates-style-guide-and-coding-conventions/" class="md-nav__link">
+        Web Templates Style Guide and Coding Conventions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-and-template/" class="md-nav__link">
+        Web Campaigns & Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-debugger/" class="md-nav__link">
+        Campaign Debugger
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Data analytics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data analytics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Data analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-analytics/" class="md-nav__link">
+        Interaction Studio Data Analytics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-dictionary/" class="md-nav__link">
+        Data Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-warehouse/" class="md-nav__link">
+        Data Warehouse
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/scratch-schema/" class="md-nav__link">
+        Scratch Schema
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Data ingestion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data ingestion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data ingestion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-ingestion/data-ingestion/" class="md-nav__link">
+        Ingesting Data into Interaction Studio
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Data model
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data model" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Data model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/catalog/" class="md-nav__link">
+        Catalog
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/data-model/" class="md-nav__link">
+        Data Modeling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Develop overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Develop overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Develop overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/develop-overview/" class="md-nav__link">
+        Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/developer-role-responsibilities/" class="md-nav__link">
+        Developer Role and Responsibilities
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Event api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Event api" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Event api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-overview/" class="md-nav__link">
+        Interaction Studio Event API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-response/" class="md-nav__link">
+        Event API Responses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-specifications/" class="md-nav__link">
+        Event API Requests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Gears
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gears" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Gears
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/favorites/" class="md-nav__link">
+        Favorites Gear
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/gears/" class="md-nav__link">
+        Gears
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/" class="md-nav__link">
+        Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/contextual-rule/" class="md-nav__link">
+        Contextual Rule Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/lifecycle/" class="md-nav__link">
+        Lifecycle Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/oauth/" class="md-nav__link">
+        OAuth Component
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Metadata
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Metadata" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Metadata
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/metadata/gear-metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_5" type="checkbox" id="__nav_10_5" >
+      
+      <label class="md-nav__link" for="__nav_10_5">
+        System services
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="System services" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          System services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/" class="md-nav__link">
+        System Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/filesystem/" class="md-nav__link">
+        Filesystem Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/http/" class="md-nav__link">
+        HTTP Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Interface config
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interface config" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Interface config
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/arrays/" class="md-nav__link">
+        Array Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/config/" class="md-nav__link">
+        Custom Interface & Template Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/decorators/" class="md-nav__link">
+        Decorators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/importexport/" class="md-nav__link">
+        Importing And Exporting Configurables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/static-values/" class="md-nav__link">
+        Static Values
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" type="checkbox" id="__nav_11_6" >
+      
+      <label class="md-nav__link" for="__nav_11_6">
+        Properties
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Properties" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_6">
+          <span class="md-nav__icon md-icon"></span>
+          Properties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/boolean/" class="md-nav__link">
+        Boolean Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/color/" class="md-nav__link">
+        Color Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/complex/" class="md-nav__link">
+        Complex Object Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/datetime/" class="md-nav__link">
+        DateTime Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/multi-select/" class="md-nav__link">
+        Multi Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/number/" class="md-nav__link">
+        Number Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/select/" class="md-nav__link">
+        Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/string/" class="md-nav__link">
+        String Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/typed-list/" class="md-nav__link">
+        Typed list
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Mobile integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mobile integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mobile-integ/mobile-overview/" class="md-nav__link">
+        Interaction Studio Mobile Integrations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      <label class="md-nav__link" for="__nav_13">
+        Web integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Web integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices-data-capture/" class="md-nav__link">
+        Best Practices for Data Capture Using Site Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparison-shopping/" class="md-nav__link">
+        Comparison Shopping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contentzones/" class="md-nav__link">
+        Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item-actions/" class="md-nav__link">
+        Item Actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multisite-strategy/" class="md-nav__link">
+        Multisite Implementation Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pageTypes/" class="md-nav__link">
+        Page Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-impact-approach/" class="md-nav__link">
+        Interaction Studio Site Impact Approach
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-map-event-validation/" class="md-nav__link">
+        Sitemap Event Validation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Get Started with Sitemapping
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Get Started with Sitemapping
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-development-process" class="md-nav__link">
+    Sitemap Development Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-javascript-configuration-overview" class="md-nav__link">
+    Sitemap JavaScript Configuration Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Sitemap JavaScript Configuration Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sitemap-javascript-code-structure" class="md-nav__link">
+    Sitemap JavaScript Code Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-initializing-the-interaction-studio-web-sdk" class="md-nav__link">
+    1. Initializing the Interaction Studio Web SDK
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Initializing the Interaction Studio Web SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-an-optional-configuration-of-the-web-sdk" class="md-nav__link">
+    Specifying an Optional Configuration of the Web SDK
+  </a>
+  
+    <nav class="md-nav" aria-label="Specifying an Optional Configuration of the Web SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-web-sdk-config-parameter-example" class="md-nav__link">
+    Optional Web SDK config parameter example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuring-the-sitemap-objects" class="md-nav__link">
+    2. Configuring the Sitemap Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configuring the Sitemap Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-object-configuration-examples" class="md-nav__link">
+    Common Object Configuration Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Object Configuration Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolvers" class="md-nav__link">
+    Resolvers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-object-configuration-examples_1" class="md-nav__link">
+    Common Object Configuration Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Object Configuration Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-zones" class="md-nav__link">
+    Content Zones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ismatch" class="md-nav__link">
+    isMatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catalog" class="md-nav__link">
+    Catalog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart" class="md-nav__link">
+    Cart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order" class="md-nav__link">
+    Order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action" class="md-nav__link">
+    Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#itemaction" class="md-nav__link">
+    itemAction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onactionevent" class="md-nav__link">
+    onActionEvent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-global-sitemap-object" class="md-nav__link">
+    Configuring the Global Sitemap Object
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-the-page-type-array-objects" class="md-nav__link">
+    Configuring the Page Type Array Objects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-initializing-the-sitemap" class="md-nav__link">
+    3. Initializing the Sitemap
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-map-user-account-attributes/" class="md-nav__link">
+        Capturing User and Account Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sitemap-implementation-notes/" class="md-nav__link">
+        Sitemap Implementation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sitemap/" class="md-nav__link">
+        Sitemap Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-identity-mapping/" class="md-nav__link">
+        User Identity Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validate-beacon-deployment/" class="md-nav__link">
+        Validate JavaScript Beacon Deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-integration-planning/" class="md-nav__link">
+        Plan a Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-integration/" class="md-nav__link">
+        Interaction Studio Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_17" type="checkbox" id="__nav_13_17" >
+      
+      <label class="md-nav__link" for="__nav_13_17">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_17">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        Example Sitemaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/b2b/" class="md-nav__link">
+        Example B2B Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/ecommerce/" class="md-nav__link">
+        Example Ecommerce Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/financial-services/" class="md-nav__link">
+        Example Financial Services Sitemap
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-development-process" class="md-nav__link">
+    Sitemap Development Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-javascript-configuration-overview" class="md-nav__link">
+    Sitemap JavaScript Configuration Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Sitemap JavaScript Configuration Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sitemap-javascript-code-structure" class="md-nav__link">
+    Sitemap JavaScript Code Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-initializing-the-interaction-studio-web-sdk" class="md-nav__link">
+    1. Initializing the Interaction Studio Web SDK
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Initializing the Interaction Studio Web SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-an-optional-configuration-of-the-web-sdk" class="md-nav__link">
+    Specifying an Optional Configuration of the Web SDK
+  </a>
+  
+    <nav class="md-nav" aria-label="Specifying an Optional Configuration of the Web SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-web-sdk-config-parameter-example" class="md-nav__link">
+    Optional Web SDK config parameter example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuring-the-sitemap-objects" class="md-nav__link">
+    2. Configuring the Sitemap Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configuring the Sitemap Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-object-configuration-examples" class="md-nav__link">
+    Common Object Configuration Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Object Configuration Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolvers" class="md-nav__link">
+    Resolvers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-object-configuration-examples_1" class="md-nav__link">
+    Common Object Configuration Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Object Configuration Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-zones" class="md-nav__link">
+    Content Zones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ismatch" class="md-nav__link">
+    isMatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catalog" class="md-nav__link">
+    Catalog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart" class="md-nav__link">
+    Cart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order" class="md-nav__link">
+    Order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action" class="md-nav__link">
+    Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#itemaction" class="md-nav__link">
+    itemAction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onactionevent" class="md-nav__link">
+    onActionEvent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-global-sitemap-object" class="md-nav__link">
+    Configuring the Global Sitemap Object
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-the-page-type-array-objects" class="md-nav__link">
+    Configuring the Page Type Array Objects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-initializing-the-sitemap" class="md-nav__link">
+    3. Initializing the Sitemap
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Get Started with Sitemapping</h1>
+                
+                <p>A Sitemap is a configuration-driven system deployed by and executed within the Interaction Studio JavaScript Web SDK. The Sitemap configuration data exposes the ability for other parts of the Interaction Studio platform to register and receive events from the client context. This article presents guidance to Sitemap developers for configuring the JavaScript components of a Sitemap required to implement the Interaction Studio web channel solution architecture. For a more complete introduction to the Sitemap, see <a href="/web-integration/sitemap">Sitemap Overview</a>.</p>
+<h2 id="sitemap-development-process">Sitemap Development Process<a class="headerlink" href="#sitemap-development-process" title="Permanent link">&para;</a></h2>
+<p>To develop a Sitemap, do the following:
+1. Navigate to the site that contains the Interaction Studio JavaScript Web SDK.
+2. Launch the Interaction Studio <strong>Visual Editor</strong> and login. See <a href="https://doc.evergage.com/display/EKB/Install+and+Use+the+Evergage+Launcher">Install and Use the Interaction Studio Launcher</a> for more information on installing and starting the Interaction Studio Visual Editor.</p>
+<pre><code>![Launch Interaction Studio](Interaction-Studio-Launcher.png)
+</code></pre>
+<ol>
+<li>
+<p>Click the Sitemap launcher highlighted below to open the Sitemap Editor.</p>
+<p><img style="float: left;" src="site-map-launch.png"/></p>
+</li>
+<li>
+<p>In the <strong>Sitemap JS</strong> tab of the Sitemap Editor, configure the JavaScript components required for your Sitemap as described in the remainder of this article.</p>
+<p><img alt="Sitemap Editor" src="../sitemap-editor.png" /></p>
+</li>
+</ol>
+<h2 id="sitemap-javascript-configuration-overview">Sitemap JavaScript Configuration Overview<a class="headerlink" href="#sitemap-javascript-configuration-overview" title="Permanent link">&para;</a></h2>
+<p>A Sitemap is built and initialized after the Interaction Studio Web SDK is initialized. Developing a Sitemap consists of writing the JavaScript required to do the following:</p>
+<ol>
+<li>Initialize the Web SDK</li>
+<li>Configure the Sitemap JavaScript objects</li>
+<li>Initialize the Sitemap</li>
+</ol>
+<h3 id="sitemap-javascript-code-structure">Sitemap JavaScript Code Structure<a class="headerlink" href="#sitemap-javascript-code-structure" title="Permanent link">&para;</a></h3>
+<p>The general JavaScript code structure for a Sitemap is as follows:</p>
+<pre><code class="language-js">Evergage.init({    // Initializes the Interaction Studio Web SDK
+    cookieDomain: &quot;company.com&quot;    // Optional tracking cookie domain config (overrides default)
+}).then(() =&gt; {
+
+    const sitemapConfig = {    // Sitemap configuration object
+        global: {},            // Object used to contain Global site object config
+        pageTypes: []          // Array used to contain the page type object configs
+    }
+
+    Evergage.initSitemap(sitemapConfig);    // Initializes the Sitemap
+});
+</code></pre>
+<p>The following sections present the considerations and guidance for developing each Sitemap functional component. For examples of complete Sitemap configurations, see <a href="/web-integration/sitemap/examples">Example Sitemaps</a>.</p>
+<h2 id="1-initializing-the-interaction-studio-web-sdk">1. Initializing the Interaction Studio Web SDK<a class="headerlink" href="#1-initializing-the-interaction-studio-web-sdk" title="Permanent link">&para;</a></h2>
+<p>At the beginning of the Sitemap JavaScript, the Interaction Studio Web SDK (formerly Evergage) must be initialized with the following function: </p>
+<pre><code class="language-js">Evergage.init({   
+
+}).then(() =&gt; { }
+
+---Sitemap Configuration---
+</code></pre>
+<p>This function initializes the Interaction Studio Web SDK and allows it to begin tracking. The Web SDK will only start tracking if <code>Evergage.init()</code> is called.</p>
+<h3 id="specifying-an-optional-configuration-of-the-web-sdk">Specifying an Optional Configuration of the Web SDK<a class="headerlink" href="#specifying-an-optional-configuration-of-the-web-sdk" title="Permanent link">&para;</a></h3>
+<p>Developers can specify an optional configuration of the Web SDK by setting <code>config</code> object parameters for the <code>Evergage.init</code> function. These parameters are strictly optional and are not required for the Sitemap to function correctly.</p>
+<p>The following table lists the optional parameters accepted by the <code>config</code> object:</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Expected Value Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account</td>
+<td>string</td>
+<td>No</td>
+<td>Overrides the default Interaction Studio account to use for tracking</td>
+</tr>
+<tr>
+<td>dataset</td>
+<td>string</td>
+<td>No</td>
+<td>Overrides the default Interaction Studio dataset to use for tracking</td>
+</tr>
+<tr>
+<td>trackerUrl</td>
+<td>string</td>
+<td>No</td>
+<td>Overrides the default URL where the tracker sends events</td>
+</tr>
+<tr>
+<td>cookieDomain</td>
+<td>string</td>
+<td>No</td>
+<td>Overrides the default domain used for setting the Interaction Studio tracking cookie</td>
+</tr>
+</tbody>
+</table>
+<p>You should use the <code>account</code>, <code>dataset</code>, and <code>trackerUrl</code> parameters exclusively in your staging environment for testing purposes and never in your production environment. You can use these parameters to configure Sitemap operations to occur in your sandbox or learning environment without disrupting your production environment.</p>
+<p>On the other hand, you can use the <code>cookieDomain</code> parameter in the production environment in scenarios where you need to share the tracking cookie across all possible subdomains of the default site host. For example, if the default site host is <code>something.company.com</code>, the tracking cookie will only be set on that host by default. You can override this domain to share the cookie across all subdomains of <code>company.com</code> with the following configuration:</p>
+<pre><code class="language-js">Evergage.init({
+    cookieDomain: 'company.com'
+});
+</code></pre>
+<h4 id="optional-web-sdk-config-parameter-example">Optional Web SDK <code>config</code> parameter example<a class="headerlink" href="#optional-web-sdk-config-parameter-example" title="Permanent link">&para;</a></h4>
+<p>The following code sample shows an optional configuration of the Web SDK using <code>config</code> object parameters:</p>
+<pre><code class="language-js">Evergage.init({
+    account: &quot;development&quot;
+    dataset: &quot;staging&quot;
+    trackerUrl: &quot;https://staging.company.com&quot;
+    cookieDomain: &quot;staging.company.com&quot;
+});
+</code></pre>
+<p><strong>Note:</strong> As mentioned above, you should use the <code>account</code>, <code>dataset</code>, and <code>trackerUrl</code> parameters only in your staging or learning environment and never in your production environment. However, you can use the <code>cookieDomain</code> parameter in your production or staging environment as needed. </p>
+<h2 id="2-configuring-the-sitemap-objects">2. Configuring the Sitemap Objects<a class="headerlink" href="#2-configuring-the-sitemap-objects" title="Permanent link">&para;</a></h2>
+<p>The <code>const sitemapConfig</code> variable is used to configure the JavaScript objects that capture site visitor actions. The optional <code>global</code> object can be used to define what user actions should be captured on every page that is matched as a page type. The <code>pageTypes</code> array is used to contain the configurations of one or more specific page types in a site. A Sitemap developer must configure one <code>global</code> object and the <code>pageTypes</code> array must have a page type object configured for each page type on the site.</p>
+<h3 id="common-object-configuration-examples">Common Object Configuration Examples<a class="headerlink" href="#common-object-configuration-examples" title="Permanent link">&para;</a></h3>
+<p>A Sitemap can accept any valid JavaScript. Some JavaScript objects from the Interaction Studio Web SDK are required to support the functionality of Interaction Studio data collection and transmission. Some are required in the <code>pageTypes</code> array configuration but not used in the <code>global</code> object. The JavaScript objects from the Web SDK that are commonly used in the Sitemap global and page type configurations are described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Purpose</th>
+<th>Usage</th>
+<th>Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contentZones</td>
+<td>Array of objects used to indicate area(s) of a page that are eligible for customization</td>
+<td>Optional</td>
+<td>Global object or configured page type</td>
+</tr>
+<tr>
+<td>listeners</td>
+<td>Array of <code>listener()</code> functions used to listen for user actions that trigger events to send to Interaction Studio</td>
+<td>Optional</td>
+<td>Global object or configured page type</td>
+</tr>
+<tr>
+<td>isMatch</td>
+<td>Function required (along with the page name) to match a specific page type</td>
+<td>Required</td>
+<td>Configured page type only</td>
+</tr>
+<tr>
+<td>catalog</td>
+<td>Object used to collect and send data on catalog items</td>
+<td>Optional</td>
+<td>Configured page type only</td>
+</tr>
+<tr>
+<td>order</td>
+<td>Object used to collect and send order data to Interaction Studio, including line items, order IDs, total order value, and currency</td>
+<td>Context-dependent</td>
+<td>Configured page type only</td>
+</tr>
+<tr>
+<td>action</td>
+<td>Property of ActionEvent which is used to identify user actions sent to Interaction Studio</td>
+<td>Context-dependent</td>
+<td>Global object or configured page type</td>
+</tr>
+<tr>
+<td>itemAction</td>
+<td>Property of ActionEvent used to identify user actions taken on catalog items such as "Purchase" or "AddToCart"</td>
+<td>Context-dependent</td>
+<td>Configured page type only</td>
+</tr>
+<tr>
+<td>onActionEvent</td>
+<td>Function used with ActionEvent that sends events to Interaction Studiio based on user actions</td>
+<td>Optional</td>
+<td>Global object or configured page type</td>
+</tr>
+</tbody>
+</table>
+<h4 id="resolvers">Resolvers<a class="headerlink" href="#resolvers" title="Permanent link">&para;</a></h4>
+<p>The <code>resolvers</code> are a set of properties provided by the Web SDK to help developers return the values of page elements and attributes. Resolvers can be used with some of the objects in the above table such as <code>catalog</code> to more easily return item information. Resolvers return functions so that they can be invoked <em>after</em> a page has been matched. When used in a page type configuration, the returned functions do not need to be invoked in order to get the final value as the underlying Sitemap code will handle that logic. The following example shows <code>resolvers</code> used to return information on line items on an e-Commerce site. For detailed guidance on implementing <code>resolvers</code> and a complete list of the available <code>resolvers</code>, see <a href="/web-integration/sitemap/sitemap-implementation-notes">Sitemap Implementation Notes</a>. </p>
+<pre><code class="language-js">
+    lineItems: {
+        _id: Evergage.resolvers.fromSelectorAttributeMultiple(&quot;.product-info .product-details .line-item-quanity-info&quot;, &quot;data-pid&quot;),
+        price: Evergage.resolvers.fromSelectorMultiple(&quot;.product-info .product-details .pricing&quot;),
+        quantity: Evergage.resolvers.fromSelectorMultiple(&quot;.product-info .product-details .qty-card-quantity-count&quot;),
+    }
+
+</code></pre>
+<h4 id="common-object-configuration-examples_1">Common Object Configuration Examples<a class="headerlink" href="#common-object-configuration-examples_1" title="Permanent link">&para;</a></h4>
+<p>The following sections describe and present example configurations of the common Sitemap objects in the preceding table. The example configurations presented here are taken from the complete <a href="/web-integration/sitemap/examples/ecommerce">e-Commerce Example Sitemap</a>.</p>
+<h5 id="content-zones">Content Zones<a class="headerlink" href="#content-zones" title="Permanent link">&para;</a></h5>
+<p>Content Zones are used to designate one or more areas of a page as available for customization in customer engagement campaigns. This functionality is implemented using a <code>contentZones</code> array. Individual Content Zones consist of a <code>name</code> and a <code>selector</code>. The <code>name</code> is defined by the developer and should indicate the location on the page of the zone. The <code>selector</code> is used to indicate the HTML element that is eligible for personalization. Content Zones can be defined without a <code>selector</code>, meaning there is no designated HTML element associated with the Content Zone. This usage supports abandonment popups that display when a user begins to browse away from the page. The following are examples of Content Zone configurations. See <a href="/web-integration/sitemap/contentzones">Content Zones</a> for additional information and examples of commonly used Content Zones.</p>
+<pre><code class="language-js">// Example: &quot;Header&quot; and &quot;Footer&quot; Content Zones defined in global object configuration
+
+   contentZones: [
+       {name: &quot;global_infobar_top_of_page&quot;, selector: &quot;header.site-header&quot;},
+       {name: &quot;global_infobar_bottom_of_page&quot;, selector: &quot;footer.site-footer&quot;}
+   ],
+
+// Example: Content Zones defined for product recommendation rows in product detail page type
+
+    contentZones: [
+       { name: &quot;product_detail_recs_row_1&quot;, selector: &quot;.row.recommendations div[id*='cq']:nth-of-type(1)&quot;},
+       { name: &quot;product_detail_recs_row_2&quot;, selector: &quot;.row.recommendations div[id*='cq']:nth-of-type(2)&quot;},
+    ],
+
+// Example: &quot;Logical&quot; Content Zone defined with no selector for popup in global object configuration 
+
+    contentZones: [
+       { name: &quot;global_popup&quot; }
+    ],
+
+ ```
+
+ ##### Listeners
+Sitemap listeners are used to listen for user actions on a page, capture information from the action, and send the action and information to Interaction Studio. Listeners may be used in the global object configuration and in specific page types. Below are examples of listeners configured in the global config and product detail page type. See [Sitemap Implementation Notes](/web-integration/sitemap/sitemap-implementation-notes) for details on implementing Sitemap listeners. 
+
+```js
+// Example: Listener on global object for email sign-up that captures user email
+
+    listeners: [
+       Evergage.listener(&quot;submit&quot;, &quot;.email-signup&quot;, () =&gt; {
+          const email = Evergage.cashDom(&quot;#dwfrm_mcsubscribe_email&quot;).val();
+          if (email) {
+             Evergage.sendEvent({action: &quot;Email Sign Up - Footer&quot;, user: {id: email} });
+          }
+       }),
+    ],
+
+// Example: Listener on product detail page for add-to-cart action that captures product line item added
+
+    listeners: [
+        Evergage.listener(&quot;click&quot;, &quot;.add-to-cart&quot;, () =&gt; {
+           const lineItem = Evergage.util.buildLineItemFromPageState(&quot;select[id*=quantity]&quot;);
+           lineItem.sku = { _id: Evergage.cashDom(&quot;.product-detail[data-pid]&quot;).attr(&quot;data-pid&quot;) };
+           Evergage.sendEvent({
+               itemAction: Evergage.ItemAction.AddToCart,
+               cart: {
+                   singleLine: {
+                      Product: lineItem
+                   }
+               }
+           });
+        }),
+    ],
+
+</code></pre>
+<h5 id="ismatch">isMatch<a class="headerlink" href="#ismatch" title="Permanent link">&para;</a></h5>
+<p>The <code>isMatch</code> property is a required component of each page type configuration in the <code>pageTypes</code> array. The <code>isMatch</code> property must declare a function that tells Interaction Studio how to determine what type of page the user is viewing. An <code>isMatch</code> function can return a boolean or a Promise that resolves a boolean.  </p>
+<pre><code class="language-js">// Example: isMatch property using the Web SDK cashDom function to return the &quot;Product-Show&quot; DOM element which
+// would indicate the user is on the Product Detail (&quot;product_detail&quot;) page type.
+
+    name: &quot;product_detail&quot;,
+    isMatch: () =&gt; {
+        return Evergage.cashDom(&quot;div.page[data-action='Product-Show']&quot;).length &gt; 0;
+    }
+
+// Example: isMatch property using a regex expression to return the window href &quot;/cart&quot; which would indicate 
+// the user is on the shopping cart (&quot;cart&quot;) page type.
+
+    name: &quot;cart&quot;,
+    isMatch: () =&gt; /\/cart/.test(window.location.href),
+
+// Example: isMatch property that returns a Promise
+
+    name: &quot;cart&quot;,
+    isMatch: () =&gt; {
+        return Evergage.DisplayUtils.pageElementLoaded(&quot;.cart-empty, .cart&quot;, &quot;html&quot;).then(() =&gt; true);
+    }
+
+</code></pre>
+<h5 id="catalog">Catalog<a class="headerlink" href="#catalog" title="Permanent link">&para;</a></h5>
+<p>The <code>catalog</code> object is used to collect and send information about the catalog items with which a user is interacting. When tracking a catlog item, <code>_id</code> is a required field. For the <code>_id</code>, <code>categories</code> and <code>dimensions</code> fields, a Promise can be returned. When returning Promises for these fields, the event will only be tracked if the <code>_id</code>, <code>categories</code> and <code>dimensions</code> attributes all resolve.</p>
+<p><strong>IMPORTANT:</strong> Catalog items and attributes must be added through the Interaction Studio UI before they can be used in a Sitemap. Some item attributes like <code>_id</code>, <code>name</code> and <code>description</code> are built into every catalog item by default. Additional ones can be added within the Interaction Studio UI as needed.</p>
+<p>The following shows an example of a catalog object for a product detail page type.</p>
+<pre><code class="language-js">    catalog: {
+        Product: {
+            _id: () =&gt; {
+                return Evergage.util.resolveWhenTrue.bind(() =&gt; {
+                    const productId = Evergage.cashDom(&quot;.product-id&quot;).first().text();
+                    const products = getProductsFromDataLayer();
+                    if (products &amp;&amp; products.length &gt; 0) {
+                        return products[0].id;
+                    } else if (productId) {
+                        return productId;
+                    } else {
+                        return false;
+                    }
+                })
+            },
+            sku: { _id: Evergage.cashDom(&quot;.product-detail[data-pid]&quot;).attr(&quot;data-pid&quot;) },
+            name: Evergage.resolvers.fromJsonLd(&quot;name&quot;),
+            description: Evergage.resolvers.fromSelector(&quot;.short-description&quot;),
+            url: Evergage.resolvers.fromHref(),
+            imageUrl: Evergage.resolvers.fromSelectorAttribute(&quot;.product-carousel .carousel-item[data-slick-index='0'] img&quot;, &quot;src&quot;),
+            inventoryCount: 1,
+            price: Evergage.resolvers.fromSelector(&quot;.prices .price .value&quot;),
+            rating: () =&gt; {
+                return Evergage.util.extractFirstGroup(/([.\w]+) out of/, Evergage.cashDom(&quot;.ratings .sr-only&quot;).text());
+            },
+            categories: () =&gt; {
+                return Evergage.DisplayUtils.pageElementLoaded(&quot;.container .product-breadcrumb .breadcrumb a&quot;, &quot;html&quot;).then((ele) =&gt; {
+                    return Evergage.resolvers.buildCategoryId(&quot;.container .product-breadcrumb .breadcrumb a&quot;, null, null, (categoryId) =&gt; [categoryId.toUpperCase()]);
+                });
+            },
+            dimensions: {
+                Gender: () =&gt; {
+                    return Evergage.DisplayUtils.pageElementLoaded(&quot;.product-breadcrumb .breadcrumb a, h1.product-name&quot;, &quot;html&quot;).then((ele) =&gt; {
+                        if (Evergage.cashDom(&quot;.product-breadcrumb .breadcrumb a&quot;).first().text().toLowerCase() === &quot;women&quot; ||
+                            Evergage.cashDom(&quot;h1.product-name&quot;).text().indexOf(&quot;Women&quot;) &gt;= 0) {
+                            return [&quot;WOMEN&quot;];
+                        } else if (Evergage.cashDom(&quot;.product-breadcrumb .breadcrumb a&quot;).first().text().toLowerCase() === &quot;men&quot; ||
+                            Evergage.cashDom(&quot;h1.product-name&quot;).text().indexOf(&quot;Men&quot;) &gt;= 0) {
+                            return [&quot;MEN&quot;];
+                        } else {
+                            return;
+                        }
+                    });
+                },
+                Color: () =&gt; {
+                    return Evergage.DisplayUtils.pageElementLoaded(&quot;.attributes&quot;, &quot;html&quot;).then((ele) =&gt; {
+                        return Evergage.resolvers.fromSelectorAttributeMultiple(&quot;.color-value&quot;, &quot;data-attr-value&quot;);
+                    });
+                },
+                Feature: () =&gt; {
+                    return Evergage.DisplayUtils.pageElementLoaded(&quot;.features&quot;, &quot;html&quot;).then((ele) =&gt; {
+                        return Evergage.resolvers.fromSelectorMultiple(&quot;.features .feature&quot;, (features) =&gt; {
+                            return features.map((feature) =&gt; {
+                                return feature.trim();
+                            });
+                        });
+                    });
+                }
+            }
+        }
+    }
+
+</code></pre>
+<h5 id="cart">Cart<a class="headerlink" href="#cart" title="Permanent link">&para;</a></h5>
+<p>The <code>cart</code> object is typically used in the shopping cart pages of e-Commerce sites to collect information about the line items, including the item ID (or SKU), price, and quantity. The following shows an example of an <code>cart</code> object. For a <code>cart</code> object, the <code>_id</code>, <code>price</code> and <code>quantity</code> fields can return a Promise. When returning Promises for these fields, an event will only be sent if all Promises resolve.</p>
+<p><strong>Note 1:</strong> <code>complete</code> is used to update the state of the cart in Evergage, setting it's content to the provided line items. Previous cart contents will be replaced.</p>
+<p><strong>Note 2:</strong> <code>_id</code> must be defined under item type,  however you can pass SKU values here if they are properly attributed to a product.</p>
+<pre><code class="language-js">    cart: {
+        complete: {
+            Product: {                
+                _id: () =&gt; {
+                    return Evergage.DisplayUtils.pageElementLoaded(&quot;.cart-empty, .product-info .product-details .line-item-quanity-info&quot;, &quot;html&quot;).then((ele) =&gt; {
+                        return Evergage.resolvers.fromSelectorAttributeMultiple(&quot;.product-info .product-details .line-item-quanity-info&quot;, &quot;data-pid&quot;)
+                    })
+                },
+                price: () =&gt; {
+                    return Evergage.DisplayUtils.pageElementLoaded(&quot;.cart-empty, .product-info .product-details .pricing&quot;, &quot;html&quot;).then((ele) =&gt; {
+                        return Evergage.resolvers.fromSelectorMultiple(&quot;.product-info .product-details .pricing&quot;);
+                    })
+                },
+                quantity: () =&gt; {
+                    return Evergage.DisplayUtils.pageElementLoaded('.cart-empty, .product-info .product-details .qty-card-quantity-count', &quot;html&quot;).then((ele) =&gt; {
+                        return Evergage.resolvers.fromSelectorMultiple(&quot;.product-info .product-details .qty-card-quantity-count&quot;);
+                    });
+                },
+            }
+        }
+    }
+
+</code></pre>
+<h5 id="order">Order<a class="headerlink" href="#order" title="Permanent link">&para;</a></h5>
+<p>The <code>order</code> object is typically used in the order confirmation pages of e-Commerce sites to collect information about the line items in a transaction, including the item ID (or SKU), price, and quantity. For an <code>order</code> object, all fields can return promises. When returning promises, an event will only be sent when all Promises resolve. The following shows an example of an <code>order</code> object. </p>
+<p><strong>Note 1:</strong> The <code>resolver</code> functions in the Interaction Studio Web SDK are especially useful in simplifying the retrieval of this data.</p>
+<p><strong>Note 2:</strong> <code>_id</code> must be defined under <code>lineItems</code>,  however you can pass SKU values here if they are properly attributed to a product.</p>
+<pre><code class="language-js">    order: {
+        Product: {
+            orderId: () =&gt; {
+                return Evergage.DisplayUtils.pageElementLoaded(&quot;.order-number&quot;, &quot;html&quot;).then((ele) =&gt; {
+                    return Evergage.resolvers.fromSelector(&quot;.order-number&quot;);
+                });
+            },
+            lineItems: {
+                _id: () =&gt; {
+                    return Evergage.DisplayUtils.pageElementLoaded(&quot;.product-line-item line-item-quanity-info&quot;, &quot;html&quot;).then((ele) =&gt; {
+                        return Evergage.resolvers.fromSelectorAttributeMultiple(&quot;.product-line-item .line-item-quanity-info&quot;, &quot;data-pid&quot;);
+                    });
+                },
+                price:  () =&gt; {
+                    return Evergage.DisplayUtils.pageElementLoaded(&quot;.product-line-item .pricing&quot;, &quot;html&quot;).then((ele) =&gt; {
+                        return Evergage.resolvers.fromSelectorAttributeMultiple(&quot;.product-line-item .pricing&quot;, &quot;data-pid&quot;);
+                    });
+                },
+                quantity:  () =&gt; {
+                    return Evergage.DisplayUtils.pageElementLoaded(&quot;.product-line-item .qty-card-quantity-count&quot;, &quot;html&quot;).then((ele) =&gt; {
+                        return Evergage.resolvers.fromSelectorAttributeMultiple(&quot;.product-line-item .qty-card-quantity-count&quot;, &quot;data-pid&quot;);
+                    });
+                }
+            }
+        }
+    }
+
+</code></pre>
+<h5 id="action">Action<a class="headerlink" href="#action" title="Permanent link">&para;</a></h5>
+<p>The <code>action</code> property provides a way for Interaction Studio to name user actions such as the viewing of the page or signing up for an email subscription. Often an <code>action</code> will be included after the <code>name</code> in the page type specification. The following would send a "Login" action to Interaction Studio every time a user accesses the <code>login</code> page type.</p>
+<pre><code>{
+    name: login
+    action: Login
+    isMatch: () =&gt; /\/login/.test(window.location.href)
+}
+</code></pre>
+<h5 id="itemaction">itemAction<a class="headerlink" href="#itemaction" title="Permanent link">&para;</a></h5>
+<p>An <code>itemAction</code> is used when a user takes a specific action related to an item in the catalog. Some <code>itemAction</code> examples include:
+* <code>AddToCart</code>
+* <code>Comment</code>
+* <code>Purchase</code></p>
+<p>For the complete list of <code>itemAction</code> values, see the <a href="http://evergage-gears-docs.s3-website-us-east-1.amazonaws.com/websdk/docs/modules/_evergage_d_.html">Web SDK Typedoc</a>. Some examples of the <code>itemAction</code> in Sitemap code are shown below. </p>
+<pre><code class="language-js">
+// Example: Send Add-to-cart item action as event
+
+    Evergage.sendEvent({
+        itemAction: Evergage.ItemAction.AddToCart
+        cart: {
+            singleLine: {
+                Product: lineItem
+            }
+        }
+    });
+
+ // Example: View-cart item action on shopping cart page
+
+    name: &quot;cart&quot;,
+    isMatch: () =&gt; /\/cart/.test(window.location.href),
+    itemAction: Evergage.ItemAction.ViewCart
+    cart: {
+        //cart config
+    }
+
+ // Example: Purchase item action on order confirmation page
+
+    name: &quot;order_confirmation&quot;,
+    isMatch: () =&gt; /\/confirmation/.test(window.location.href),
+    itemAction: Evergage.ItemAction.Purchase,
+    order: {
+        //order config
+    }
+
+</code></pre>
+<h5 id="onactionevent">onActionEvent<a class="headerlink" href="#onactionevent" title="Permanent link">&para;</a></h5>
+<p>The <code>onActionEvent</code> function is used with the <code>ActionEvent</code> property to send events to Interaction Studio based on user actions. The following is an example of the <code>onActionEvent</code> function in the <code>pageType</code> configuration:</p>
+<pre><code class="language-js">pageTypes: [
+    {
+        name: &quot;search&quot;,
+        isMatch: () =&gt; /\/search/.test(window.location.pathname),
+        onActionEvent: (actionEvent) =&gt; {
+            const searchTerm = Evergage.cashDom(&quot;.content.searchTerm&quot;).text().trim();
+            if (searchTerm) {
+                actionEvent.user = actionEvent.user || {};
+                actionEvent.user.attributes = actionEvent.user.attributes || {};
+                actionEvent.user.attributes.lastSearchTerm = searchTerm;
+            };
+            return actionEvent;
+        }
+    },
+]
+</code></pre>
+<h3 id="configuring-the-global-sitemap-object">Configuring the Global Sitemap Object<a class="headerlink" href="#configuring-the-global-sitemap-object" title="Permanent link">&para;</a></h3>
+<p>The <code>global{}</code> Sitemap configuration object allows you to define what should be captured on every page that is matched as a page type.  This allows for Content Zones, listeners, locale and an onActionEvent functions to be defined for every page that is matched instead of only on individually matched pages.</p>
+<p>The following shows an example of a global Sitemap configuration.</p>
+<pre><code class="language-js">Evergage.init({
+    cookieDomain: &quot;northerntrailoutfitters.com&quot;
+}).then(() =&gt; {
+    const sitemapConfig = {
+        global: {
+            contentZones: [
+                {name: &quot;global_infobar_top_of_page&quot;, selector: &quot;header.site-header&quot;},
+                {name: &quot;global_infobar_bottom_of_page&quot;, selector: &quot;footer.site-footer&quot;},
+                {name: &quot;global_popup&quot; }
+            ],
+            listeners: [
+                Evergage.listener(&quot;submit&quot;, &quot;.email-signup&quot;, () =&gt; {
+                    const email = Evergage.cashDom(&quot;#dwfrm_mcsubscribe_email&quot;).val();
+                    if (email) {
+                        Evergage.sendEvent({action: &quot;Email Sign Up - Footer&quot;, user: {id: email} });
+                    }
+                }),
+            ],
+        },
+        pageTypes: [ // ...page type configurations...]
+    }
+
+    Evergage.initSitemap(sitemapConfig);
+});
+</code></pre>
+<h2 id="configuring-the-page-type-array-objects">Configuring the Page Type Array Objects<a class="headerlink" href="#configuring-the-page-type-array-objects" title="Permanent link">&para;</a></h2>
+<p>A Sitemap configuration consists of the global configuration (described above) which runs for all page types and an array of individual page type configurations. At a minimum, a page type requires configuring a <code>name</code> and an <code>isMatch</code> function.  The name defines the name of the page type, while the <code>isMatch</code> function output is evaluated to determine if the page the user is on is a match for the page config. After <code>name</code> and <code>isMatch</code>, any of the <code>sitemapConfig</code> objects mentioned in this article may be used in a page type configuration object.</p>
+<pre><code>{
+    name: string
+    isMatch: () =&gt; boolean | () =&gt; Promise&lt;boolean&gt;
+}
+</code></pre>
+<p><code>isMatch</code> accepts a function that returns a boolean or a function that returns a Promise.  The sitemap will only evaluate the first page type whose <code>isMatch</code> resolves to true.  If no page types match, no event will be sent to Interaction Studio.</p>
+<p>The following shows a few examples of different page type configurations. See <a href="/web-integration/sitemap/examples">Example Sitemaps</a> for additional page type configuration examples and examples of complete Sitemaps.</p>
+<pre><code class="language-js">Evergage.init({
+    cookieDomain: &quot;northerntrailoutfitters.com&quot;
+}).then(() =&gt; {
+    const config = {
+        global: {
+            onActionEvent: (actionEvent) =&gt; {
+                const email = Evergage.util.getValueFromNestedObject(&quot;window._etmc.user_info.email&quot;);
+                if (email) {
+                    actionEvent.user = actionEvent.user || {};
+                    actionEvent.user.attributes = actionEvent.user.attributes || {};
+                    actionEvent.user.attributes.emailAddress = email;
+                }
+                return actionEvent;
+            },
+            contentZones: [
+                {name: &quot;global_infobar_top_of_page&quot;, selector: &quot;header.site-header&quot;},
+                {name: &quot;global_infobar_bottom_of_page&quot;, selector: &quot;footer.site-footer&quot;}
+            ],
+            listeners: [
+                Evergage.listener(&quot;submit&quot;, &quot;.email-signup&quot;, () =&gt; {
+                    const email = Evergage.cashDom(&quot;#dwfrm_mcsubscribe_email&quot;).val();
+                    if (email) {
+                        Evergage.sendEvent({action: &quot;Email Sign Up - Footer&quot;, user: {attributes: {emailAddress: email}}});
+                    }
+                }),
+            ],
+        },
+        pageTypes: [
+            {
+                name: &quot;home&quot;,
+                action: &quot;Homepage&quot;,
+                isMatch: () =&gt; /\/homepage/.test(window.location.href),
+                contentZones: [
+                    {name: &quot;home_hero&quot;, selector: &quot;.experience-carousel-bannerCarousel&quot;},
+                    {name: &quot;home_sub_hero&quot;, selector: &quot;.experience-carousel-bannerCarousel + .experience-component&quot;},
+                    {name: &quot;home_popup&quot;}
+                ]
+            },
+            {
+                name: &quot;login&quot;,
+                action: &quot;Login&quot;,
+                isMatch: () =&gt; /\/login/.test(window.location.href) &amp;&amp; window.location.hostname !== &quot;community.northerntrailoutfitters.com&quot;,
+                listeners: [
+                    Evergage.listener(&quot;click&quot;, &quot;form[name='login-form'] button&quot;, () =&gt; {
+                        const email = Evergage.cashDom(&quot;#login-form-email&quot;).val();
+                        if (email) {
+                            Evergage.sendEvent({action: &quot;Logged In&quot;, user: {attributes: {emailAddress:  email}}});
+                        }
+                    })
+                ]
+            },
+            {
+                name: &quot;cart&quot;,
+                isMatch: () =&gt; {
+                    if (\/cart/.test(window.location.href)) {
+                        return Evergage.DisplayUtil.pageElementLoaded(&quot;.cart-empty, .cart&quot;, &quot;html&quot;).then(() =&gt; true);
+                    } else {
+                        return false;
+                    }
+                },
+                itemAction: Evergage.ItemAction.ViewCart,
+                cart: {
+                    complete: {
+                        Product: {
+                            _id: Evergage.resolvers.fromSelectorAttributeMultiple(&quot;.product-info .product-details .line-item-quanity-info&quot;, &quot;data-pid&quot;),
+                            price: Evergage.resolvers.fromSelectorMultiple(&quot;.product-info .product-details .pricing&quot;),
+                            quantity: Evergage.resolvers.fromSelectorMultiple(&quot;.product-info .product-details .qty-card-quantity-count&quot;),
+                        }
+                    }
+                }
+            }
+        ]
+    };
+    Evergage.initSitemap(config);
+});
+</code></pre>
+<h2 id="3-initializing-the-sitemap">3. Initializing the Sitemap<a class="headerlink" href="#3-initializing-the-sitemap" title="Permanent link">&para;</a></h2>
+<p>A Sitemap is initialized at the end of the JavaScript code by calling <code>Evergage.initSitemap(sitemapConfig)</code>. Events will not be sent to Interaction Studio unless the sitemap is initialized with <code>Evergage.initSitemap(sitemapConfig)</code>and a matching page type is found.</p>
+<pre><code class="language-js">Evergage.init({
+    cookieDomain: &quot;developer.evergage.com&quot;
+}).then(() =&gt; {
+
+    const sitemapConfig = {
+        global: {...global object configuration...},
+        pageTypes: [...page type array configuration...]
+    }
+
+    Evergage.initSitemap(sitemapConfig);
+});
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../site-map-event-validation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sitemap Event Validation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Sitemap Event Validation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../site-map-user-account-attributes/" class="md-footer__link md-footer__link--next" aria-label="Next: Capturing User and Account Attributes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Capturing User and Account Attributes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2475 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://developer.evergage.com/web-integ/web-integration-planning/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Plan a Web Integration - Salesforce Interaction Studio Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#step-1-implementation-planning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-header__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Salesforce Interaction Studio Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plan a Web Integration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-nav__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    Salesforce Interaction Studio Developer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About us
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Additional apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional apis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Additional apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/additional-apis/" class="md-nav__link">
+        Additional Interaction Studio APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/user-look-up-deletion-api/" class="md-nav__link">
+        User Look-Up & Deletion API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Campaign development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-development/" class="md-nav__link">
+        Campaign Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Advanced use case apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Advanced use case apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced use case apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/advanced-use-case-apis/" class="md-nav__link">
+        Advanced Use-Case APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2_2">
+        Is trends
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Is trends" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Is trends
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/is-trends/is-trends/" class="md-nav__link">
+        ISTrends
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_3" type="checkbox" id="__nav_4_2_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_3">
+        Web surveys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web surveys" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web surveys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/web-surveys/web-surveys/" class="md-nav__link">
+        Web Surveys
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Campaign template apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign template apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign template apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/campaign-template-apis/" class="md-nav__link">
+        Campaign Template APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      <label class="md-nav__link" for="__nav_4_3_2">
+        Corvus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Corvus" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corvus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/corvus/corvus/" class="md-nav__link">
+        Corvus
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_3" type="checkbox" id="__nav_4_3_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3_3">
+        Recommendations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Recommendations" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/recommendations/recommendations/" class="md-nav__link">
+        Recommendations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Email campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Email campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Email campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/capture-email-campaign-url/" class="md-nav__link">
+        Capture an Open-Time Email Campaign URL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/overview/" class="md-nav__link">
+        Open-time Email Campaigns and Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/render-non-western-characters/" class="md-nav__link">
+        Render Non-Western Characters in OTE Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/third-party-tracking-for-email-campaigns/" class="md-nav__link">
+        Add Third Party Tracking Parameters to Open-Time Email Campaigns
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Server side campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Server side campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Server side campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/contentzones/" class="md-nav__link">
+        Server Side Campaigns and Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/einstein-decisions/" class="md-nav__link">
+        Einstein Decisions - Server-Side Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/mutiplecampaigns/" class="md-nav__link">
+        Multiple Server Side Campaign Responses in a Single Call
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/server-side-templates/" class="md-nav__link">
+        Server-Side Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      <label class="md-nav__link" for="__nav_4_6">
+        Templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/campaign-stats/" class="md-nav__link">
+        Campaign Stats Tracking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/modify-global-templates/" class="md-nav__link">
+        Modify Global templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-client-javascript/" class="md-nav__link">
+        Template Client JavaScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-global-templates/" class="md-nav__link">
+        Get Started with Global Web Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-handlebars/" class="md-nav__link">
+        Web Template Handlebars
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-html-classes-and-css/" class="md-nav__link">
+        Web Template CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-response-simulator/" class="md-nav__link">
+        Template Response Simulator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-server-typescript/" class="md-nav__link">
+        Template Server TypeScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      <label class="md-nav__link" for="__nav_4_7">
+        Web campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Web campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/display-utilities/" class="md-nav__link">
+        Web Template Display Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/flicker-defender/" class="md-nav__link">
+        Flicker Defender
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/template-development-checklist/" class="md-nav__link">
+        Web Template Building Best Practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/templates-style-guide-and-coding-conventions/" class="md-nav__link">
+        Web Templates Style Guide and Coding Conventions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-and-template/" class="md-nav__link">
+        Web Campaigns & Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-debugger/" class="md-nav__link">
+        Campaign Debugger
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Data analytics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data analytics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Data analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-analytics/" class="md-nav__link">
+        Interaction Studio Data Analytics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-dictionary/" class="md-nav__link">
+        Data Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-warehouse/" class="md-nav__link">
+        Data Warehouse
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/scratch-schema/" class="md-nav__link">
+        Scratch Schema
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Data ingestion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data ingestion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data ingestion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-ingestion/data-ingestion/" class="md-nav__link">
+        Ingesting Data into Interaction Studio
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Data model
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data model" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Data model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/catalog/" class="md-nav__link">
+        Catalog
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/data-model/" class="md-nav__link">
+        Data Modeling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Develop overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Develop overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Develop overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/develop-overview/" class="md-nav__link">
+        Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/developer-role-responsibilities/" class="md-nav__link">
+        Developer Role and Responsibilities
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Event api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Event api" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Event api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-overview/" class="md-nav__link">
+        Interaction Studio Event API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-response/" class="md-nav__link">
+        Event API Responses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-specifications/" class="md-nav__link">
+        Event API Requests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Gears
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gears" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Gears
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/favorites/" class="md-nav__link">
+        Favorites Gear
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/gears/" class="md-nav__link">
+        Gears
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/" class="md-nav__link">
+        Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/contextual-rule/" class="md-nav__link">
+        Contextual Rule Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/lifecycle/" class="md-nav__link">
+        Lifecycle Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/oauth/" class="md-nav__link">
+        OAuth Component
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Metadata
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Metadata" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Metadata
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/metadata/gear-metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_5" type="checkbox" id="__nav_10_5" >
+      
+      <label class="md-nav__link" for="__nav_10_5">
+        System services
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="System services" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          System services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/" class="md-nav__link">
+        System Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/filesystem/" class="md-nav__link">
+        Filesystem Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/http/" class="md-nav__link">
+        HTTP Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Interface config
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interface config" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Interface config
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/arrays/" class="md-nav__link">
+        Array Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/config/" class="md-nav__link">
+        Custom Interface & Template Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/decorators/" class="md-nav__link">
+        Decorators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/importexport/" class="md-nav__link">
+        Importing And Exporting Configurables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/static-values/" class="md-nav__link">
+        Static Values
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" type="checkbox" id="__nav_11_6" >
+      
+      <label class="md-nav__link" for="__nav_11_6">
+        Properties
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Properties" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_6">
+          <span class="md-nav__icon md-icon"></span>
+          Properties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/boolean/" class="md-nav__link">
+        Boolean Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/color/" class="md-nav__link">
+        Color Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/complex/" class="md-nav__link">
+        Complex Object Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/datetime/" class="md-nav__link">
+        DateTime Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/multi-select/" class="md-nav__link">
+        Multi Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/number/" class="md-nav__link">
+        Number Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/select/" class="md-nav__link">
+        Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/string/" class="md-nav__link">
+        String Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/typed-list/" class="md-nav__link">
+        Typed list
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Mobile integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mobile integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mobile-integ/mobile-overview/" class="md-nav__link">
+        Interaction Studio Mobile Integrations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      <label class="md-nav__link" for="__nav_13">
+        Web integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Web integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices-data-capture/" class="md-nav__link">
+        Best Practices for Data Capture Using Site Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparison-shopping/" class="md-nav__link">
+        Comparison Shopping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contentzones/" class="md-nav__link">
+        Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item-actions/" class="md-nav__link">
+        Item Actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multisite-strategy/" class="md-nav__link">
+        Multisite Implementation Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pageTypes/" class="md-nav__link">
+        Page Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-impact-approach/" class="md-nav__link">
+        Interaction Studio Site Impact Approach
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-map-event-validation/" class="md-nav__link">
+        Sitemap Event Validation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-map-getting-started/" class="md-nav__link">
+        Get Started with Sitemapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-map-user-account-attributes/" class="md-nav__link">
+        Capturing User and Account Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sitemap-implementation-notes/" class="md-nav__link">
+        Sitemap Implementation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sitemap/" class="md-nav__link">
+        Sitemap Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-identity-mapping/" class="md-nav__link">
+        User Identity Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validate-beacon-deployment/" class="md-nav__link">
+        Validate JavaScript Beacon Deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Plan a Web Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Plan a Web Integration
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-implementation-planning" class="md-nav__link">
+    Step 1: Implementation Planning
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Implementation Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discovery" class="md-nav__link">
+    Discovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blueprint" class="md-nav__link">
+    Blueprint
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-sitemap-development" class="md-nav__link">
+    Step 2: Sitemap Development
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Sitemap Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-a-test-dataset-during-development" class="md-nav__link">
+    Use a Test Dataset During Development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-interaction-studio-launcher-to-work-on-your-test-dataset-with-the-sitemap-editor" class="md-nav__link">
+    Use the Interaction Studio Launcher to Work on Your Test Dataset with the Sitemap Editor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    SEE ALSO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-sitemap-validation" class="md-nav__link">
+    Step 3: Sitemap Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-moving-an-approved-sitemap-to-production" class="md-nav__link">
+    Step 4: Moving an Approved Sitemap to Production
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-templates-and-campaigns" class="md-nav__link">
+    Step 5: Create Templates and Campaigns
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-integration/" class="md-nav__link">
+        Interaction Studio Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_17" type="checkbox" id="__nav_13_17" >
+      
+      <label class="md-nav__link" for="__nav_13_17">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_17">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        Example Sitemaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/b2b/" class="md-nav__link">
+        Example B2B Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/ecommerce/" class="md-nav__link">
+        Example Ecommerce Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/financial-services/" class="md-nav__link">
+        Example Financial Services Sitemap
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-implementation-planning" class="md-nav__link">
+    Step 1: Implementation Planning
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Implementation Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discovery" class="md-nav__link">
+    Discovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blueprint" class="md-nav__link">
+    Blueprint
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-sitemap-development" class="md-nav__link">
+    Step 2: Sitemap Development
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Sitemap Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-a-test-dataset-during-development" class="md-nav__link">
+    Use a Test Dataset During Development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-interaction-studio-launcher-to-work-on-your-test-dataset-with-the-sitemap-editor" class="md-nav__link">
+    Use the Interaction Studio Launcher to Work on Your Test Dataset with the Sitemap Editor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    SEE ALSO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-sitemap-validation" class="md-nav__link">
+    Step 3: Sitemap Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-moving-an-approved-sitemap-to-production" class="md-nav__link">
+    Step 4: Moving an Approved Sitemap to Production
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-templates-and-campaigns" class="md-nav__link">
+    Step 5: Create Templates and Campaigns
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Plan a Web Integration</h1>
+                
+                <p>Combined with helpful tips and tricks, the steps in this document reflect how our internal development teams approach implementations. Follow these steps in the correct order as guidance for planning your Interaction Studio web integration.</p>
+<h2 id="step-1-implementation-planning">Step 1: Implementation Planning<a class="headerlink" href="#step-1-implementation-planning" title="Permanent link">&para;</a></h2>
+<h3 id="discovery">Discovery<a class="headerlink" href="#discovery" title="Permanent link">&para;</a></h3>
+<p>During the Interaction Studio discovery process, a solution architect works with the Interaction Studio customer to understand the business context for the Interaction Studio web implementation, any web campaign requirements, and the web-channel solution architecture to implement. Ideally, the implementor will also come away from the discovery process with a deep understanding of the website's structure and what data is available for collection by Interaction Studio.</p>
+<p>The following list details all the tasks the implementation team carries out during this process. </p>
+<ul>
+<li>
+<p>Establish the business context and goals of any web campaigns, along with requirements for the associated web templates. For specific technical documentation about Campaigns and Templates, see the <a href="/campaign-development/web-templates">Web Templates</a> documentation on this site and the <a href="https://doc.evergage.com/display/EKB/Web+Campaigns+and+Templates">Web Campaigns and Templates</a> documentation in the Interaction Studio business user knowledge base.</p>
+</li>
+<li>
+<p>Identify the identity attributes necessary for your implementation. Take careful consideration when deciding what identities to use; since identity setup is permanent, it has significant implications for your deployment. Refer to the documentation linked below for detailed information about how the identity system functions and how you can configure it for use with the web SDK.</p>
+<ul>
+<li><a href="https://doc.evergage.com/display/EKB/Identity+Management">Identity Management</a></li>
+<li><a href="https://doc.evergage.com/display/EKB/Configure+Identity+Types+and+Attributes">Configure Identity Types and Attributes</a></li>
+<li><a href="https://doc.evergage.com/display/EKB/Configure+the+Identity+System+for+the+Web+SDK">Configure the Identity System for the Web SDK</a></li>
+</ul>
+</li>
+</ul>
+<p>Additional considerations:</p>
+<ul>
+<li>If the client is implementing multiple sites on one account, our <a href="/web-integration/multisite-strategy">Multisite Implementation Strategy</a> documentation will be helpful.</li>
+<li>If the site is a Single Page Application (SPA), please refer to the <a href="/web-integration/sitemap/sitemap-implementation-notes/#single-page-app-handling">Single Page App Handling</a> documentation.</li>
+</ul>
+<h3 id="blueprint">Blueprint<a class="headerlink" href="#blueprint" title="Permanent link">&para;</a></h3>
+<p>The <a href="/web-integration/sitemap#sitemap-blueprint">site mapping blueprint</a> is all about planning. A sitemap blueprint is a skeleton for the structure of your sitemap. It serves as a guide for the developer writing the sitemap code and a reference for those unfamiliar with a particular implementation. In the sitemap blueprint, you will define the page types to be mapped, how the platform should treat them, what relevant data is available on each page chosen for mapping, and where individual values to be collected are found within the site. </p>
+<p>Creating a good sitemap blueprint is the part of the implementation process that is key to developing the data model. Ensure that the decisions made during blueprinting make sense from a technical standpoint. For more information about data modeling, see the <a href="/data-model">Data Modeling</a> documentation.</p>
+<p>It's also essential to keep the client's use cases in mind while developing your blueprint to ensure you create a data model capable of supporting those cases. Additionally, creating the blueprint document should be a collaborative effort; it's crucial to involve both a business user and a technical resource familiar with the product throughout this process. </p>
+<p>Once the blueprint has the overall sitemap structure in detail, we recommend adding to the blueprint where each piece of data to be collected can be found on the client's website.</p>
+<p>Ensure that you call out all identities needed for this implementation in your blueprint. Finally, get your technical resource to validate whether the values for identity attributes are available on the site and/or through ETL and that all of the identity types you are planning to configure support your use cases. </p>
+<h2 id="step-2-sitemap-development">Step 2: Sitemap Development<a class="headerlink" href="#step-2-sitemap-development" title="Permanent link">&para;</a></h2>
+<p>You can start the Interaction Studio web integration by deploying the <a href="/web-integration#web-sdk-javascript-beacon">JavaScript web beacon</a> on all pages that Interaction Studio will monitor. Typically, the team or individual responsible for deploying software to the company website carries out this task. </p>
+<p><a href="/web-integration/sitemap/validate-beacon-deployment">Validate the JavaScript Beacon deployment</a>, either before or during the sitemap development process. Next, develop the sitemap configuration for all page types and test the sitemap data ingestion to ensure that it meets the anticipated web campaign requirements. For more information on the sitemap development process, see <a href="/web-integration/sitemap">Sitemap Development</a>.</p>
+<h3 id="use-a-test-dataset-during-development">Use a Test Dataset During Development<a class="headerlink" href="#use-a-test-dataset-during-development" title="Permanent link">&para;</a></h3>
+<p>Leveraging a test dataset to hone your sitemap allows you to experiment during the early stages of the implementation process. It helps ensure that any data captured while working on a sitemap does not contaminate the data in your production environment., Any data captured in your production dataset will be factored into the catalog structure, campaign targeting logic, and machine learning recipe training. Hence, it is essential to avoid polluting your production dataset with unwanted data elements. Most importantly, editing and revising sitemap code directly in production can lead to incomplete and unvalidated code running live on the client's site.</p>
+<p>Creating and using a test dataset is a simple but critical measure to ensure safe sitemap iteration and a pristine production environment. You can create a test dataset by referring to the instructions listed in the <a href="https://doc.evergage.com/display/EKB/Set+up+and+Manage+Datasets">Setup and Manage Datasets</a> documentation.</p>
+<p><strong>Note:</strong> Once you create a new dataset, you will not be able to delete it.</p>
+<h3 id="use-the-interaction-studio-launcher-to-work-on-your-test-dataset-with-the-sitemap-editor">Use the Interaction Studio Launcher to Work on Your Test Dataset with the Sitemap Editor<a class="headerlink" href="#use-the-interaction-studio-launcher-to-work-on-your-test-dataset-with-the-sitemap-editor" title="Permanent link">&para;</a></h3>
+<p>First, <a href="/web-integration/sitemap/validate-beacon-deployment">Validate the JavaScript Beacon Deployment</a> to check whether the site already has the JavaScript beacon installed. Then, install the Interaction Studio Launcher by referring to the <a href="https://doc.evergage.com/display/EKB/Install+and+Use+the+Evergage+Launcher#InstallandUsetheEvergageLauncher-InstalltheEvergageLauncher">Install and Use the Interaction Studio Launcher</a> documentation. When using your test dataset and viewing the site in your browser, the option you enable on the Interaction Studio Launcher changes based on the presence of the JavaScript beacon. If the beacon is live on the site, enable <strong>Force Web SDK URL</strong>. If the beacon is not live on the site, enable <strong>Inject Web SDK</strong>. For more information on each of these scenarios, refer to the <a href="https://doc.evergage.com/display/EKB/Install+and+Use+the+Evergage+Launcher#InstallandUsetheEvergageLauncher-InjectingtheSDK">Interaction Studio Launcher</a> documentation. </p>
+<p>Throughout the development process, remember to validate the events sent by your sitemap using all of the methods outlined in the <a href="/web-integration/sitemap/sitemap-event-validation">Sitemap Event Validation</a> documentation. Doing so will ensure that you identify any timing issues, errors, or unexpected behavior caused by your sitemap code as they occur.</p>
+<p>If you are capturing any data from a form as part of your sitemap, remember that it is best to collect form entry data upon form submission <em>only</em>. Doing this helps ensure that you are only collecting accurate data intended to be submitted by the user. It also ensures that your data has undergone and passed the same validation processes used to collect these values natively on the client site. </p>
+<p>Finally, ensure that all identities are configured appropriately according to the blueprint. To know more about configuring identity types and attributes, see <a href="https://doc.evergage.com/display/EKB/Configure+Identity+Types+and+Attributes">Configure Identity Types and Attributes</a>.</p>
+<h3 id="see-also">SEE ALSO<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><a href="/web-integration/sitemap">Sitemap Development in Interaction Studio</a></p>
+</li>
+<li>
+<p>Example Sitemaps:</p>
+<ul>
+<li><a href="/web-integration/sitemap/examples/financial-services">Example Financial Services Sitemap</a></li>
+<li><a href="/web-integration/sitemap/examples/ecommerce">Example Ecommerce Sitemap</a></li>
+<li><a href="/web-integration/sitemap/examples/b2b">Example B2B Sitemap</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="step-3-sitemap-validation">Step 3: Sitemap Validation<a class="headerlink" href="#step-3-sitemap-validation" title="Permanent link">&para;</a></h2>
+<p>Once the implementor feels like they are in a good spot with their sitemap code, they should review their progress alongside the <a href="/web-integration/sitemap/sitemap-data-capture">Best Practices for Data Capture Using Site Mapping</a>. Then, after reviewing these practices and checking that their code works as intended, they can pass their code off for the next phase of code review within their own organization and make any adjustments based on feedback provided.</p>
+<h2 id="step-4-moving-an-approved-sitemap-to-production">Step 4: Moving an Approved Sitemap to Production<a class="headerlink" href="#step-4-moving-an-approved-sitemap-to-production" title="Permanent link">&para;</a></h2>
+<p><strong>Important:</strong> If the client's site already has the beacon corresponding to the production dataset integrated into their site, adding a sitemap code to that dataset immediately makes the implementation live and data collection begin. Ensure that the client is ready for this step before proceeding.</p>
+<p>This process involves ensuring that the production dataset is configured in the same way as the test dataset you have been using to ensure everything works as expected.</p>
+<ul>
+<li>Reproduce catalog setup from the test dataset in the production dataset.<ul>
+<li>The catalog in the production dataset can be maintained throughout the development process to reflect the Catalog as it gets finalized in your test dataset.</li>
+</ul>
+</li>
+<li>Paste the completed sitemap code into the production dataset. Make sure you are saving your sitemap code through the web <strong>Sitemap Editor</strong> accessed via the <strong>Visual Editor</strong>.</li>
+<li>Reproduce all recipes and segments created in the test dataset to support your use-cases and/or reporting efforts.</li>
+<li>Configure any third-party integrations from the test dataset in production.</li>
+<li>Configure any feeds from the test dataset in production.</li>
+<li>If development of campaigns and templates began in a test dataset, the following steps may also be required.<ul>
+<li>Export templates from the test dataset and import them into production.</li>
+<li>Reproduce all campaigns created in the test dataset.</li>
+</ul>
+</li>
+</ul>
+<h2 id="step-5-create-templates-and-campaigns">Step 5: Create Templates and Campaigns<a class="headerlink" href="#step-5-create-templates-and-campaigns" title="Permanent link">&para;</a></h2>
+<p><strong>Important:</strong> As a best practice, complete the sitemap and move it to production before creating any templates or campaigns. Ideally, all of your campaigns and templates will be created only once directly in the production dataset.</p>
+<p>Configure and test the web templates required to support the anticipated web campaigns. For guidance, refer to articles in the <a href="/campaign-development">Campaign Development</a> section of this site and the <a href="https://doc.evergage.com/display/EKB/Web+Campaigns+and+Templates">Web Campaigns and Templates</a> documentation in the Interaction Studio business user knowledge base.</p>
+<p>Once you have developed your campaigns, debug them using the <a href="/campaign-development/web-campaign-debugger">Web Campaign Debugger</a>. You may also want to watch the <a href="/event-api/event-api-response">Event API Responses</a> directly in the <strong>Network</strong> tab of your browser’s developer tools.</p>
+<p>If work on campaigns and templates in the production dataset needs to begin before the sitemap is complete, you <em>can</em> create campaigns and templates within your test dataset. However, be mindful of the following.</p>
+<ul>
+<li>Cloning a dataset does not carry over data, campaigns, or templates.</li>
+<li>If templates are built on a test dataset, you will have to individually export and then import each template from the test dataset into the production dataset before you go live with them.</li>
+<li>Campaigns built on the test dataset will have to be reproduced manually on the production dataset.</li>
+</ul>
+<p>Both templates and campaigns will rely on the sitemap in some way to function properly. Without a completed sitemap, it can be difficult to develop a template that will work long-term, considering that the sitemap is still in flux. Recipes and segmentation depend on the proper implementation of the sitemap based on the discovery and blueprinting processes.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../validate-beacon-deployment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Validate JavaScript Beacon Deployment" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Validate JavaScript Beacon Deployment
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../web-integration/" class="md-footer__link md-footer__link--next" aria-label="Next: Interaction Studio Web Integration" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Interaction Studio Web Integration
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

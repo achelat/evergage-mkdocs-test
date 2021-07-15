@@ -1,0 +1,14 @@
+---
+path: '/campaign-development'
+title: 'Campaign Development in Interaction Studio'
+tags: ['editors', 'gears', 'campaign editor']
+---
+
+Once the Interaction Studio platform is implemented by a client or partners development team, developers will shift focus from data ingestion to cross-channel use case execution and enablement. Interaction Studio’s [campaign & templates system](/campaign-development/web-templates) is designed to be business user friendly while also empowering developers to determine what data and what level of flexibility a business user has access to. Interaction Studio campaigns can be broken down into four types:
+
+## Interaction Studio Campaign Types
+
+* **Web Campaigns:** To support web campaigns, developers are responsible for integrating Interaction Studio with the client’s website(s) and for developing web templates that business users can leverage to build out campaigns including A/B/n and rules based tests. Documentation on integrating Interaction Studio with your website is [available here](/web-integration) and information on how to leverage campaign templates can be found [here](/campaign-development/web-templates)
+* **Server-Side Campaigns:** Leveraging a similar approach as web campaigns, developers can configure templates specifically for server-side campaigns. A business user is still able to control test configuration and set-up, but will collaborate more closely with their development team to ensure that they are leveraging Interaction Studio’s [Event API](/event-api) correctly for their campaign execution. Additional information on building a Server-Side Campaign from a template can be found [here.](/campaign-development/server-side-campaigns-and-templates)
+* **Email Campaigns:** Developers may have limited or no involvement in open time email campaign development, depending on the capabilities of the business users in the company. Email campaigns are developed through the Interaction Studio UI, but require some basic knowledge of HTML, which may or may not require developer involvement. Additional documentation on how to configure Open Time email campaigns is [available on Interaction Studio’s knowledge base.](https://doc.evergage.com/display/EKB/Email+Campaigns)
+* **Mobile Campaigns:** Interaction Studio can support campaigns for display on mobile devices by using responsive HTML (HTML5) in its normal web templates feature or through integration with native iOS and Android mobile apps. Documentation on Interaction Studio’s Mobile SDK is [available here](/mobile-integration) and business user documentation for configuring mobile campaigns is [available on the knowledgebase.](https://doc.evergage.com/display/EKB/Mobile+Campaigns)

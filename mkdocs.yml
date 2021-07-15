@@ -1,0 +1,57 @@
+site_name: Salesforce Interaction Studio Developer Documentation
+site_url: https://developer.evergage.com/
+
+repo_name: ajitlo
+repo_url: https://github.com/squidfunk/mkdocs-material
+edit_uri: ""
+
+theme:
+  name: material
+  include_search_page: false
+  search_index_only: true
+  palette:
+    - scheme: salesforce
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: media/interaction-studio-logo.png
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+
+plugins:
+  - search:
+      lang: en
+      prebuild_index: true
+      indexing: full
+
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed
+
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:

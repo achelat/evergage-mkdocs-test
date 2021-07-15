@@ -1,0 +1,2546 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://developer.evergage.com/campaign-development/server-side-campaigns-and-templates/server-side-templates/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Server-Side Templates - Salesforce Interaction Studio Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#login-to-interaction-studio" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Salesforce Interaction Studio Developer Documentation" class="md-header__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Salesforce Interaction Studio Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Server-Side Templates
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Salesforce Interaction Studio Developer Documentation" class="md-nav__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    Salesforce Interaction Studio Developer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About us
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Additional apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional apis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Additional apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../additional-apis/additional-apis/" class="md-nav__link">
+        Additional Interaction Studio APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../additional-apis/user-look-up-deletion-api/" class="md-nav__link">
+        User Look-Up & Deletion API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Campaign development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/" class="md-nav__link">
+        Campaign Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Advanced use case apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Advanced use case apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced use case apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-use-case-apis/advanced-use-case-apis/" class="md-nav__link">
+        Advanced Use-Case APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2_2">
+        Is trends
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Is trends" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Is trends
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-use-case-apis/is-trends/is-trends/" class="md-nav__link">
+        ISTrends
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_3" type="checkbox" id="__nav_4_2_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_3">
+        Web surveys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web surveys" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web surveys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-use-case-apis/web-surveys/web-surveys/" class="md-nav__link">
+        Web Surveys
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Campaign template apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign template apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign template apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-template-apis/campaign-template-apis/" class="md-nav__link">
+        Campaign Template APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      <label class="md-nav__link" for="__nav_4_3_2">
+        Corvus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Corvus" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corvus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-template-apis/corvus/corvus/" class="md-nav__link">
+        Corvus
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_3" type="checkbox" id="__nav_4_3_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3_3">
+        Recommendations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Recommendations" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-template-apis/recommendations/recommendations/" class="md-nav__link">
+        Recommendations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Email campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Email campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Email campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../email-campaigns-and-templates/capture-email-campaign-url/" class="md-nav__link">
+        Capture an Open-Time Email Campaign URL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../email-campaigns-and-templates/overview/" class="md-nav__link">
+        Open-time Email Campaigns and Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../email-campaigns-and-templates/render-non-western-characters/" class="md-nav__link">
+        Render Non-Western Characters in OTE Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../email-campaigns-and-templates/third-party-tracking-for-email-campaigns/" class="md-nav__link">
+        Add Third Party Tracking Parameters to Open-Time Email Campaigns
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Server side campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Server side campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Server side campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contentzones/" class="md-nav__link">
+        Server Side Campaigns and Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einstein-decisions/" class="md-nav__link">
+        Einstein Decisions - Server-Side Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mutiplecampaigns/" class="md-nav__link">
+        Multiple Server Side Campaign Responses in a Single Call
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Server-Side Templates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Server-Side Templates
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#login-to-interaction-studio" class="md-nav__link">
+    Login to Interaction Studio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-server-side-campaign" class="md-nav__link">
+    Create a New Server-Side Campaign
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#determine-the-campaign-type" class="md-nav__link">
+    Determine the Campaign Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-and-name-campaign-experiences" class="md-nav__link">
+    Create and Name Campaign Experiences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#determine-campaign-identity-authentication-requirements" class="md-nav__link">
+    Determine Campaign Identity &amp; Authentication Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-application-specific-experiences" class="md-nav__link">
+    Create Application Specific Experiences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply-a-template" class="md-nav__link">
+    Apply a Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-experiences" class="md-nav__link">
+    Test Experiences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publish-the-campaign" class="md-nav__link">
+    Publish the Campaign
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#track-campaign-results" class="md-nav__link">
+    Track Campaign Results
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      <label class="md-nav__link" for="__nav_4_6">
+        Templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/campaign-stats/" class="md-nav__link">
+        Campaign Stats Tracking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/modify-global-templates/" class="md-nav__link">
+        Modify Global templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/template-client-javascript/" class="md-nav__link">
+        Template Client JavaScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/template-global-templates/" class="md-nav__link">
+        Get Started with Global Web Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/template-handlebars/" class="md-nav__link">
+        Web Template Handlebars
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/template-html-classes-and-css/" class="md-nav__link">
+        Web Template CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/template-response-simulator/" class="md-nav__link">
+        Template Response Simulator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/template-server-typescript/" class="md-nav__link">
+        Template Server TypeScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      <label class="md-nav__link" for="__nav_4_7">
+        Web campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Web campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/display-utilities/" class="md-nav__link">
+        Web Template Display Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/flicker-defender/" class="md-nav__link">
+        Flicker Defender
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/template-development-checklist/" class="md-nav__link">
+        Web Template Building Best Practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/templates-style-guide-and-coding-conventions/" class="md-nav__link">
+        Web Templates Style Guide and Coding Conventions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/web-campaign-and-template/" class="md-nav__link">
+        Web Campaigns & Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/web-campaign-debugger/" class="md-nav__link">
+        Campaign Debugger
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Data analytics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data analytics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Data analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-analytics/data-analytics/" class="md-nav__link">
+        Interaction Studio Data Analytics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-analytics/data-dictionary/" class="md-nav__link">
+        Data Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-analytics/data-warehouse/" class="md-nav__link">
+        Data Warehouse
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-analytics/scratch-schema/" class="md-nav__link">
+        Scratch Schema
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Data ingestion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data ingestion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data ingestion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-ingestion/data-ingestion/" class="md-nav__link">
+        Ingesting Data into Interaction Studio
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Data model
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data model" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Data model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-model/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-model/catalog/" class="md-nav__link">
+        Catalog
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-model/data-model/" class="md-nav__link">
+        Data Modeling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-model/datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Develop overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Develop overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Develop overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../develop-overview/develop-overview/" class="md-nav__link">
+        Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../develop-overview/developer-role-responsibilities/" class="md-nav__link">
+        Developer Role and Responsibilities
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Event api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Event api" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Event api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event-api/event-api-overview/" class="md-nav__link">
+        Interaction Studio Event API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event-api/event-api-response/" class="md-nav__link">
+        Event API Responses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event-api/event-api-specifications/" class="md-nav__link">
+        Event API Requests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Gears
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gears" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Gears
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/favorites/" class="md-nav__link">
+        Favorites Gear
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/gears/" class="md-nav__link">
+        Gears
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/components/" class="md-nav__link">
+        Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/components/contextual-rule/" class="md-nav__link">
+        Contextual Rule Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/components/lifecycle/" class="md-nav__link">
+        Lifecycle Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/components/oauth/" class="md-nav__link">
+        OAuth Component
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Metadata
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Metadata" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Metadata
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/metadata/gear-metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_5" type="checkbox" id="__nav_10_5" >
+      
+      <label class="md-nav__link" for="__nav_10_5">
+        System services
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="System services" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          System services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/system-services/" class="md-nav__link">
+        System Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/system-services/filesystem/" class="md-nav__link">
+        Filesystem Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/system-services/http/" class="md-nav__link">
+        HTTP Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Interface config
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interface config" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Interface config
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/arrays/" class="md-nav__link">
+        Array Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/config/" class="md-nav__link">
+        Custom Interface & Template Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/decorators/" class="md-nav__link">
+        Decorators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/importexport/" class="md-nav__link">
+        Importing And Exporting Configurables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/static-values/" class="md-nav__link">
+        Static Values
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" type="checkbox" id="__nav_11_6" >
+      
+      <label class="md-nav__link" for="__nav_11_6">
+        Properties
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Properties" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_6">
+          <span class="md-nav__icon md-icon"></span>
+          Properties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/boolean/" class="md-nav__link">
+        Boolean Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/color/" class="md-nav__link">
+        Color Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/complex/" class="md-nav__link">
+        Complex Object Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/datetime/" class="md-nav__link">
+        DateTime Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/multi-select/" class="md-nav__link">
+        Multi Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/number/" class="md-nav__link">
+        Number Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/select/" class="md-nav__link">
+        Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/string/" class="md-nav__link">
+        String Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/typed-list/" class="md-nav__link">
+        Typed list
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Mobile integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mobile integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mobile-integ/mobile-overview/" class="md-nav__link">
+        Interaction Studio Mobile Integrations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Web integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Web integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/best-practices-data-capture/" class="md-nav__link">
+        Best Practices for Data Capture Using Site Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/comparison-shopping/" class="md-nav__link">
+        Comparison Shopping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/contentzones/" class="md-nav__link">
+        Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/item-actions/" class="md-nav__link">
+        Item Actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/multisite-strategy/" class="md-nav__link">
+        Multisite Implementation Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/pageTypes/" class="md-nav__link">
+        Page Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/site-impact-approach/" class="md-nav__link">
+        Interaction Studio Site Impact Approach
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/site-map-event-validation/" class="md-nav__link">
+        Sitemap Event Validation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/site-map-getting-started/" class="md-nav__link">
+        Get Started with Sitemapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/site-map-user-account-attributes/" class="md-nav__link">
+        Capturing User and Account Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/sitemap-implementation-notes/" class="md-nav__link">
+        Sitemap Implementation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/sitemap/" class="md-nav__link">
+        Sitemap Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/user-identity-mapping/" class="md-nav__link">
+        User Identity Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/validate-beacon-deployment/" class="md-nav__link">
+        Validate JavaScript Beacon Deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/web-integration-planning/" class="md-nav__link">
+        Plan a Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/web-integration/" class="md-nav__link">
+        Interaction Studio Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_17" type="checkbox" id="__nav_13_17" >
+      
+      <label class="md-nav__link" for="__nav_13_17">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_17">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/examples/" class="md-nav__link">
+        Example Sitemaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/examples/b2b/" class="md-nav__link">
+        Example B2B Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/examples/ecommerce/" class="md-nav__link">
+        Example Ecommerce Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/examples/financial-services/" class="md-nav__link">
+        Example Financial Services Sitemap
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#login-to-interaction-studio" class="md-nav__link">
+    Login to Interaction Studio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-server-side-campaign" class="md-nav__link">
+    Create a New Server-Side Campaign
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#determine-the-campaign-type" class="md-nav__link">
+    Determine the Campaign Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-and-name-campaign-experiences" class="md-nav__link">
+    Create and Name Campaign Experiences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#determine-campaign-identity-authentication-requirements" class="md-nav__link">
+    Determine Campaign Identity &amp; Authentication Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-application-specific-experiences" class="md-nav__link">
+    Create Application Specific Experiences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply-a-template" class="md-nav__link">
+    Apply a Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-experiences" class="md-nav__link">
+    Test Experiences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publish-the-campaign" class="md-nav__link">
+    Publish the Campaign
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#track-campaign-results" class="md-nav__link">
+    Track Campaign Results
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Server-Side Templates</h1>
+                
+                <p>Interaction Studio allows business users to build Server-Side campaigns and templates using a streamlined version of the web templates editor and the same campaign builder that you are familiar with from web campaigns. By leveraging the same campaign builder and the same underlying template infrastructure, clients can more easily extend campaigns across channels and even build a single campaign that can be called by multiple applications. Server-Side campaigns are available to premium edition clients.</p>
+<h2 id="login-to-interaction-studio">Login to Interaction Studio<a class="headerlink" href="#login-to-interaction-studio" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Login to your Interaction Studio Account</li>
+<li>Navigate to the dataset where you want to build your Server-Side campaign</li>
+</ol>
+<h2 id="create-a-new-server-side-campaign">Create a New Server-Side Campaign<a class="headerlink" href="#create-a-new-server-side-campaign" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select <strong>Server-Side</strong> from the left-hand navigation in the <strong>Channels &amp; Campaigns</strong> section 
+This will take you a screen where you can view all of your published &amp; disabled Server-Side campaigns (published campaigns have bolded names, unpublished are not bolded)</li>
+<li>
+<p>To create a new campaign, click the New Campaign button in the upper right.</p>
+<p>a. When you create a new Server-Side campaign, it will open the campaign interface and have a campaign targeting rule of <code>channel: Server</code> applied by default. The campaign level channel: Server rule means that by default, a Server-Side campaign will require the /authevent API endpoint and an API token in order for a response to be returned. It will also reference the <a href="https://doc.evergage.com/display/EKB/Configure+the+Identity+System+for+the+Event+API">ID attribute configured for the Event API</a> in the dataset settings screen.</p>
+<p>b. Campaign targeting rules are configurable by the business user. More information about channel targeting is provided in the Apply Targeting Logic section below.</p>
+</li>
+</ol>
+<p><strong>NOTE:</strong> Creating a new Server-Side campaign using the Classic editor <a href="https://doc.evergage.com/display/EKB/Server-Side+Campaigns">documented here</a> is no longer supported for clients leveraging the campaigns &amp; templates system. If you have existing Server-Side classic campaigns, they will continue to function and you will still be able to access and edit those campaigns, but you will not be able to create a new one.</p>
+<p><img style="float: left;" src="templateScreen.png"/>
+<br></p>
+<div class='alert-blue'>
+Both rule-based and A/B tests provide options for a control experience. With A/B tests, you determine control traffic using a slider; with rules-based campaigns you enter a control percentage in an input field.
+</div>
+
+<h2 id="determine-the-campaign-type">Determine the Campaign Type<a class="headerlink" href="#determine-the-campaign-type" title="Permanent link">&para;</a></h2>
+<p>There are two campaign types. A/B Test campaigns split traffic randomly into different groups based on percentages you define. Each group sees a different campaign experience. Rule Based Test campaigns follow the rules you define to determine which experience to show to each visitor. For example, using a rule-based test, you could target a segment of visitors who had not been to your site in 30 days and show them experience 1, then show experience 2 to visitors who had been to your site in the last 24 hours.</p>
+<ol>
+<li>The default campaign type is <em>A/B Test</em></li>
+<li>Click <strong>&gt;</strong> next to A/B Test </li>
+<li>
+<p>Choose the campaign type that supports your goal for the campaign</p>
+<p>a. <a href="https://doc.evergage.com/display/EKB/Create+a+Web+Campaign+from+a+Web+Campaign+Template">A/B Test</a></p>
+<p>b. <a href="https://doc.evergage.com/display/EKB/Use+Targeting+Rules+for+Web+Campaigns">Rule-based</a>
+4. Toggle between <strong>A/B Test</strong> and <strong>Rule Based Test</strong> to change the type</p>
+</li>
+</ol>
+<h2 id="create-and-name-campaign-experiences">Create and Name Campaign Experiences<a class="headerlink" href="#create-and-name-campaign-experiences" title="Permanent link">&para;</a></h2>
+<p>Determine how many experiences you want to have for your campaign. If you want to deliver a different campaign experience to various groups of qualified visitors, create additional experiences by cloning the configured experience. Then you can make modifications to the next experience using the same template, or apply a different template as needed.</p>
+<ol>
+<li>Still in <em>Campaign Type</em>, click the following icon to clone an experience
+<img style="float: left;" src="cloneIcon.png"/></li>
+<li>Double click the Experience Name to change the name</li>
+<li>Repeat the cloning and renaming process until you have the number of experiences you need for your campaign</li>
+</ol>
+<div class='alert-blue'>
+The name of each experience shows up in your campaign statistics report. It can be helpful to name each experience with what is unique about that experience so you can interpret the results in reporting. For example, if you are building a cross-channel campaign, it is helpful to name each experience with their respective channel name (eg. Mobile, POS, Web, etc.)
+<br><br>
+For rules-based campaigns, if a user that qualifies for the campaign qualifies for multiple experiences, the experience higher in the list of experiences is considered the higher priority experience. You can drag and reorder campaign experiences on the campaign type screen.
+</div>
+
+<h2 id="determine-campaign-identity-authentication-requirements">Determine Campaign Identity &amp; Authentication Requirements<a class="headerlink" href="#determine-campaign-identity-authentication-requirements" title="Permanent link">&para;</a></h2>
+<p>Server-Side campaigns have the same targeting options available as web campaigns. There is, however, important nuance around the channel rule that has identity and authentication implications. As described above, Server-Side campaigns have campaign level targeting logic of <code>channel: Server</code> applied by default. While a business user can choose to remove this logic, its inclusion means that the campaign will require an authenticated request via the /authevent endpoint with channel set to Server in the call in order to return a campaign response. Additional information around the implications for using or removing the <code>channel: Server</code> logic is as follows:</p>
+<ul>
+<li><strong>Authenticated Campaigns:</strong><ul>
+<li><strong>channel: Server Rule:</strong><ul>
+<li><strong>Authentication:</strong> Any time <code>channel: Server</code> is present (at either the campaign level or experience level) it means that authentication will be required in order for Interaction Studio to return a campaign response, as Server is a default "Trusted" channel. (If your Interaction Studio account was provisioned prior to 1/28/2021, you might need to file a support ticket to get <code>channel: Server</code> added as a trusted channel)</li>
+<li><strong>API Calling Pattern:</strong> The inbound request that includes <code>channel: Server</code> MUST leverage the /authevent endpoint and include an API token. Information on the <a href="https://developer.evergage.com/event-api/event-api-specifications#authenticated-event-endpoint">/authevent</a> endpoint and creating an API token in Interaction Studio are available at their respective links. If a POST request is made to the authevent endpoint without either channel: Server or an <a href="https://doc.evergage.com/display/EKB/API+Tokens">API token</a> included, no campaign response data will be returned.</li>
+<li><strong>Identity:</strong> When channel → Server is applied to a POST request that goes through the /authevent endpoint, the id value provided will reference the Event API identity attribute that is configured via the identity settings screen (instructions / details on the API identity attribute configuration is <a href="https://doc.evergage.com/display/EKB/Configure+the+Identity+System+for+the+Event+API">available here</a>). The configured value is the only value that can be used for user lookup via the authevent endpoint and if any other identity attributes are included in the call, they will be ignored.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img style="float: left;" src="template-flowchart.png"/>
+<br></p>
+<ul>
+<li>
+<p><strong>Unauthenticated Campaigns:</strong></p>
+<ul>
+<li><strong>channel: Web Rule</strong><ul>
+<li><strong>Authentication:</strong> If the default <code>channel: Server</code> campaign level rule is removed, you can update a user and get campaign responses returned without authentication.</li>
+<li><strong>API Calling Pattern:</strong> The inbound request that includes <code>channel: Web</code> MUST leverage the /event endpoint. Information on the /event endpoint is available <a href="/event-api">here</a>. If a POST request is made to the <code>/event</code> endpoint with no channel value or a different channel value included, you will NOT be able to reference an identity attribute and might end up creating new users in the platform.</li>
+<li><strong>Identity:</strong> When <code>channel: Web</code> is applied to an inbound request that goes through the /event endpoint, the user.id value provided will reference the Web SDK identity attribute that is configured via the identity settings screen (instructions / details on the Web SDK identity attribute configuration is <a href="https://doc.evergage.com/display/EKB/Configure+the+Identity+System+for+the+Web+SDK">available here</a>). More than one identity attribute can be included in the user.attributes object in order to facilitate additional profile merge scenarios. Note that this behavior is different than the /authevent endpoint above.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Hybrid Authenticated &amp; Unauthenticated Campaigns:</strong></p>
+<ul>
+<li>While A/B/n testing campaigns can ONLY be either fully authenticated or unauthenticated, rules based campaigns provide additional flexibility via experience level rules. By removing the default campaign level <code>channel: Server</code> rule, you can make certain experiences within a campaign either require or not require authentication. To do this, simply apply either <code>channel: Server</code> or <code>channel: Web</code> as a rule on the experience. </li>
+<li><strong>IMPORTANT NOTE:</strong> If you decide to mix <code>channel: Web</code> &amp; <code>channel: Server</code> logic into a single campaign, make sure the correct endpoints and Id values are being used in the call for the respective experiences.</li>
+</ul>
+</li>
+</ul>
+<div class='alert-blue'>
+
+**Channel Support**
+If you include a channel value in the campaign targeting logic that is not either Web or Server, you will NOT be able to access identity attributes. Web & Server are the only channel values with identity support.
+</div>
+
+<h2 id="create-application-specific-experiences">Create Application Specific Experiences<a class="headerlink" href="#create-application-specific-experiences" title="Permanent link">&para;</a></h2>
+<p>There are a couple different ways for a user to build a single Server-Side campaign that can power experiences across multiple touch-points.</p>
+<ul>
+<li><strong>Restrict Campaign Response to Certain Applications at the Campaign Level:</strong> If you want to limit a campaign response to only certain applications, you can layer in additional targeting rules via the Source → Application rule. By applying this rule, an inbound request needs to include one of the applications listed on the campaign rule (eg. Mobile, POS, Support, etc.) in order for a response to be returned. This type of targeting helps ensure you are only returning campaign responses relevant to that particular application.</li>
+<li><strong>Application Specific Experiences:</strong> If you want to build different experiences for different applications, a business user would simply leverage a rules based campaign and then apply application targeting logic to the experience. To apply application targeting logic, simply apply an application rule at the experience level (eg. Mobile or POS). The application will be required in the inbound call in order to return the experience designed for that specific application. </li>
+</ul>
+<p><img style="float: left;" src="campaignConfigured.png"/></p>
+<h2 id="apply-a-template">Apply a Template<a class="headerlink" href="#apply-a-template" title="Permanent link">&para;</a></h2>
+<p>Once you have created a new campaign, added a name for the campaign, and applied your targeting logic, it's time to apply a template.</p>
+<ol>
+<li>At the left, under your first experience, click <strong>Add Template</strong></li>
+<li>In the Select Template window, you will see all published Server-Side templates.</li>
+<li>Once selected, the template name will appear under the experience and the business user can fill in the configuration options that the template developer has exposed</li>
+</ol>
+<h2 id="test-experiences">Test Experiences<a class="headerlink" href="#test-experiences" title="Permanent link">&para;</a></h2>
+<p>To test a Server-Side campaign that is built from template, you will need to use a tool to make POST requests. For campaigns that require authentication, you will need access to an API token. The campaign response generated by Interaction Studio is the same format as the response generated for web campaigns using the campaign and templates system. If you are unsure about your API Token review with your Interaction Studio account administrator and review the <a href="https://doc.evergage.com/display/EKB/API+Tokens">documentation here.</a></p>
+<ol>
+<li>Create a new API <strong>POST</strong> request, The formatting of this POST URL is as follows:<ol>
+<li><strong>Authenticated:</strong> <code>/api2/authevent/{dataset}</code></li>
+<li><strong>Unauthenticated:</strong> <code>/api2/event/{dataset}</code></li>
+<li>To test a campaign or experience where channel: Server is included requires an API token in order to return a response. By default, a Server-Side campaign has channel: Server configured in the campaign targeting logic meaning campaign responses will only return for authenticated requests. (If you removed the channel: Server logic, you need to reference the /event endpoint for unauthenticated posts/responses)</li>
+</ol>
+</li>
+<li>If using the <code>/authevent</code> endpoint you will need to leverage <strong>Basic Auth</strong> &amp; enter your API token credentials your Key is the <strong>Username</strong> and the Secret as the <strong>Password</strong></li>
+<li>The <strong>Body</strong> content of the request must be constructed as <strong>JSON</strong> </li>
+<li>
+<p>There are two types of test requests that you can submit (sample calls available to copy/paste below):</p>
+<p>a. <code>testMessages: true</code>  <br />
+this configuration will allow you to test that the campaign targeting rules are being adhered to correctly. Only users that qualify for the campaign and all of the targeting logic will be eligible to receive a campaign response. If they do not qualify, the request will not return any campaign response information. The campaign MUST be in a published state in order to test that rules are being adhered to correctly. We recommend testing this in a separate dataset prior to moving the template to a campaign on the production dataset (remember templates can be easily transferred between datasets by downloading and uploading the template zip file).</p>
+<p>b. <code>testMessages: experienceId</code>
+In this configuration, you would replace the experienceId text with the id of the campaign experience your are looking to test (see image on the right to learn how to find your campaign experience id). Testing in this manner will IGNORE campaign rules, but allows you to validate the campaign response data looks correct. By including a specific experience ID, you ARE able to test an unpublished campaign experience. Testing a specific experience can ONLY be done via the /authevent endpoint. This means that if you have an unauthenticated campaign leveraging the <code>channel:Web</code> rule, in order to test the campaign response for a specific experience while the campaign is unpublished, you still need to use <code>channel:Server</code> in the POST.</p>
+</li>
+</ol>
+<p><strong>Sample authevent API POST Request</strong></p>
+<pre><code>{
+    &quot;action&quot;: &quot;hello world&quot;,
+    &quot;debug&quot;: {
+        &quot;testMessages&quot;: &quot;true&quot;
+    },
+    &quot;user&quot;: {
+        &quot;id&quot;: &quot;sample Id&quot;
+    },
+    &quot;source&quot;: {
+        &quot;channel&quot;:&quot;Server&quot;,
+        &quot;application&quot;:&quot;POS&quot;
+    }
+}
+</code></pre>
+<div class='alert-blue'>
+<br>
+
+**Note:** the id value you select for a user will look for a user in the system based on the identity attribute that you have assigned to the Event API. Instructions/information on selecting the identity attribute for the Event API [is available here](https://doc.evergage.com/display/EKB/Configure+the+Identity+System+for+the+Event+API)
+</div>
+
+<p><strong>testMessages: experienceId</strong></p>
+<p>To find your campaigns experience Id, simply open the Server-Side campaign list screen, select the campaign you are intending to test and scroll down to the <strong>Overview</strong> section. You will see the experience Id next to the eye icon on the right side of the page (reference screenshot with highlighted value below). In order to test a specific experience, a trusted channel MUST be included in the call. This ensures that ignoring campaign rules does not ignore authentication requirements.</p>
+<p><strong>Sample authevent API POST Request</strong></p>
+<pre><code>{
+    &quot;action&quot;: &quot;hello world&quot;,
+    &quot;debug&quot;: {
+        &quot;testMessages&quot;: &quot;experienceId&quot;
+    },
+    &quot;user&quot;: {
+        &quot;id&quot;: &quot;sample UserId&quot;
+    },
+    &quot;source&quot;: {
+        &quot;channel&quot;:&quot;Server&quot;
+    }
+}
+</code></pre>
+<h2 id="publish-the-campaign">Publish the Campaign<a class="headerlink" href="#publish-the-campaign" title="Permanent link">&para;</a></h2>
+<p>Once you have thoroughly tested your campaign, you need to publish it to make it live. The process for publishing a campaign can be done on the campaign list page or while editing the campaign.</p>
+<ol>
+<li>While editing your campaign in the campaign editor, save any changes</li>
+<li>The SAVE button will dim to let you know all changes have been saved</li>
+<li>Slide the toggle to <strong>PUBLISHED</strong></li>
+<li>You will receive a confirmation message that the campaign was published</li>
+<li>To disable a campaign, slide the toggle to <strong>DISABLED</strong></li>
+<li>Again, you will receive a confirmation message that the campaign was unpublished</li>
+</ol>
+<p><img style="float: left;" src="expIdDemo.png"/></p>
+<div class='alert-blue'>
+
+**Campaign Access Controls**
+If you want to know who has access to publish a campaign (or edit or create a new campaign) refer to [the roles based access guide](https://doc.evergage.com/display/EKB/Add%2C+Edit%2C+and+Delete+Users+and+Roles). Roles-based access is a great way to ensure that campaigns go through the proper approval process prior to publishing for live traffic. Server-Side campaign & template creation follows the same permissions associated with web campaigns & templates.
+</div>
+
+<h2 id="track-campaign-results">Track Campaign Results<a class="headerlink" href="#track-campaign-results" title="Permanent link">&para;</a></h2>
+<p>To track campaign stats on a Server-Side campaign, you will need to work with your web developer to pass stats information like impressions, clicks, items returned, etc. back via API. Information on how to pass campaign stats back to Interaction Studio is <a href="https://developer.evergage.com/campaign-development/web-templates/web-campaign-stats">available here</a> on our developer documentation site. The stats will appear in the campaigns statistics report that is automatically generated for the campaign.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../mutiplecampaigns/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Multiple Server Side Campaign Responses in a Single Call" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Multiple Server Side Campaign Responses in a Single Call
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../templates/campaign-stats/" class="md-footer__link md-footer__link--next" aria-label="Next: Campaign Stats Tracking" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Campaign Stats Tracking
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

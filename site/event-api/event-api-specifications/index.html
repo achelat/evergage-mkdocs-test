@@ -1,0 +1,3163 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://developer.evergage.com/event-api/event-api-specifications/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Event API Requests - Salesforce Interaction Studio Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#send-event-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-header__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Salesforce Interaction Studio Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Event API Requests
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-nav__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    Salesforce Interaction Studio Developer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About us
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Additional apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional apis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Additional apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/additional-apis/" class="md-nav__link">
+        Additional Interaction Studio APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/user-look-up-deletion-api/" class="md-nav__link">
+        User Look-Up & Deletion API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Campaign development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-development/" class="md-nav__link">
+        Campaign Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Advanced use case apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Advanced use case apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced use case apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/advanced-use-case-apis/" class="md-nav__link">
+        Advanced Use-Case APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2_2">
+        Is trends
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Is trends" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Is trends
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/is-trends/is-trends/" class="md-nav__link">
+        ISTrends
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_3" type="checkbox" id="__nav_4_2_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_3">
+        Web surveys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web surveys" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web surveys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/web-surveys/web-surveys/" class="md-nav__link">
+        Web Surveys
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Campaign template apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign template apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign template apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/campaign-template-apis/" class="md-nav__link">
+        Campaign Template APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      <label class="md-nav__link" for="__nav_4_3_2">
+        Corvus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Corvus" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corvus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/corvus/corvus/" class="md-nav__link">
+        Corvus
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_3" type="checkbox" id="__nav_4_3_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3_3">
+        Recommendations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Recommendations" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/recommendations/recommendations/" class="md-nav__link">
+        Recommendations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Email campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Email campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Email campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/capture-email-campaign-url/" class="md-nav__link">
+        Capture an Open-Time Email Campaign URL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/overview/" class="md-nav__link">
+        Open-time Email Campaigns and Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/render-non-western-characters/" class="md-nav__link">
+        Render Non-Western Characters in OTE Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/third-party-tracking-for-email-campaigns/" class="md-nav__link">
+        Add Third Party Tracking Parameters to Open-Time Email Campaigns
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Server side campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Server side campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Server side campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/contentzones/" class="md-nav__link">
+        Server Side Campaigns and Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/einstein-decisions/" class="md-nav__link">
+        Einstein Decisions - Server-Side Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/mutiplecampaigns/" class="md-nav__link">
+        Multiple Server Side Campaign Responses in a Single Call
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/server-side-templates/" class="md-nav__link">
+        Server-Side Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      <label class="md-nav__link" for="__nav_4_6">
+        Templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/campaign-stats/" class="md-nav__link">
+        Campaign Stats Tracking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/modify-global-templates/" class="md-nav__link">
+        Modify Global templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-client-javascript/" class="md-nav__link">
+        Template Client JavaScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-global-templates/" class="md-nav__link">
+        Get Started with Global Web Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-handlebars/" class="md-nav__link">
+        Web Template Handlebars
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-html-classes-and-css/" class="md-nav__link">
+        Web Template CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-response-simulator/" class="md-nav__link">
+        Template Response Simulator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-server-typescript/" class="md-nav__link">
+        Template Server TypeScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      <label class="md-nav__link" for="__nav_4_7">
+        Web campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Web campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/display-utilities/" class="md-nav__link">
+        Web Template Display Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/flicker-defender/" class="md-nav__link">
+        Flicker Defender
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/template-development-checklist/" class="md-nav__link">
+        Web Template Building Best Practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/templates-style-guide-and-coding-conventions/" class="md-nav__link">
+        Web Templates Style Guide and Coding Conventions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-and-template/" class="md-nav__link">
+        Web Campaigns & Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-debugger/" class="md-nav__link">
+        Campaign Debugger
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Data analytics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data analytics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Data analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-analytics/" class="md-nav__link">
+        Interaction Studio Data Analytics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-dictionary/" class="md-nav__link">
+        Data Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-warehouse/" class="md-nav__link">
+        Data Warehouse
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/scratch-schema/" class="md-nav__link">
+        Scratch Schema
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Data ingestion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data ingestion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data ingestion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-ingestion/data-ingestion/" class="md-nav__link">
+        Ingesting Data into Interaction Studio
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Data model
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data model" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Data model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/catalog/" class="md-nav__link">
+        Catalog
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/data-model/" class="md-nav__link">
+        Data Modeling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Develop overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Develop overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Develop overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/develop-overview/" class="md-nav__link">
+        Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/developer-role-responsibilities/" class="md-nav__link">
+        Developer Role and Responsibilities
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        Event api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Event api" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Event api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event-api-overview/" class="md-nav__link">
+        Interaction Studio Event API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event-api-response/" class="md-nav__link">
+        Event API Responses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Event API Requests
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Event API Requests
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#send-event-data" class="md-nav__link">
+    Send Event Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Send Event Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-and-endpoint" class="md-nav__link">
+    Method and Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-url" class="md-nav__link">
+    Request URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-parameters" class="md-nav__link">
+    URL Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-content-types" class="md-nav__link">
+    Supported Content Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-event-data-using-a-get-request" class="md-nav__link">
+    Send Event Data Using a GET Request
+  </a>
+  
+    <nav class="md-nav" aria-label="Send Event Data Using a GET Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-and-endpoint_1" class="md-nav__link">
+    Method and Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-url_1" class="md-nav__link">
+    Request URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-parameters_1" class="md-nav__link">
+    URL Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-event-data-via-trusted-channel" class="md-nav__link">
+    Send Event Data via Trusted Channel
+  </a>
+  
+    <nav class="md-nav" aria-label="Send Event Data via Trusted Channel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-and-endpoint_2" class="md-nav__link">
+    Method and Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-url_2" class="md-nav__link">
+    Request URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-parameters_2" class="md-nav__link">
+    URL Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-content-types_1" class="md-nav__link">
+    Supported Content Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    Authorization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-options" class="md-nav__link">
+    Event Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-debug-object" class="md-nav__link">
+    The debug object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-flags-object" class="md-nav__link">
+    The flags object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-source-object" class="md-nav__link">
+    The source object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-user-object" class="md-nav__link">
+    The user object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-account-object" class="md-nav__link">
+    The account object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-catalog-object" class="md-nav__link">
+    The catalog object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-order-object" class="md-nav__link">
+    The order object
+  </a>
+  
+    <nav class="md-nav" aria-label="The order object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#line-item" class="md-nav__link">
+    Line Item
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cart-object" class="md-nav__link">
+    The cart object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-campaignstats-object" class="md-nav__link">
+    The campaignStats object
+  </a>
+  
+    <nav class="md-nav" aria-label="The campaignStats object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campaignstat" class="md-nav__link">
+    CampaignStat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-performance-object" class="md-nav__link">
+    The performance object
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Gears
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gears" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Gears
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/favorites/" class="md-nav__link">
+        Favorites Gear
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/gears/" class="md-nav__link">
+        Gears
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/" class="md-nav__link">
+        Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/contextual-rule/" class="md-nav__link">
+        Contextual Rule Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/lifecycle/" class="md-nav__link">
+        Lifecycle Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/oauth/" class="md-nav__link">
+        OAuth Component
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Metadata
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Metadata" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Metadata
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/metadata/gear-metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_5" type="checkbox" id="__nav_10_5" >
+      
+      <label class="md-nav__link" for="__nav_10_5">
+        System services
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="System services" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          System services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/" class="md-nav__link">
+        System Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/filesystem/" class="md-nav__link">
+        Filesystem Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/http/" class="md-nav__link">
+        HTTP Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Interface config
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interface config" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Interface config
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/arrays/" class="md-nav__link">
+        Array Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/config/" class="md-nav__link">
+        Custom Interface & Template Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/decorators/" class="md-nav__link">
+        Decorators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/importexport/" class="md-nav__link">
+        Importing And Exporting Configurables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/static-values/" class="md-nav__link">
+        Static Values
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" type="checkbox" id="__nav_11_6" >
+      
+      <label class="md-nav__link" for="__nav_11_6">
+        Properties
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Properties" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_6">
+          <span class="md-nav__icon md-icon"></span>
+          Properties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/boolean/" class="md-nav__link">
+        Boolean Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/color/" class="md-nav__link">
+        Color Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/complex/" class="md-nav__link">
+        Complex Object Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/datetime/" class="md-nav__link">
+        DateTime Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/multi-select/" class="md-nav__link">
+        Multi Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/number/" class="md-nav__link">
+        Number Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/select/" class="md-nav__link">
+        Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/string/" class="md-nav__link">
+        String Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/typed-list/" class="md-nav__link">
+        Typed list
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Mobile integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mobile integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mobile-integ/mobile-overview/" class="md-nav__link">
+        Interaction Studio Mobile Integrations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Web integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Web integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/best-practices-data-capture/" class="md-nav__link">
+        Best Practices for Data Capture Using Site Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/comparison-shopping/" class="md-nav__link">
+        Comparison Shopping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/contentzones/" class="md-nav__link">
+        Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/item-actions/" class="md-nav__link">
+        Item Actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/multisite-strategy/" class="md-nav__link">
+        Multisite Implementation Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/pageTypes/" class="md-nav__link">
+        Page Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/site-impact-approach/" class="md-nav__link">
+        Interaction Studio Site Impact Approach
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/site-map-event-validation/" class="md-nav__link">
+        Sitemap Event Validation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/site-map-getting-started/" class="md-nav__link">
+        Get Started with Sitemapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/site-map-user-account-attributes/" class="md-nav__link">
+        Capturing User and Account Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/sitemap-implementation-notes/" class="md-nav__link">
+        Sitemap Implementation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/sitemap/" class="md-nav__link">
+        Sitemap Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/user-identity-mapping/" class="md-nav__link">
+        User Identity Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/validate-beacon-deployment/" class="md-nav__link">
+        Validate JavaScript Beacon Deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/web-integration-planning/" class="md-nav__link">
+        Plan a Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/web-integration/" class="md-nav__link">
+        Interaction Studio Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_17" type="checkbox" id="__nav_13_17" >
+      
+      <label class="md-nav__link" for="__nav_13_17">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_17">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/examples/" class="md-nav__link">
+        Example Sitemaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/examples/b2b/" class="md-nav__link">
+        Example B2B Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/examples/ecommerce/" class="md-nav__link">
+        Example Ecommerce Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/examples/financial-services/" class="md-nav__link">
+        Example Financial Services Sitemap
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#send-event-data" class="md-nav__link">
+    Send Event Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Send Event Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-and-endpoint" class="md-nav__link">
+    Method and Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-url" class="md-nav__link">
+    Request URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-parameters" class="md-nav__link">
+    URL Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-content-types" class="md-nav__link">
+    Supported Content Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-event-data-using-a-get-request" class="md-nav__link">
+    Send Event Data Using a GET Request
+  </a>
+  
+    <nav class="md-nav" aria-label="Send Event Data Using a GET Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-and-endpoint_1" class="md-nav__link">
+    Method and Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-url_1" class="md-nav__link">
+    Request URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-parameters_1" class="md-nav__link">
+    URL Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-event-data-via-trusted-channel" class="md-nav__link">
+    Send Event Data via Trusted Channel
+  </a>
+  
+    <nav class="md-nav" aria-label="Send Event Data via Trusted Channel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-and-endpoint_2" class="md-nav__link">
+    Method and Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-url_2" class="md-nav__link">
+    Request URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-parameters_2" class="md-nav__link">
+    URL Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-content-types_1" class="md-nav__link">
+    Supported Content Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    Authorization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-options" class="md-nav__link">
+    Event Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-debug-object" class="md-nav__link">
+    The debug object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-flags-object" class="md-nav__link">
+    The flags object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-source-object" class="md-nav__link">
+    The source object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-user-object" class="md-nav__link">
+    The user object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-account-object" class="md-nav__link">
+    The account object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-catalog-object" class="md-nav__link">
+    The catalog object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-order-object" class="md-nav__link">
+    The order object
+  </a>
+  
+    <nav class="md-nav" aria-label="The order object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#line-item" class="md-nav__link">
+    Line Item
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cart-object" class="md-nav__link">
+    The cart object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-campaignstats-object" class="md-nav__link">
+    The campaignStats object
+  </a>
+  
+    <nav class="md-nav" aria-label="The campaignStats object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campaignstat" class="md-nav__link">
+    CampaignStat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-performance-object" class="md-nav__link">
+    The performance object
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Event API Requests</h1>
+                
+                <p>The Interaction Studio Event API uses standard HTTP methods and returns JSON-formatted responses to requests generated by the Sitemap and other Interaction Studio event sources. The following sections describe the various Event API endpoints that enable you to interact with the Interaction Studio platform.</p>
+<hr />
+<h2 id="send-event-data">Send Event Data<a class="headerlink" href="#send-event-data" title="Permanent link">&para;</a></h2>
+<p>Send event data to the Interaction Studio dataset specified in the request.</p>
+<h3 id="method-and-endpoint">Method and Endpoint<a class="headerlink" href="#method-and-endpoint" title="Permanent link">&para;</a></h3>
+<p><code>POST</code> <code>/api2/event/&lt;dataset&gt;</code></p>
+<h3 id="request-url">Request URL<a class="headerlink" href="#request-url" title="Permanent link">&para;</a></h3>
+<p><code>https://&lt;accountName&gt;.&lt;server&gt;.evergage.com/api2/event/&lt;dataset&gt;</code></p>
+<h3 id="url-parameters">URL Parameters<a class="headerlink" href="#url-parameters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>URL Parameter</th>
+<th>Required?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountName</code></td>
+<td>Yes</td>
+<td>Your Interaction Studio account name. You can retrieve this by accessing <strong>Gears</strong> from the Interaction Studio UI and reviewing the URL. For example, if your Gears URL is <code>https://demo.us-1.everage.com/</code>, then your account name is <code>demo</code>.</td>
+</tr>
+<tr>
+<td><code>server</code></td>
+<td>Yes</td>
+<td>Your Interaction Studio server identifier. You can retrieve this by accessing <strong>Gears</strong> from the Interaction Studio UI and reviewing the URL. For example, if your Gears URL is <code>https://demo.us-1.everage.com/</code>, then your server identifier is <code>us-1</code>.</td>
+</tr>
+<tr>
+<td><code>dataset</code></td>
+<td>Yes</td>
+<td>The name/identifier of the Interaction Studio dataset you are sending data to.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-content-types">Supported Content Types<a class="headerlink" href="#supported-content-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>application/json</code></li>
+<li><code>application/x-www-form-urlencoded</code></li>
+</ul>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<p>Consider the following as sample event data that you would like to send to Interaction Studio. </p>
+<pre><code class="language-json">{
+    &quot;action&quot;: &quot;hello world&quot;,
+    &quot;user&quot;: {
+        &quot;id&quot;: &quot;testuser&quot;
+    }
+}
+</code></pre>
+<p>You can send this event data to Interaction Studio as a JSON payload by <a href="https://www.npmjs.com/package/json-minify">minifying</a> the event data to remove whitespaces, including it in the body of your API request, and setting the <code>Content-Type</code> to <code>application/json</code>, as shown in the following example request.</p>
+<pre><code class="language-curl">curl -X POST \
+     -H 'Content-Type: application/json' \
+     -d '{&quot;action&quot;:&quot;hello world&quot;,&quot;user&quot;:{&quot;id&quot;:&quot;testuser&quot;}}' \
+     &quot;https://&lt;accountName&gt;.&lt;server&gt;.everage.com/api2/event/&lt;dataset&gt;&quot;
+</code></pre>
+<div class='alert-blue'>
+
+**Note**: You should not make `POST` requests with `Content-Type: application/json` from an environment that checks for Cross-Origin Resource Sharing (CORS), such as a web browser.
+</div>
+
+<p>When using <code>Content-Type: application/x-www-form-urlencoded</code>, the event data must be minified and then base64-encoded. Minifying the example event data JSON above gives you the following single-line JSON string.</p>
+<pre><code class="language-json">{&quot;action&quot;:&quot;hello world&quot;,&quot;user&quot;:{&quot;id&quot;:&quot;testuser&quot;}}
+</code></pre>
+<p>Base64-encoding the above JSON string gives you the value <code>eyJhY3Rpb24iOiJoZWxsbyB3b3JsZCIsInVzZXIiOnsiaWQiOiJ0ZXN0dXNlciJ9fQ==</code>. You can then pass this value via the <code>event</code> key, as shown in the following example request.</p>
+<pre><code class="language-curl">curl -X POST \
+     -H 'Content-Type: application/x-www-form-urlencoded' \
+     -d 'event=eyJhY3Rpb24iOiJoZWxsbyB3b3JsZCIsInVzZXIiOnsiaWQiOiJ0ZXN0dXNlciJ9fQ==' \
+     &quot;https://&lt;accountName&gt;.&lt;server&gt;.evergage.com/api2/event/&lt;dataset&gt;&quot;
+</code></pre>
+<hr />
+<h2 id="send-event-data-using-a-get-request">Send Event Data Using a GET Request<a class="headerlink" href="#send-event-data-using-a-get-request" title="Permanent link">&para;</a></h2>
+<p>Send event data to the Interaction Studio dataset specified in the request.</p>
+<h3 id="method-and-endpoint_1">Method and Endpoint<a class="headerlink" href="#method-and-endpoint_1" title="Permanent link">&para;</a></h3>
+<p><code>GET</code> <code>/api2/event/&lt;dataset&gt;</code></p>
+<p>The event data you send in <code>GET</code> requests must be minified, base64-encoded, and passed via the <code>event</code> query parameter in the request URL.</p>
+<h3 id="request-url_1">Request URL<a class="headerlink" href="#request-url_1" title="Permanent link">&para;</a></h3>
+<p><code>https://&lt;accountName&gt;.&lt;server&gt;.evergage.com/api2/event/&lt;dataset&gt;?event=&lt;base64-encoded-minified-event&gt;</code></p>
+<h3 id="url-parameters_1">URL Parameters<a class="headerlink" href="#url-parameters_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>URL Parameter</th>
+<th>Required?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountName</code></td>
+<td>Yes</td>
+<td>Your Interaction Studio account name. You can retrieve this by accessing <strong>Gears</strong> from the Interaction Studio UI and reviewing the URL. For example, if your Gears URL is <code>demo.us-1.everage.com</code>, then your account name is <code>demo</code>.</td>
+</tr>
+<tr>
+<td><code>server</code></td>
+<td>Yes</td>
+<td>Your Interaction Studio server identifier. You can retrieve this by accessing <strong>Gears</strong> from the Interaction Studio UI and reviewing the URL. For example, if your Gears URL is <code>demo.us-1.everage.com</code>, then your server identifier is <code>us-1</code>.</td>
+</tr>
+<tr>
+<td><code>dataset</code></td>
+<td>Yes</td>
+<td>The name/identifier of the Interaction Studio dataset you are sending data to.</td>
+</tr>
+<tr>
+<td><code>base64-encoded-minified-event</code></td>
+<td>Yes</td>
+<td>The minified and base64-encoded event data string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>Consider the following as sample event data that you would like to send to Interaction Studio.</p>
+<pre><code class="language-json">{
+    &quot;action&quot;: &quot;hello world&quot;,
+    &quot;user&quot;: {
+        &quot;id&quot;: &quot;testuser&quot;
+    }
+}
+</code></pre>
+<p>You can pass this event by minifying the event JSON data and base64-encoding the resulting JSON string in the <code>event</code> parameter in the request URL and send the <code>GET</code> request, as shown in the following example.</p>
+<pre><code class="language-curl">curl -X GET 'https://&lt;accountName&gt;.&lt;server&gt;.evergage.com/api2/event/&lt;dataset&gt;/event=eyJhY3Rpb24iOiJoZWxsbyB3b3JsZCIsInVzZXIiOnsiaWQiOiJ0ZXN0dXNlciJ9fQ=='
+</code></pre>
+<p>You can also send the <code>GET</code> request via a web browser by accessing the request URL directly in your browser.</p>
+<div class='alert-blue'> 
+
+**Note:** You can use `GET` requests as an alternative to using `POST` requests for sending event data to your Interaction Studio datasets, if required.
+</div>
+
+<hr />
+<h2 id="send-event-data-via-trusted-channel">Send Event Data via Trusted Channel<a class="headerlink" href="#send-event-data-via-trusted-channel" title="Permanent link">&para;</a></h2>
+<p>The Interaction Studio Event API provides a dedicated endpoint sending events that use <em>trusted</em> <code>Server</code> channels. The API call must also be authenticated with a valid API token that is permitted to send events. The API token must be provided via the <code>Authorization</code> header according to the HTTP basic authentication scheme. For more information about creating and configuring an API token in Interaction Studio, see the <a href="https://doc.evergage.com/display/EKB/API+Tokens">API Tokens</a> documentation.
+ <code>Content-Type: application/json</code></p>
+<div class='alert-blue'> 
+
+**Note:**
+- For datasets created after January 28, 2021, the campaign targeting rule is set to `channel: Server` by default. To return server-side campaigns using the Event API, an event be sent via a trusted server channel. For more information on the implications of using or removing the `channel: Server` rule, refer to the [Server-Side Templates](https://developer.evergage.com/campaign-development/server-side-campaigns-and-templates#determine-campaign-identity--authentication-requirements) documentation. 
+- To add authentication to server-side campaigns for datasets created prior to January 28, 2021, please reach out to our [Support](https://doc.evergage.com/display/EKB/Open+Support+Ticket) team.
+</div>
+
+<h3 id="method-and-endpoint_2">Method and Endpoint<a class="headerlink" href="#method-and-endpoint_2" title="Permanent link">&para;</a></h3>
+<p><code>POST</code> <code>/api2/authevent/&lt;dataset&gt;</code></p>
+<h3 id="request-url_2">Request URL<a class="headerlink" href="#request-url_2" title="Permanent link">&para;</a></h3>
+<p><code>https://&lt;accountName&gt;.&lt;server&gt;.evergage.com/api2/authevent/&lt;dataset&gt;</code></p>
+<h3 id="url-parameters_2">URL Parameters<a class="headerlink" href="#url-parameters_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>URL Parameter</th>
+<th>Required?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountName</code></td>
+<td>Yes</td>
+<td>Your Interaction Studio account name. You can retrieve this by accessing <strong>Gears</strong> from the Interaction Studio UI and reviewing the URL. For example, if your Gears URL is <code>demo.us-1.everage.com</code>, then your account name is <code>demo</code>.</td>
+</tr>
+<tr>
+<td><code>server</code></td>
+<td>Yes</td>
+<td>Your Interaction Studio server identifier. You can retrieve this by accessing <strong>Gears</strong> from the Interaction Studio UI and reviewing the URL. For example, if your Gears URL is <code>demo.us-1.everage.com</code>, then your server identifier is <code>us-1</code>.</td>
+</tr>
+<tr>
+<td><code>dataset</code></td>
+<td>Yes</td>
+<td>The name/identifier of the Interaction Studio dataset you are sending data to.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-content-types_1">Supported Content Types<a class="headerlink" href="#supported-content-types_1" title="Permanent link">&para;</a></h3>
+<p><code>application/json</code></p>
+<h3 id="authorization">Authorization<a class="headerlink" href="#authorization" title="Permanent link">&para;</a></h3>
+<p><code>Authorization: Basic &lt;base64-encoded-API-token&gt;</code></p>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<p>Consider the following as sample event data that you would like to send to Interaction Studio.</p>
+<pre><code class="language-json">{
+    &quot;action&quot;: &quot;hello world&quot;,
+    &quot;source&quot;: {
+        &quot;channel&quot;: &quot;Server&quot;
+    },
+    &quot;user&quot;: {
+        &quot;id&quot;: &quot;testuser&quot;
+    }
+}
+</code></pre>
+<p>You can send this event data via the trusted channel via a <code>POST</code> request to the dedicated endpoint, as shown in the following example request. Ensure that you minify the event JSON data into a single line by removing all whitespaces before sending it via the <code>POST</code> request.</p>
+<pre><code class="language-curl">curl -X POST \
+     -H 'Content-Type: application/json' \
+     -H 'Authentication: Basic &lt;base64-encoded-API-token&gt;' \
+     -d '{&quot;action&quot;:&quot;hello world&quot;,&quot;source&quot;:{&quot;channel&quot;:&quot;Server&quot;},&quot;user&quot;:{&quot;id&quot;:&quot;testuser&quot;}}' \
+     &quot;https://&lt;accountName&gt;.&lt;server&gt;.evergage.com/api2/authevent/&lt;dataset&gt;&quot;
+</code></pre>
+<hr />
+<h2 id="event-options">Event Options<a class="headerlink" href="#event-options" title="Permanent link">&para;</a></h2>
+<pre><code class="language-javascript">{
+    action: string,
+    itemAction: string,
+    debug: {
+        explanations: boolean,
+        testMessages: string
+    },
+    flags: {
+       noCampaigns: boolean,
+       doNotTrack: boolean,
+       pageView: boolean,
+       nonInteractive: boolean
+    },
+    source: {
+        channel: string,
+        pageType: string,
+        url: string,
+        urlReferrer: string,
+        locale: string,
+        contentZones: string[],
+        time: number
+    },
+    user: {
+        id: string,
+        attributes: {
+            [key: string]: string | number | boolean
+        }
+    },
+    account: {
+        id: string,
+        domain: string,
+        attributes: {
+            [key: string]: string | number | boolean
+        },
+    },
+    catalog: {
+        &lt;ItemType&gt;: {
+            [key: string]: string | number | boolean | object
+        }
+    },
+    order: {
+        &lt;ItemType&gt;: {
+            orderId: string,
+            totalValue: number,
+            currency: string
+            lineItems: LineItem[]
+        }
+    },
+    cart: {
+        singleLine: {
+            &lt;ItemType&gt;: LineItem
+        },
+        complete: {
+            &lt;ItemType&gt;: LineItem[]
+        }
+    },
+    campaignStats: CampaignStat[],
+    performance: {
+        sdkLoadTime: number,
+        pageLoadTime: number,
+        sdkParseTime: number,
+        networkTime: number,
+        sdkDnsTime: number,
+        eventDnsTime: number,
+        downloadTime: number
+    }
+}
+</code></pre>
+<hr />
+<p><code>action: string</code></p>
+<p>Name of the event. This is used for segmentation, targeting and reporting.</p>
+<p><code>itemAction: string</code></p>
+<p>Defines the action taken on a catalog item.</p>
+<hr />
+<h2 id="the-debug-object">The debug object<a class="headerlink" href="#the-debug-object" title="Permanent link">&para;</a></h2>
+<p><em>Fields to help investigate issues that could arise when developing campaigns</em></p>
+<p><code>explanations: boolean</code></p>
+<p>If true, then return additional information in the response about why campaigns did or did not render. Requires authentication.</p>
+<p><code>testMessages: string</code></p>
+<p>A comma seperated list of campaign experience IDs to force to return in the event, ignoring rules that would otherwise prevent the campaign from returning.</p>
+<p>Alternatively, the string value 'true' can be used to return all campaigns in testing mode but all rules will be respected.</p>
+<hr />
+<h2 id="the-flags-object">The flags object<a class="headerlink" href="#the-flags-object" title="Permanent link">&para;</a></h2>
+<p><em>Flags that alter default event processing. By default, all flags are <code>false</code> if not present on the event.</em></p>
+<p><code>noCampaigns: boolean</code></p>
+<p>If true, do not return campaigns in the response.</p>
+<p><code>pageView: boolean</code></p>
+<p>If true, indicates that the event was triggered from a page load.</p>
+<p><code>nonInteractive: boolean</code></p>
+<p>If true, a visit will not be created (or updated) for the given user in the event. Additionally, no visit referrer nor originating referrer will be created for the user.</p>
+<p><code>doNotTrack: boolean</code></p>
+<p>If true, do not process the event one it is sent to the server.</p>
+<hr />
+<h2 id="the-source-object">The source object<a class="headerlink" href="#the-source-object" title="Permanent link">&para;</a></h2>
+<p><em>Describes where the event is coming from</em></p>
+<p><code>channel: string</code></p>
+<p>The originating source of the event (e.g. Web, MobileApp, CallCenter).</p>
+<p><code>application: string</code></p>
+<p>The originating application level source of the event (e.g. ReactApp, 3rd Party, ReactNative)</p>
+<p><code>pageType: string</code></p>
+<p>The type of page from which you are sending the event (e.g. PDP, Blog, Pricing).</p>
+<p><code>url: string</code></p>
+<p>The url of the page from which you are sending the event.</p>
+<p><code>urlReferrer: string</code></p>
+<p>The previous url visited by the user.</p>
+<p><code>locale: string</code></p>
+<p>The locale of the current page, as defined by ISO 639 alpha-2 language codes and ISO 3166 alpha-2 country codes (e.g. <code>en_US</code>, <code>de_DE</code>).</p>
+<p><code>contentZones: string[]</code></p>
+<p>An array of content zones on the current page.</p>
+<p><code>configVersion: number</code></p>
+<p>Version number of the configuration for the SDK.</p>
+<p><code>time: number</code></p>
+<p>The date and time of the event, in milliseconds elapsed since the UNIX epoch. This field is optional and will be autopopulated with the current time if null.</p>
+<hr />
+<h2 id="the-user-object">The user object<a class="headerlink" href="#the-user-object" title="Permanent link">&para;</a></h2>
+<p><em>Describes the user associated with the event</em></p>
+<p><code>id: string</code></p>
+<p>The ID of a known user.</p>
+<p><code>attributes: { [key: string]: string | number | boolean }</code></p>
+<p>Key-value pairs that are stored as metadata on the user. These attributes must be defined in the platform.</p>
+<hr />
+<h2 id="the-account-object">The account object<a class="headerlink" href="#the-account-object" title="Permanent link">&para;</a></h2>
+<p><em>Describes the account associated with the event</em></p>
+<p><code>id: string</code></p>
+<p>The ID of an account.</p>
+<p><code>encryptedId: string</code></p>
+<p>The encrypted ID returned from an event that contains the ID field above. Encrypted IDs are returned in the response to events which provide a user.id.</p>
+<p><code>attributes: { [key: string]: string | number | boolean }</code></p>
+<p>Key-value pairs that are stored as metadata on the account. These attributes must be defined in the platform.</p>
+<hr />
+<h2 id="the-catalog-object">The catalog object<a class="headerlink" href="#the-catalog-object" title="Permanent link">&para;</a></h2>
+<p><em>Item data associated with the given itemAction</em></p>
+<p>Used for actions pertaining to items in the catalog. For instance, provides the item being view when sending the item action "View Item"</p>
+<pre><code class="language-javascript">{
+    ...
+    catalog: {
+        &lt;ItemType&gt;: {
+            [key: string]: string | number | boolean | object
+        }
+    },
+    ...
+}
+</code></pre>
+<p>See the articles in the <a href="/web-integration/sitemap">Sitemap</a> section of this site for more information.</p>
+<hr />
+<h2 id="the-order-object">The order object<a class="headerlink" href="#the-order-object" title="Permanent link">&para;</a></h2>
+<p><em>Order data associated with the given itemAction</em></p>
+<p>Used for Purchase actions.</p>
+<pre><code class="language-javascript">{
+    ...
+    order: {
+        &lt;ItemType&gt;: {
+            orderId: string,
+            totalValue: number,
+            currency: string
+            lineItems: LineItem[]
+        }
+    },
+    ...
+}
+</code></pre>
+<h6 id="line-item">Line Item<a class="headerlink" href="#line-item" title="Permanent link">&para;</a></h6>
+<pre><code class="language-javascript">    {
+        _id: string,
+        price: number,
+        quantity: number
+    }
+</code></pre>
+<p><code>orderId: string</code></p>
+<p>ID of the purchased order.</p>
+<p><code>currency: string</code></p>
+<p>Optional currency code of purchase. Will default to the dataset's configured currency if null.</p>
+<p><code>totalValue: number</code></p>
+<p>Optional total value for purchase. Will default to sum of line items quantity * price.</p>
+<p><code>lineItems: LineItem[]</code></p>
+<p>List of purchased line items.</p>
+<p>See the articles in the <a href="/web-integration/sitemap">Sitemap</a> section of this site for more information.</p>
+<hr />
+<h2 id="the-cart-object">The cart object<a class="headerlink" href="#the-cart-object" title="Permanent link">&para;</a></h2>
+<p><em>Cart data associated with the given itemAction</em></p>
+<pre><code class="language-javascript">{
+    ...
+    cart: {
+        singleLine: {
+            &lt;ItemType&gt;: LineItem
+        },
+        complete: {
+            &lt;ItemType&gt;: LineItem[]
+        }
+    }
+    ...
+}
+</code></pre>
+<p><code>singleLine: LineItem</code></p>
+<p>Used for Add To Cart and Update Cart actions. Add To Cart will add the quantity to any existing matching items. Update Cart will overwrite the quantity of any existing matching items.</p>
+<p>See the articles in the <a href="/web-integration/sitemap">Sitemap</a> section of this site for more information.</p>
+<p><code>complete: LineItem[]</code></p>
+<p>Used to update the state of the cart in Interaction Studio, setting it's content to the provided line items. Previous cart contents will be replaced.</p>
+<hr />
+<h2 id="the-campaignstats-object">The campaignStats object<a class="headerlink" href="#the-campaignstats-object" title="Permanent link">&para;</a></h2>
+<p><em>Campaign stats to be tracked with the associated event. For sending campaign stats on the web, see <a href="/campaign-development/web-templates/web-campaign-stats">Campaign Stats Tracking</a>.</em></p>
+<pre><code class="language-javascript">{
+    ...
+    {
+        campaignStats: CampaignStat[]
+    }
+    ...
+}
+</code></pre>
+<h5 id="campaignstat">CampaignStat<a class="headerlink" href="#campaignstat" title="Permanent link">&para;</a></h5>
+<pre><code class="language-javascript">{
+    experienceId: string,
+    stat: &quot;Impression&quot; | &quot;Click&quot; | &quot;Dismissal&quot;,
+    control: boolean,
+    catalog: {
+        &lt;ItemType&gt;: string[]
+    }
+}
+</code></pre>
+<p><code>experienceId: string</code></p>
+<p>The experience ID of the campaign on which the given stat is being tracked</p>
+<p><code>stat: "Impression" | "Click" | "Dismissal"</code></p>
+<p>The type of stat that is being tracked.</p>
+<p><code>control: boolean</code></p>
+<p>If true, the stat is tracked for the control group of the given experience</p>
+<p><code>catalog: { &lt;ItemType&gt;: string[] }</code></p>
+<p>A mapping of catalog item types to a list of corresponding item IDs on which to attribute the given stat.</p>
+<pre><code class="language-javascript">...
+catalog: {
+    Product: [&quot;product1&quot;, &quot;product2&quot;]
+}
+...
+</code></pre>
+<hr />
+<h2 id="the-performance-object">The performance object<a class="headerlink" href="#the-performance-object" title="Permanent link">&para;</a></h2>
+<p><em>Measurements of loading, parsing and network performance</em></p>
+<p><code>sdkLoadTime: number</code></p>
+<p>(Web SDK) Time, in milliseconds, for the network to load the web SDK.</p>
+<p><code>pageLoadTime: number</code></p>
+<p>(Web SDK) Time, in milliseconds, for the DOM to load.</p>
+<p><code>sdkParseTime: number</code></p>
+<p>(Web SDK) Time, in milliseconds, for the beacon to be parsed during page load.</p>
+<p><code>networkTime: number</code></p>
+<p>(Web SDK) Time, in milliseconds, for the previous request to return.</p>
+<p><code>sdkDnsTime: number</code></p>
+<p>(Web SDK) Time, in milliseconds, to perform resolution of SDK's cdn domain.</p>
+<p><code>eventDnsTime: number</code></p>
+<p>(Web SDK) Time, in milliseconds, to resolve account specific domain.</p>
+<p><code>domLoadTime: number</code></p>
+<p>(Web SDK) Time, in milliseconds, for the DOM to finish loading.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../event-api-response/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Event API Responses" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Event API Responses
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../gears/favorites/" class="md-footer__link md-footer__link--next" aria-label="Next: Favorites Gear" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Favorites Gear
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

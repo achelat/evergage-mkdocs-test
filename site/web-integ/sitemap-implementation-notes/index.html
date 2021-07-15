@@ -1,0 +1,3016 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://developer.evergage.com/web-integ/sitemap-implementation-notes/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Sitemap Implementation - Salesforce Interaction Studio Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#article-topics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-header__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Salesforce Interaction Studio Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sitemap Implementation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-nav__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    Salesforce Interaction Studio Developer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About us
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Additional apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional apis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Additional apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/additional-apis/" class="md-nav__link">
+        Additional Interaction Studio APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/user-look-up-deletion-api/" class="md-nav__link">
+        User Look-Up & Deletion API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Campaign development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-development/" class="md-nav__link">
+        Campaign Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Advanced use case apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Advanced use case apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced use case apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/advanced-use-case-apis/" class="md-nav__link">
+        Advanced Use-Case APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2_2">
+        Is trends
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Is trends" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Is trends
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/is-trends/is-trends/" class="md-nav__link">
+        ISTrends
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_3" type="checkbox" id="__nav_4_2_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_3">
+        Web surveys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web surveys" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web surveys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/web-surveys/web-surveys/" class="md-nav__link">
+        Web Surveys
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Campaign template apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign template apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign template apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/campaign-template-apis/" class="md-nav__link">
+        Campaign Template APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      <label class="md-nav__link" for="__nav_4_3_2">
+        Corvus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Corvus" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corvus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/corvus/corvus/" class="md-nav__link">
+        Corvus
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_3" type="checkbox" id="__nav_4_3_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3_3">
+        Recommendations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Recommendations" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/recommendations/recommendations/" class="md-nav__link">
+        Recommendations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Email campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Email campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Email campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/capture-email-campaign-url/" class="md-nav__link">
+        Capture an Open-Time Email Campaign URL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/overview/" class="md-nav__link">
+        Open-time Email Campaigns and Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/render-non-western-characters/" class="md-nav__link">
+        Render Non-Western Characters in OTE Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/third-party-tracking-for-email-campaigns/" class="md-nav__link">
+        Add Third Party Tracking Parameters to Open-Time Email Campaigns
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Server side campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Server side campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Server side campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/contentzones/" class="md-nav__link">
+        Server Side Campaigns and Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/einstein-decisions/" class="md-nav__link">
+        Einstein Decisions - Server-Side Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/mutiplecampaigns/" class="md-nav__link">
+        Multiple Server Side Campaign Responses in a Single Call
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/server-side-templates/" class="md-nav__link">
+        Server-Side Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      <label class="md-nav__link" for="__nav_4_6">
+        Templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/campaign-stats/" class="md-nav__link">
+        Campaign Stats Tracking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/modify-global-templates/" class="md-nav__link">
+        Modify Global templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-client-javascript/" class="md-nav__link">
+        Template Client JavaScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-global-templates/" class="md-nav__link">
+        Get Started with Global Web Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-handlebars/" class="md-nav__link">
+        Web Template Handlebars
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-html-classes-and-css/" class="md-nav__link">
+        Web Template CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-response-simulator/" class="md-nav__link">
+        Template Response Simulator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-server-typescript/" class="md-nav__link">
+        Template Server TypeScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      <label class="md-nav__link" for="__nav_4_7">
+        Web campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Web campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/display-utilities/" class="md-nav__link">
+        Web Template Display Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/flicker-defender/" class="md-nav__link">
+        Flicker Defender
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/template-development-checklist/" class="md-nav__link">
+        Web Template Building Best Practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/templates-style-guide-and-coding-conventions/" class="md-nav__link">
+        Web Templates Style Guide and Coding Conventions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-and-template/" class="md-nav__link">
+        Web Campaigns & Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-debugger/" class="md-nav__link">
+        Campaign Debugger
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Data analytics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data analytics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Data analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-analytics/" class="md-nav__link">
+        Interaction Studio Data Analytics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-dictionary/" class="md-nav__link">
+        Data Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-warehouse/" class="md-nav__link">
+        Data Warehouse
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/scratch-schema/" class="md-nav__link">
+        Scratch Schema
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Data ingestion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data ingestion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data ingestion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-ingestion/data-ingestion/" class="md-nav__link">
+        Ingesting Data into Interaction Studio
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Data model
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data model" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Data model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/catalog/" class="md-nav__link">
+        Catalog
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/data-model/" class="md-nav__link">
+        Data Modeling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Develop overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Develop overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Develop overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/develop-overview/" class="md-nav__link">
+        Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/developer-role-responsibilities/" class="md-nav__link">
+        Developer Role and Responsibilities
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Event api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Event api" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Event api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-overview/" class="md-nav__link">
+        Interaction Studio Event API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-response/" class="md-nav__link">
+        Event API Responses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-specifications/" class="md-nav__link">
+        Event API Requests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Gears
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gears" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Gears
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/favorites/" class="md-nav__link">
+        Favorites Gear
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/gears/" class="md-nav__link">
+        Gears
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/" class="md-nav__link">
+        Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/contextual-rule/" class="md-nav__link">
+        Contextual Rule Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/lifecycle/" class="md-nav__link">
+        Lifecycle Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/oauth/" class="md-nav__link">
+        OAuth Component
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Metadata
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Metadata" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Metadata
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/metadata/gear-metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_5" type="checkbox" id="__nav_10_5" >
+      
+      <label class="md-nav__link" for="__nav_10_5">
+        System services
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="System services" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          System services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/" class="md-nav__link">
+        System Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/filesystem/" class="md-nav__link">
+        Filesystem Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/http/" class="md-nav__link">
+        HTTP Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Interface config
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interface config" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Interface config
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/arrays/" class="md-nav__link">
+        Array Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/config/" class="md-nav__link">
+        Custom Interface & Template Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/decorators/" class="md-nav__link">
+        Decorators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/importexport/" class="md-nav__link">
+        Importing And Exporting Configurables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/static-values/" class="md-nav__link">
+        Static Values
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" type="checkbox" id="__nav_11_6" >
+      
+      <label class="md-nav__link" for="__nav_11_6">
+        Properties
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Properties" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_6">
+          <span class="md-nav__icon md-icon"></span>
+          Properties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/boolean/" class="md-nav__link">
+        Boolean Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/color/" class="md-nav__link">
+        Color Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/complex/" class="md-nav__link">
+        Complex Object Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/datetime/" class="md-nav__link">
+        DateTime Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/multi-select/" class="md-nav__link">
+        Multi Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/number/" class="md-nav__link">
+        Number Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/select/" class="md-nav__link">
+        Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/string/" class="md-nav__link">
+        String Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/typed-list/" class="md-nav__link">
+        Typed list
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Mobile integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mobile integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mobile-integ/mobile-overview/" class="md-nav__link">
+        Interaction Studio Mobile Integrations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      <label class="md-nav__link" for="__nav_13">
+        Web integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Web integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices-data-capture/" class="md-nav__link">
+        Best Practices for Data Capture Using Site Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparison-shopping/" class="md-nav__link">
+        Comparison Shopping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contentzones/" class="md-nav__link">
+        Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item-actions/" class="md-nav__link">
+        Item Actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multisite-strategy/" class="md-nav__link">
+        Multisite Implementation Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pageTypes/" class="md-nav__link">
+        Page Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-impact-approach/" class="md-nav__link">
+        Interaction Studio Site Impact Approach
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-map-event-validation/" class="md-nav__link">
+        Sitemap Event Validation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-map-getting-started/" class="md-nav__link">
+        Get Started with Sitemapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-map-user-account-attributes/" class="md-nav__link">
+        Capturing User and Account Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sitemap Implementation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Sitemap Implementation
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#article-topics" class="md-nav__link">
+    Article Topics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-sitemaps" class="md-nav__link">
+    Example Sitemaps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-configuration-type-definitions" class="md-nav__link">
+    Sitemap Configuration Type Definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Sitemap Configuration Type Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sitemapconfig-type-processing" class="md-nav__link">
+    SiteMapConfig Type Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-config" class="md-nav__link">
+    Global Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-types" class="md-nav__link">
+    Page Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Page Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pageconfig" class="md-nav__link">
+    PageConfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catalogconfig" class="md-nav__link">
+    CatalogConfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartconfig" class="md-nav__link">
+    CartConfig
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderconfig" class="md-nav__link">
+    OrderConfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lineitem" class="md-nav__link">
+    LineItem
+  </a>
+  
+    <nav class="md-nav" aria-label="LineItem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#catalogconfig-utility-functions" class="md-nav__link">
+    CatalogConfig utility functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-page-config" class="md-nav__link">
+    Default Page Config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-api" class="md-nav__link">
+    Sitemap API
+  </a>
+  
+    <nav class="md-nav" aria-label="Sitemap API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listeners" class="md-nav__link">
+    Listeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolvers" class="md-nav__link">
+    Resolvers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utility-functions" class="md-nav__link">
+    Utility Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-page-app-handling" class="md-nav__link">
+    Single Page App Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-localization-implementation" class="md-nav__link">
+    Sitemap Localization Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Sitemap Localization Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-setting-locale-in-global-config" class="md-nav__link">
+    Example: Setting Locale in Global Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catalog-configs-in-different-locales" class="md-nav__link">
+    Catalog Configs in Different Locales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-config-in-different-locales" class="md-nav__link">
+    Order Config in Different Locales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sitemap/" class="md-nav__link">
+        Sitemap Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-identity-mapping/" class="md-nav__link">
+        User Identity Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validate-beacon-deployment/" class="md-nav__link">
+        Validate JavaScript Beacon Deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-integration-planning/" class="md-nav__link">
+        Plan a Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-integration/" class="md-nav__link">
+        Interaction Studio Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_17" type="checkbox" id="__nav_13_17" >
+      
+      <label class="md-nav__link" for="__nav_13_17">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_17">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        Example Sitemaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/b2b/" class="md-nav__link">
+        Example B2B Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/ecommerce/" class="md-nav__link">
+        Example Ecommerce Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/financial-services/" class="md-nav__link">
+        Example Financial Services Sitemap
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#article-topics" class="md-nav__link">
+    Article Topics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-sitemaps" class="md-nav__link">
+    Example Sitemaps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-configuration-type-definitions" class="md-nav__link">
+    Sitemap Configuration Type Definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Sitemap Configuration Type Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sitemapconfig-type-processing" class="md-nav__link">
+    SiteMapConfig Type Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-config" class="md-nav__link">
+    Global Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-types" class="md-nav__link">
+    Page Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Page Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pageconfig" class="md-nav__link">
+    PageConfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catalogconfig" class="md-nav__link">
+    CatalogConfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartconfig" class="md-nav__link">
+    CartConfig
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderconfig" class="md-nav__link">
+    OrderConfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lineitem" class="md-nav__link">
+    LineItem
+  </a>
+  
+    <nav class="md-nav" aria-label="LineItem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#catalogconfig-utility-functions" class="md-nav__link">
+    CatalogConfig utility functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-page-config" class="md-nav__link">
+    Default Page Config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-api" class="md-nav__link">
+    Sitemap API
+  </a>
+  
+    <nav class="md-nav" aria-label="Sitemap API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listeners" class="md-nav__link">
+    Listeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolvers" class="md-nav__link">
+    Resolvers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utility-functions" class="md-nav__link">
+    Utility Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-page-app-handling" class="md-nav__link">
+    Single Page App Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-localization-implementation" class="md-nav__link">
+    Sitemap Localization Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Sitemap Localization Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-setting-locale-in-global-config" class="md-nav__link">
+    Example: Setting Locale in Global Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catalog-configs-in-different-locales" class="md-nav__link">
+    Catalog Configs in Different Locales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-config-in-different-locales" class="md-nav__link">
+    Order Config in Different Locales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Sitemap Implementation</h1>
+                
+                <p>The Interaction Studio Sitemap system is a configuration driven integration layer that is deployed by and executes within the Interaction Studio Web SDK. A Sitemap is developed to integrate with a specific site using the Web SDK, which map key business objects into the Interaction Studio system through event capture. This can include page type information and catalog items, supporting the ability to understand user interests against the catalog. It includes items such as products, article content, and categories, and can also include other user-specified dimensions (categorical information about other items with attributes that are entered by a user in the Interaction Studio UI). See <a href="/web-integration/sitemap">Sitemap Overview</a> for an introduction to the Interaction Studio Sitemap feature and <a href="/data-model">Data Model</a> for details on the Interaction Studio data model.</p>
+<hr />
+<h4 id="article-topics">Article Topics<a class="headerlink" href="#article-topics" title="Permanent link">&para;</a></h4>
+<p>This article covers the following Sitemap implementation topics:
+* <a href="#sitemap-configuration-type-definitions">Sitemap Configuration Type Definitions</a>
+* <a href="#sitemap-api">Sitemap API</a>
+    * <a href="#resolvers">Resolvers</a>
+    * <a href="#utility-functions">Utility Functions</a>
+* <a href="#single-page-app-handling">Single Page App (SPA) Handling</a>
+* <a href="#sitemap-localization-implementation">Sitemap Localization Implementation</a></p>
+<hr />
+<h4 id="example-sitemaps">Example Sitemaps<a class="headerlink" href="#example-sitemaps" title="Permanent link">&para;</a></h4>
+<p>See <a href="/web-integration/sitemap/examples">example sitemaps here</a> </p>
+<hr />
+<h2 id="sitemap-configuration-type-definitions">Sitemap Configuration Type Definitions<a class="headerlink" href="#sitemap-configuration-type-definitions" title="Permanent link">&para;</a></h2>
+<p>A <code>SiteMapConfig</code> is comprised of three separate configurations: <code>global</code>, <code>pageTypes</code> (array), and <code>pageTypeDefault</code>. These configuration types are defined as follows:</p>
+<ul>
+<li><strong>Global:</strong> Contains the objects that should be monitored on all page type configuration objects and the default page configuration (if defined).</li>
+<li><strong>Page Types:</strong> Contains the objects used to detect/match each different page type to be monitored on the site. </li>
+<li><strong>Default Page Configuration:</strong> If defined, the objects configured in a <code>DefaultPageConfig</code> will match when all <code>PageConfig</code> objects in the <code>pageTypes</code> array resolve to <code>false</code>. </li>
+</ul>
+<p>The following sections describe how the above Sitemap configuration types are processed and provides additional information on each configuration type.</p>
+<h3 id="sitemapconfig-type-processing">SiteMapConfig Type Processing<a class="headerlink" href="#sitemapconfig-type-processing" title="Permanent link">&para;</a></h3>
+<p>When a <code>PageConfig</code> inside the <code>pageTypes</code> array matches a page on the site, or if the <code>pageTypeDefault</code> matches as described above, the matched config will merge with anything defined in <code>GlobalConfig</code>. The merge for individual attributes occurs in the following manner:</p>
+<ul>
+<li><code>locale</code> :  the matched <code>PageConfig</code> or <code>DefaultPageConfig</code> takes precedence</li>
+<li><code>contentZones</code>: concatenate</li>
+<li><code>listeners</code>: concatenate</li>
+<li><code>onActionEvent</code>: the function for the matched <code>PageConfig</code> or <code>DefaultPageConfig</code> executes first, followed by the function for the <code>GlobalConfig</code></li>
+</ul>
+<p>The result of this merge will then be evaluated as expected.</p>
+<pre><code>{
+    global: GlobalConfig,
+    pageTypeDefault: DefaultPageConfig,
+    pageTypes: PageConfig[]
+}
+</code></pre>
+<hr />
+<h3 id="global-config">Global Config<a class="headerlink" href="#global-config" title="Permanent link">&para;</a></h3>
+<p>Defines what additional data will be tracked if a <code>PageConfig</code> or <code>DefaultPageConfig</code> matches for a specific page</p>
+<pre><code>{
+    locale?: string | () =&gt; string,
+    contentZones?: ContentZone[],
+    listeners?: Listener[],
+    onActionEvent?: (event: ActionEvent) =&gt; ActionEvent
+}
+</code></pre>
+<hr />
+<h3 id="page-types">Page Types<a class="headerlink" href="#page-types" title="Permanent link">&para;</a></h3>
+<p>Page type configurations use a <code>pageTypes</code> array to declare how to detect that a given URL or loaded page is one of the known
+page types. Each page type config must contain an <code>isMatch</code> property declaring the function that will be used to detect that page type.
+Additionally, individual page type configurations may declare <a href="/web-integration/sitemap/contentzones">Content Zones</a> that represent key parts of a page designed
+for personalization adjustments. The configs may also declare other event listeners for a given page type, such as an "add to cart" listener. Page types may map to more than a single page. For example, the product display page (PDP) type would have separate URLs for every product in the site, but only a single page type. The <strong>Home</strong> page is an example of a page type that would have only a single instance of a page. For additional documentation on <code>pageTypes</code> <a href="/web-integration/sitemap/pagetypes/">click here</a>.</p>
+<h4 id="pageconfig">PageConfig<a class="headerlink" href="#pageconfig" title="Permanent link">&para;</a></h4>
+<p>Defines what data will be tracked for a specific page</p>
+<pre><code>{
+    name: string, // required
+    isMatch: () =&gt; boolean | () =&gt; Promise&lt;boolean&gt;, // required
+    locale?: string | () =&gt; string,
+    action?: string,
+    catalog?: CatalogConfig,
+    cart?: CartConfig,
+    order?: OrderConfig,
+    contentZones?: ContentZone[],
+    listeners?: Listener[],
+    onActionEvent?: (event: ActionEvent) =&gt; ActionEvent
+}
+</code></pre>
+<p><code>name</code></p>
+<p>The page type that gets sent in the event when this config is evaluated.</p>
+<p><code>isMatch: () =&gt; boolean | Promise&lt;boolean&gt;</code></p>
+<p>The function provided here is evaluated when the sitemap is deciding which <code>PageConfig</code> to evaluate. The sitemap will only evaluate the first <code>PageConfig</code> whose <code>isMatch</code> resolves to true. If no <code>isMatch</code> resolves to <code>true</code>, then the <code>pageTypeDefault</code> config will run.</p>
+<p><code>locale</code></p>
+<p>The locale of the page (e.g, <code>en_US</code>). Only use if you have catalog localization enabled.</p>
+<p><code>action</code></p>
+<p>The name of the action that gets sent in the event when this config is evaluated.</p>
+<p><code>catalog</code></p>
+<p>See <a href="#catalogconfig">CatalogConfig</a></p>
+<p><code>cart</code></p>
+<p>See <a href="#cartconfig">CartConfig</a></p>
+<p><code>order</code></p>
+<p>See <a href="#order">OrderConfig</a></p>
+<p><code>contentZones</code></p>
+<p>The content zones defined in the sitemap determine where Evergage campaigns are rendered throughout a website. Evergage templates reference these content zones for targeting within campaigns.</p>
+<p>Below is an example of a <code>ContentZone</code></p>
+<pre><code>{ name: Hero Image, selector: '#hero img' }
+</code></pre>
+<p><em>Note that <code>name</code> is the only required field for ContentZones.</em></p>
+<p><code>listeners</code></p>
+<p>See <a href="#listeners">Listeners</a></p>
+<p><code>onActionEvent(event: ActionEvent) =&gt; ActionEvent</code></p>
+<p>This function will run whenever the sitemap builds an <code>ActionEvent</code> and is about to send it to Evergage. This can occur as a result of building a <code>PageConfig</code> or calling <code>Evergage.sendEvent</code>. Use this to modify the outgoing <code>ActionEvent</code>. If this function exists on both the <code>GlobalConfig</code> and a matched <code>PageConfig</code>, then both will be run, with the function in the <code>PageConfig</code> running first, followed by the one in the <code>GlobalConfig</code>.</p>
+<hr />
+<h4 id="catalogconfig">CatalogConfig<a class="headerlink" href="#catalogconfig" title="Permanent link">&para;</a></h4>
+<pre><code class="language-js">catalog: {
+    &lt;ItemType&gt;: {
+        _id: string | () =&gt; string | () =&gt; Promise&lt;string | () =&gt; string&gt; // required
+        categories?: string[] | () =&gt; string[] | () =&gt; Promise&lt;string[] | () =&gt; string[]&gt;
+        &lt;attributes&gt;?: value | () =&gt; value,
+        dimensions?: {
+            &lt;dimension&gt;?: string[] | () =&gt; string[] | () =&gt; Promise&lt;string[] | () =&gt; string[]&gt;
+        },
+        attributes?: {
+            &lt;attribute&gt;?: value | () =&gt; value
+        }
+    }
+}
+</code></pre>
+<p><code>ItemType</code></p>
+<p>The ItemType is defined in the <em>Catalog Setup</em> section of the Evergage platform. These can refer to items such as products or dimensions.</p>
+<p><code>_id</code></p>
+<p>The _id of the catalog item. This is required for an item to be tracked.</p>
+<p><code>categories</code></p>
+<p>The categories of the catalog item.</p>
+<p><code>dimensions</code></p>
+<p>The dimensions of the catalog item.</p>
+<p><code>&lt;attributes&gt;</code></p>
+<p>This is where you can define standard, built-in item attributes such as _id, name, price, etc.</p>
+<p><code>attributes</code></p>
+<p>Custom attributes on an item, as defined in the <em>Catalog Setup</em> section of the Evergage platform.</p>
+<p>For more details on catalog items and item attributes, refer to the Catalog Setup section of <a href="https://doc.evergage.com/display/EKB/Catalog+Setup">this Knowledge Base article</a>.</p>
+<h4 id="cartconfig">CartConfig<a class="headerlink" href="#cartconfig" title="Permanent link">&para;</a></h4>
+<pre><code class="language-js">cart: {
+    complete: {
+        &lt;ItemType&gt;: LineItem[]
+    }
+}
+</code></pre>
+<p><code>ItemType</code></p>
+<h3 id="orderconfig">OrderConfig<a class="headerlink" href="#orderconfig" title="Permanent link">&para;</a></h3>
+<pre><code class="language-js">order: {
+    &lt;ItemType&gt;: {
+        orderId: string | () =&gt; string | Promise&lt;string | () =&gt; string&gt;,
+        totalValue?: double | () =&gt; double | Promise&lt;double | () =&gt; double&gt;,
+        currency?: string | () =&gt; string | Promise&lt;string | () =&gt; string&gt;,
+        lineItems: LineItem[]
+    }
+}
+</code></pre>
+<h3 id="lineitem">LineItem<a class="headerlink" href="#lineitem" title="Permanent link">&para;</a></h3>
+<pre><code class="language-js">{
+    _id: string | () =&gt; string | Promise&lt;string | () =&gt; string&gt;
+    price: double | () =&gt; double | Promise&lt;value | ()=&gt; double&gt;
+    quantity: integer | () =&gt; integer | Promise&lt;value | ()=&gt; integer&gt;
+}
+</code></pre>
+<h5 id="catalogconfig-utility-functions">CatalogConfig utility functions<a class="headerlink" href="#catalogconfig-utility-functions" title="Permanent link">&para;</a></h5>
+<p>There is a utility function under <code>Evergage.util</code> that is especially helpful for building lineItems.</p>
+<p><code>buildLineItemFromPageState(quantitySelector) =&gt; LineItem</code></p>
+<p>Returns a LineItem constructed from the data already captured on the page, using the given <code>quantitySelector</code> to determine how many of the item are in the lineItem.</p>
+<hr />
+<h3 id="default-page-config">Default Page Config<a class="headerlink" href="#default-page-config" title="Permanent link">&para;</a></h3>
+<p>Defines what data will be tracked <em>only if</em> all other <code>PageConfig</code>s resolve to <code>false</code></p>
+<pre><code>{
+    name: string, // required
+    locale?: string | () =&gt; string,
+    contentZones?: ContentZone[],
+    listeners?: Listener[],
+    onActionEvent?: (event: ActionEvent) =&gt; ActionEvent
+}
+</code></pre>
+<hr />
+<h2 id="sitemap-api">Sitemap API<a class="headerlink" href="#sitemap-api" title="Permanent link">&para;</a></h2>
+<p>The Sitemap API is scoped on the <code>window</code> under <code>Evergage</code>.</p>
+<hr />
+<p><code>Evergage.initSitemap(siteMapConfig: *SiteMapConfig*) =&gt; void</code></p>
+<p>Initialize the sitemap process, using the provided config. Events will not be sent to Evergage unless this function is called.</p>
+<hr />
+<p><code>Evergage.cashDom(selector: *String*, context) =&gt; Cash</code></p>
+<p>A small library for modern browsers that provides jQuery style syntax to wrap modern Vanilla JS features and select elements from the DOM. For more information on <code>Cash</code>, see <a href="https://kenwheeler.github.io/cash/#docs">the docs on GitHub</a>.</p>
+<hr />
+<p><code>Evergage.sendEvent(event: *ActionEvent*)</code></p>
+<p>Send a custom event to Interaction Studio.</p>
+<hr />
+<p><code>Evergage.getState()</code></p>
+<p>Get the current page state, including values in the config that have already been resolved.</p>
+<hr />
+<h3 id="listeners">Listeners<a class="headerlink" href="#listeners" title="Permanent link">&para;</a></h3>
+<p><code>Evergage.listener(bind: keyof WindowEventMap, selector: string, callback: Function): Listener;</code></p>
+<p>Create a new listener.</p>
+<p>A listener is a way to take some action upon an event happening on a page. It is structured similarly to jQuery's event listeners. Below is an example of a simple <code>listener</code>. It binds a click to the banner of a website and fires an event to Evergage.</p>
+<pre><code class="language-js"> Evergage.listener(&quot;click&quot;, &quot;.header-banner&quot;, () =&gt; {
+     Evergage.sendEvent({action: &quot;Banner Click&quot;})
+ })
+</code></pre>
+<p>Here is an example of an email capture, using a custom callback function:</p>
+<pre><code class="language-js">Evergage.listener(&quot;submit&quot;, &quot;form#subscribe&quot;, (e) =&gt; {
+    const userEmail = Evergage.cashDom(e.target).find(&quot;#email&quot;).val();
+    if (typeof userEmail === 'string' &amp;&amp; /^.+@.+\..+$/.test(userEmail)) {
+        Evergage.sendEvent({
+            action: 'Email Capture',
+            user: { 
+                attributes: { emailAddress: userEmail }
+            }
+        });
+    }
+})
+</code></pre>
+<hr />
+<h3 id="resolvers">Resolvers<a class="headerlink" href="#resolvers" title="Permanent link">&para;</a></h3>
+<p><code>Evergage.resolvers.&lt;resolver&gt;</code></p>
+<p>Resolvers return functions so that they can be invoked <em>after</em> a page has been matched. When used in a <code>PageConfig</code>, the returned functions do not need to be invoked in order to get the final value - the underlying sitemap code will handle that logic.</p>
+<p>The transform functions are callbacks designed to evaluate or modify the resolved value.</p>
+<p><code>fromSelector(selector: string, transform?: (string) =&gt; string) =&gt; () =&gt; string</code></p>
+<p>Evergage.cashDom(selector).text()</p>
+<p>Returns the text of the first instance of the selector in the DOM.</p>
+<hr />
+<p><code>fromSelectorMultiple(selector: string, transform?: (string[]) =&gt; string[]) =&gt; () =&gt; string[]</code></p>
+<p>[Evergage.cashDom(selector).eq(0).text(), Evergage.cashDom(selector).eq(1).text(), ...]</p>
+<p>Returns the text of all instances of the selector in the DOM in an array.</p>
+<hr />
+<p><code>fromSelectorAttribute(selector: string, attribute: string, transform?: (string) =&gt; string) =&gt; () =&gt; string</code></p>
+<p>Evergage.cashDom(selector).attr(attribute)</p>
+<p>Returns the attribute of the first instance of the selector in the DOM.</p>
+<hr />
+<p><code>fromSelectorAttributeMultiple(selector: string, attribute: string, transform?: (string[]) =&gt; string[]) =&gt; () =&gt; string[]</code></p>
+<p>[Evergage.cashDom(selector).eq(0).attr(attribute), Evergage.cashDom(selector).eq(1).attr(attribute), ...]</p>
+<p>Returns the attributes of the of all instances of the selector in the DOM as an array.</p>
+<hr />
+<p><code>fromMeta(metaName: string, transform?: (string) =&gt; string) =&gt; () =&gt; string</code></p>
+<p>Evergage.cashDom("meta[name='" + metaName + "']").first().attr("content")</p>
+<p>Returns the content of the first meta tag with the given meta tag name.</p>
+<hr />
+<p><code>fromItemProp(itemProp: string, transform?: (string) =&gt; string) =&gt; () =&gt; string</code></p>
+<p>Evergage.cashDom("[itemprop='" + itemProp + "']").first().attr("content")</p>
+<p>Returns the content of the first item prop with the given item prop.</p>
+<hr />
+<p><code>fromWindow(windowVar: string, transform?: (string) =&gt; string) =&gt; () =&gt; string</code></p>
+<p>Returns the value from a nested object. Returns null if the nested object, or some object in the path, does not exist.</p>
+<hr />
+<p><code>fromJsonLd(path: string, transform?: any) =&gt; () =&gt; any</code></p>
+<p>Evergage.cashDom("script[type='application/ld+json']").first().text()</p>
+<p>If the path is null, the first JSON-LD script is returned after being parsed into a JavaScript object. If a path is provided, then the value of the path from parsed JavaScript object will be returned.</p>
+<hr />
+<p><code>buildCategoryId(selector: string, startFrom?: integer, ignoreLast?: boolean, transform?: (string) =&gt; string) =&gt; () =&gt; string</code></p>
+<p>Evergage.cashDom(selector).eq(startFrom).text()|Evergage.cashDom(selector).eq(startFrom+1).text()|...</p>
+<p>Returns a pipe delimited string using the text of all instances of the selector.</p>
+<hr />
+<p><code>buildCategoryIdAttribute(selector: string, attribute: string, startFrom?: integer, ignoreLast?: boolean, transform?: (string) =&gt;  string) =&gt; () =&gt; string</code></p>
+<p>Evergage.cashDom(selector).eq(startFrom).attr(attribute)|Evergage.cashDom(selector).eq(startFrom+1).attr(attribute)|...</p>
+<p>Returns a pipe delimited string using the given attribute of all instances of the selector.</p>
+<hr />
+<p><code>fromCanonical(transform?: (string) =&gt; string) =&gt; () =&gt; string</code></p>
+<p>Returns a canonical URL, if one exists on the page.</p>
+<hr />
+<p><code>fromHref(transform?: (string) =&gt; string) =&gt; () =&gt; string</code></p>
+<p>Returns the value stored in <code>window.location.href</code></p>
+<hr />
+<h3 id="utility-functions">Utility Functions<a class="headerlink" href="#utility-functions" title="Permanent link">&para;</a></h3>
+<p><code>Evergage.util.&lt;util&gt;</code></p>
+<p>The Evergage WebSDK provides a number of utility functions that can be used to help parse data.</p>
+<p><code>buildLineItemFromPageState(quantitySelector: string) =&gt; LineItem</code></p>
+<p>Returns a LineItem constructed from the data already captured on the page, using the given <code>quantitySelector</code> to determine how many of the item are in the lineItem.</p>
+<hr />
+<p><code>extractFirstGroup(regex: RegExp, str: string) =&gt; string</code></p>
+<p>Returns a string of the first group extracted from the provided regex.</p>
+<hr />
+<p><code>getFloatValue(text: string) =&gt; number</code></p>
+<p>Returns a floating point number parsed from the provided string.</p>
+<hr />
+<p><code>getIntegerValue(text: string) =&gt; number</code></p>
+<p>Returns an integer number parsed from the provided string.</p>
+<hr />
+<p><code>getLastPathComponent(url: string) =&gt; string</code></p>
+<p>Returns the last path component for the provided URL. For example <code>Evergage.util.getLastPathComponent("https://example.example/myExamplePath.html")</code> returns <code>myExamplePath.html</code>.</p>
+<hr />
+<p><code>getLastPathComponentWithoutExtension(url: string) =&gt; string</code></p>
+<p>Returns the last path component without an extension for the provided URL. For example <code>Evergage.util.getLastPathComponent("https://example.example/myExamplePath.html")</code> returns <code>myExamplePath</code>.</p>
+<hr />
+<p><code>getParameterByName(name: string, url?: string) =&gt; string</code></p>
+<p>Returns the value of the provided parameter name from the provided URL. If no URL provided, the current location.search of the page will be used.</p>
+<hr />
+<p><code>getPathname(url: string) =&gt; string</code></p>
+<p>Returns the pathname of the provided URL.</p>
+<hr />
+<p><code>getUtagFirstForField(fieldName: string) =&gt; any</code></p>
+<p>Returns the first value for the provided field in a <code>window.utag_data</code> object.</p>
+<hr />
+<p><code>getValueFromNestedObject(path: string, obj?: object) =&gt; any</code></p>
+<p>Returns the value from a nested object. If obj is not provided, <code>window</code> will be used. Returns null if the nested object, or some object in the path, does not exist.</p>
+<hr />
+<p><code>qualifyUrl(unqualified: string) =&gt; string</code></p>
+<p>Returns a qualified URL href from an unqualified relative URL path. If unqualified is null or unprovided, returns null.</p>
+<hr />
+<p><code>removeQueryString(url: string) =&gt; string</code></p>
+<p>Returns a URL without query strings from the provided URL.</p>
+<hr />
+<p><code>resolveWhenTrue.bind(trueFunc: () =&gt; any, bindId?: string timeout?: number, checkInterval?: number) =&gt; Promise&lt;any&gt;</code></p>
+<p>Returns a Promise that will resolve when the provided trueFunc evaluates to <code>true</code>. If timeout is not provided, a 2000 ms default timeout will be used. If checkInterval is not provided, a 100 ms default interval will be used to check the trueFunc. If the timeout is reached, the check will be unbound. An <code>unbind</code> function is provided under <code>resolveWhenTrue.getBindings()</code>. If a bindId is provided the unbind function will be mapped to that key, otherwise a new random key will be used.</p>
+<p><code>resolveWhenTrue.unbind(bindId: string) =&gt; void</code></p>
+<p>When given a <code>bindId</code> unbinds that bound <code>resolveWhenTrue</code> function.</p>
+<p><code>resolveWhenTrue.getBindings() =&gt; [key: string]: unbindFunction: ()</code></p>
+<p>Returns a map of currently bound <code>resolveWhenTrue</code> functions.</p>
+<p><code>resolveWhenTrue.clearBindings() =&gt; void</code></p>
+<p>Clears all currently bound <code>resolveWhenTrue</code> functions.</p>
+<hr />
+<h2 id="single-page-app-handling">Single Page App Handling<a class="headerlink" href="#single-page-app-handling" title="Permanent link">&para;</a></h2>
+<p>Use the following code to reinitialize the beacon and the sitemap when using Evergage on a single page app (SPA).</p>
+<pre><code class="language-js">Evergage.reinit()
+</code></pre>
+<p>Executing the above code will have the following effects:</p>
+<ol>
+<li>Dispatch an <code>Evergage.CustomEvents.OnInit</code> event.</li>
+<li>Reinitialize the beacon with the same settings as the initial page load (e.g. <code>cookieDomain</code>).</li>
+<li>Rerun the sitemap using the same config as the initial page load.</li>
+<li>Send activity timing for the previous page.</li>
+<li>Start activity timers for the current page.</li>
+</ol>
+<p>The above code should be wrapped in logic to determine when the beacon and sitemap should reinitialize. For example, to reinitialize the beacon and sitemap when the URL changes without a full page load, see the following sitemap.</p>
+<p><strong>Note:</strong> The following sitemap is for illustrative purposes only. It is advisable to consider other ways of using this function that better suits your specific use case and the way your site functions.</p>
+<pre><code class="language-js">Evergage.init().then(() =&gt; {
+
+    const config = {
+        global: {},
+        pageTypes: [
+            {
+                name: &quot;home&quot;,
+                isMatch: () =&gt; /home/.test(window.location.href);
+            }
+        ]
+    };
+
+    /*
+        Check for URL change every 2 seconds. If URL has changed, reinitialize beacon and sitemap.
+    */
+    const handleSPAPageChange = () =&gt; {
+        let url = window.location.href;
+        const urlChangeInterval = setInterval(() =&gt; {
+            if (url !== window.location.href) {
+                url = window.location.href;
+                Evergage.reinit();
+            }
+        }, 2000);
+    }
+
+    handleSPAPageChange();
+
+    Evergage.initSitemap(config); 
+})
+</code></pre>
+<hr />
+<h2 id="sitemap-localization-implementation">Sitemap Localization Implementation<a class="headerlink" href="#sitemap-localization-implementation" title="Permanent link">&para;</a></h2>
+<p>Using the localization setting allows a single dataset to handle a site with multiple languages/locales while utilizing the same catalog and sitemap across languages/locale. To use catalog localizations the "Localization of Catalog Metadata Based on Page Locale" setting must be enabled in catalog settings. Using localizations requires sending the locale attribute in an event. In order to send an event with a locale, see the example of a View Item event below. Locale can be set on the <code>global</code>, <code>pageTypeDefault</code> and individual <code>pageTypes</code> in the SiteMapConfig and can be set manually in events tracked through <code>Evergage.sendEvent</code>. Locale needs to be set in a specific format of an ISO 639 alpha-2 language code followed by an underscore followed by an <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166 alpha-2</a> country code.</p>
+<p>Some examples of valid locales are:</p>
+<ul>
+<li>"en_US"</li>
+<li>"en_AU"</li>
+<li>"en_CA"</li>
+<li>"zh_CN"</li>
+<li>"en_GB"</li>
+<li>"pt_PT"</li>
+<li>"en_HK"</li>
+<li>"zh_HK"</li>
+</ul>
+<h4 id="example-setting-locale-in-global-config">Example: Setting Locale in Global Config<a class="headerlink" href="#example-setting-locale-in-global-config" title="Permanent link">&para;</a></h4>
+<pre><code class="language-js">Evergage.init().then(() =&gt; {
+    const buildLocale = () =&gt; {
+        let locale = Evergage.CashDom(&quot;meta[type='locale']&quot;).attr(&quot;content&quot;);
+        return locale;
+    }
+
+    const config = {
+        global: {
+            locale: buildLocale()
+        },
+        pageTypeDefault: {
+            name: &quot;default&quot;
+        },
+        pageTypes: [
+            {
+                name: &quot;home&quot;,
+                action: &quot;Homepage&quot;,
+                isMatch: () =&gt; {
+                    return window.location.pathname === &quot;/&quot;;
+                }
+            }
+        ]
+    }
+
+    Evergage.initSitemap(config);
+});
+</code></pre>
+<h4 id="catalog-configs-in-different-locales">Catalog Configs in Different Locales<a class="headerlink" href="#catalog-configs-in-different-locales" title="Permanent link">&para;</a></h4>
+<p>When building catalog configs in a sitemap, different locales can all use the same config. Since the localized attributes are all on the same item in Evergage, when selecting which <code>_id</code> to use for a Catalog Item or for a Catalog Item's dimensions, you will want to make sure you select an <code>_id</code> that does not change depending on the locale of the page. Failing to do so will create extra Catalog Items and Dimensions in the catalog and split attribution for users between different locales of the site. All item types can be localized.</p>
+<p>For products, you will want to make sure that <code>currency</code> is captured in the catalog along with price if available. <code>currency</code> takes a <code>ISO_4217</code> 3 character string currency code as its value and may change based on locale.</p>
+<pre><code class="language-js">    catalog: {
+        Product: {
+            _id: getProductId(),
+            name: getProductName(),
+            price: getProductPrice(),
+            currency: &quot;AUD&quot;
+        }
+    }
+});
+</code></pre>
+<h4 id="order-config-in-different-locales">Order Config in Different Locales<a class="headerlink" href="#order-config-in-different-locales" title="Permanent link">&para;</a></h4>
+<p>When creating an order config on a dataset that includes locales an additional field in the order config is required to correctly calculate total revenue. <code>currency</code> takes a <code>ISO_4217</code> 3 character string currency code as its value. If no currency is provided the currency for items in the order object will be assumed to be the default currency set on the dataset.</p>
+<pre><code class="language-js">{
+    ...
+    order: {
+        Product: {
+            orderId: &quot;testOrder123&quot;,
+            totalValue: 120.25,
+            currency: &quot;AUD&quot;,
+            lineItems: {
+                _id: string[],
+                price: double[],
+                quantity: integer[]
+            }
+        }
+    },
+    ...
+}
+</code></pre>
+<p>Some examples of valid currency values are:</p>
+<ul>
+<li>"USD"</li>
+<li>"AUD"</li>
+<li>"THB"</li>
+<li>"EUR"</li>
+<li>"BRL"</li>
+<li>"DKK"</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../site-map-user-account-attributes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Capturing User and Account Attributes" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Capturing User and Account Attributes
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../sitemap/" class="md-footer__link md-footer__link--next" aria-label="Next: Sitemap Development in Interaction Studio" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Sitemap Development in Interaction Studio
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

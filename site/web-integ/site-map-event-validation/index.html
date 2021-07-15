@@ -1,0 +1,2902 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://developer.evergage.com/web-integ/site-map-event-validation/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Sitemap Event Validation - Salesforce Interaction Studio Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sitemap-events" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-header__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Salesforce Interaction Studio Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sitemap Event Validation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-nav__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    Salesforce Interaction Studio Developer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About us
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Additional apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional apis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Additional apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/additional-apis/" class="md-nav__link">
+        Additional Interaction Studio APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/user-look-up-deletion-api/" class="md-nav__link">
+        User Look-Up & Deletion API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Campaign development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-development/" class="md-nav__link">
+        Campaign Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Advanced use case apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Advanced use case apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced use case apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/advanced-use-case-apis/" class="md-nav__link">
+        Advanced Use-Case APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2_2">
+        Is trends
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Is trends" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Is trends
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/is-trends/is-trends/" class="md-nav__link">
+        ISTrends
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_3" type="checkbox" id="__nav_4_2_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_3">
+        Web surveys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web surveys" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web surveys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/web-surveys/web-surveys/" class="md-nav__link">
+        Web Surveys
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Campaign template apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign template apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign template apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/campaign-template-apis/" class="md-nav__link">
+        Campaign Template APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      <label class="md-nav__link" for="__nav_4_3_2">
+        Corvus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Corvus" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corvus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/corvus/corvus/" class="md-nav__link">
+        Corvus
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_3" type="checkbox" id="__nav_4_3_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3_3">
+        Recommendations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Recommendations" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/recommendations/recommendations/" class="md-nav__link">
+        Recommendations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Email campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Email campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Email campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/capture-email-campaign-url/" class="md-nav__link">
+        Capture an Open-Time Email Campaign URL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/overview/" class="md-nav__link">
+        Open-time Email Campaigns and Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/render-non-western-characters/" class="md-nav__link">
+        Render Non-Western Characters in OTE Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/third-party-tracking-for-email-campaigns/" class="md-nav__link">
+        Add Third Party Tracking Parameters to Open-Time Email Campaigns
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Server side campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Server side campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Server side campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/contentzones/" class="md-nav__link">
+        Server Side Campaigns and Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/einstein-decisions/" class="md-nav__link">
+        Einstein Decisions - Server-Side Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/mutiplecampaigns/" class="md-nav__link">
+        Multiple Server Side Campaign Responses in a Single Call
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/server-side-templates/" class="md-nav__link">
+        Server-Side Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      <label class="md-nav__link" for="__nav_4_6">
+        Templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/campaign-stats/" class="md-nav__link">
+        Campaign Stats Tracking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/modify-global-templates/" class="md-nav__link">
+        Modify Global templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-client-javascript/" class="md-nav__link">
+        Template Client JavaScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-global-templates/" class="md-nav__link">
+        Get Started with Global Web Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-handlebars/" class="md-nav__link">
+        Web Template Handlebars
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-html-classes-and-css/" class="md-nav__link">
+        Web Template CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-response-simulator/" class="md-nav__link">
+        Template Response Simulator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-server-typescript/" class="md-nav__link">
+        Template Server TypeScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      <label class="md-nav__link" for="__nav_4_7">
+        Web campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Web campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/display-utilities/" class="md-nav__link">
+        Web Template Display Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/flicker-defender/" class="md-nav__link">
+        Flicker Defender
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/template-development-checklist/" class="md-nav__link">
+        Web Template Building Best Practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/templates-style-guide-and-coding-conventions/" class="md-nav__link">
+        Web Templates Style Guide and Coding Conventions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-and-template/" class="md-nav__link">
+        Web Campaigns & Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-debugger/" class="md-nav__link">
+        Campaign Debugger
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Data analytics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data analytics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Data analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-analytics/" class="md-nav__link">
+        Interaction Studio Data Analytics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-dictionary/" class="md-nav__link">
+        Data Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/data-warehouse/" class="md-nav__link">
+        Data Warehouse
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-analytics/scratch-schema/" class="md-nav__link">
+        Scratch Schema
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Data ingestion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data ingestion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data ingestion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-ingestion/data-ingestion/" class="md-nav__link">
+        Ingesting Data into Interaction Studio
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Data model
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data model" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Data model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/catalog/" class="md-nav__link">
+        Catalog
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/data-model/" class="md-nav__link">
+        Data Modeling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Develop overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Develop overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Develop overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/develop-overview/" class="md-nav__link">
+        Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/developer-role-responsibilities/" class="md-nav__link">
+        Developer Role and Responsibilities
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Event api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Event api" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Event api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-overview/" class="md-nav__link">
+        Interaction Studio Event API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-response/" class="md-nav__link">
+        Event API Responses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-specifications/" class="md-nav__link">
+        Event API Requests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Gears
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gears" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Gears
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/favorites/" class="md-nav__link">
+        Favorites Gear
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/gears/" class="md-nav__link">
+        Gears
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/" class="md-nav__link">
+        Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/contextual-rule/" class="md-nav__link">
+        Contextual Rule Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/lifecycle/" class="md-nav__link">
+        Lifecycle Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/oauth/" class="md-nav__link">
+        OAuth Component
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Metadata
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Metadata" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Metadata
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/metadata/gear-metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_5" type="checkbox" id="__nav_10_5" >
+      
+      <label class="md-nav__link" for="__nav_10_5">
+        System services
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="System services" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          System services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/" class="md-nav__link">
+        System Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/filesystem/" class="md-nav__link">
+        Filesystem Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/http/" class="md-nav__link">
+        HTTP Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Interface config
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interface config" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Interface config
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/arrays/" class="md-nav__link">
+        Array Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/config/" class="md-nav__link">
+        Custom Interface & Template Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/decorators/" class="md-nav__link">
+        Decorators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/importexport/" class="md-nav__link">
+        Importing And Exporting Configurables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/static-values/" class="md-nav__link">
+        Static Values
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" type="checkbox" id="__nav_11_6" >
+      
+      <label class="md-nav__link" for="__nav_11_6">
+        Properties
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Properties" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_6">
+          <span class="md-nav__icon md-icon"></span>
+          Properties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/boolean/" class="md-nav__link">
+        Boolean Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/color/" class="md-nav__link">
+        Color Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/complex/" class="md-nav__link">
+        Complex Object Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/datetime/" class="md-nav__link">
+        DateTime Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/multi-select/" class="md-nav__link">
+        Multi Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/number/" class="md-nav__link">
+        Number Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/select/" class="md-nav__link">
+        Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/string/" class="md-nav__link">
+        String Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/typed-list/" class="md-nav__link">
+        Typed list
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Mobile integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mobile integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mobile-integ/mobile-overview/" class="md-nav__link">
+        Interaction Studio Mobile Integrations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      <label class="md-nav__link" for="__nav_13">
+        Web integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Web integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices-data-capture/" class="md-nav__link">
+        Best Practices for Data Capture Using Site Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparison-shopping/" class="md-nav__link">
+        Comparison Shopping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contentzones/" class="md-nav__link">
+        Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item-actions/" class="md-nav__link">
+        Item Actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multisite-strategy/" class="md-nav__link">
+        Multisite Implementation Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pageTypes/" class="md-nav__link">
+        Page Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-impact-approach/" class="md-nav__link">
+        Interaction Studio Site Impact Approach
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sitemap Event Validation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Sitemap Event Validation
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-events" class="md-nav__link">
+    Sitemap Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-event-validation-tools-and-methods" class="md-nav__link">
+    Sitemap Event Validation Tools and Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-validation-using-the-sitemap-editor" class="md-nav__link">
+    Event Validation Using the Sitemap Editor
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Validation Using the Sitemap Editor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sitemap-js-tab-code-check" class="md-nav__link">
+    Sitemap JS Tab Code Check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#current-page-object-validation" class="md-nav__link">
+    Current Page Object Validation
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Page Object Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-page-object-examples" class="md-nav__link">
+    Current Page Object Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Page Object Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-current-page-site-home-page" class="md-nav__link">
+    1. Current Page (Site Home Page)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-execute-button" class="md-nav__link">
+    2. Execute (button)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-page-type" class="md-nav__link">
+    3. Page Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-user-data" class="md-nav__link">
+    4. User Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-catalog-data" class="md-nav__link">
+    5. Catalog Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-content-zones-global" class="md-nav__link">
+    6. Content Zones - Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-dom-listeners" class="md-nav__link">
+    7. DOM Listeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-content-zones-page-type" class="md-nav__link">
+    8. Content Zones - Page Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-pagetypes-home" class="md-nav__link">
+    9. pageTypes: "home"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-match-validation" class="md-nav__link">
+    Page Match Validation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-validation-using-the-event-stream-report" class="md-nav__link">
+    Event Validation Using the Event Stream Report
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Validation Using the Event Stream Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-event-stream-report" class="md-nav__link">
+    Accessing the Event Stream Report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-event-processing-and-display-in-the-event-stream" class="md-nav__link">
+    Example: Event Processing and Display in the Event Stream
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Event Processing and Display in the Event Stream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#javascript-listener-for-email-sign-up" class="md-nav__link">
+    JavaScript Listener for Email Sign-Up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-ui-for-email-sign-up" class="md-nav__link">
+    Site UI for Email Sign-Up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-displayed-in-the-event-stream-report" class="md-nav__link">
+    Events Displayed in the Event Stream Report
+  </a>
+  
+    <nav class="md-nav" aria-label="Events Displayed in the Event Stream Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-stream-search" class="md-nav__link">
+    Event Stream Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-stream-table" class="md-nav__link">
+    Event Stream Table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-anonymous-to-known-user" class="md-nav__link">
+    From Anonymous to Known User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#individual-event-details" class="md-nav__link">
+    Individual Event Details
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-validation-using-chrome-browser-developer-tools" class="md-nav__link">
+    Event Validation Using Chrome Browser Developer Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Validation Using Chrome Browser Developer Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-page-load-events" class="md-nav__link">
+    Viewing Page Load Events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-individual-event-configurations" class="md-nav__link">
+    Validating Individual Event Configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-map-getting-started/" class="md-nav__link">
+        Get Started with Sitemapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../site-map-user-account-attributes/" class="md-nav__link">
+        Capturing User and Account Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sitemap-implementation-notes/" class="md-nav__link">
+        Sitemap Implementation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sitemap/" class="md-nav__link">
+        Sitemap Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-identity-mapping/" class="md-nav__link">
+        User Identity Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validate-beacon-deployment/" class="md-nav__link">
+        Validate JavaScript Beacon Deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-integration-planning/" class="md-nav__link">
+        Plan a Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-integration/" class="md-nav__link">
+        Interaction Studio Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_17" type="checkbox" id="__nav_13_17" >
+      
+      <label class="md-nav__link" for="__nav_13_17">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_17">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        Example Sitemaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/b2b/" class="md-nav__link">
+        Example B2B Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/ecommerce/" class="md-nav__link">
+        Example Ecommerce Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/financial-services/" class="md-nav__link">
+        Example Financial Services Sitemap
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-events" class="md-nav__link">
+    Sitemap Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sitemap-event-validation-tools-and-methods" class="md-nav__link">
+    Sitemap Event Validation Tools and Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-validation-using-the-sitemap-editor" class="md-nav__link">
+    Event Validation Using the Sitemap Editor
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Validation Using the Sitemap Editor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sitemap-js-tab-code-check" class="md-nav__link">
+    Sitemap JS Tab Code Check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#current-page-object-validation" class="md-nav__link">
+    Current Page Object Validation
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Page Object Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-page-object-examples" class="md-nav__link">
+    Current Page Object Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Page Object Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-current-page-site-home-page" class="md-nav__link">
+    1. Current Page (Site Home Page)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-execute-button" class="md-nav__link">
+    2. Execute (button)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-page-type" class="md-nav__link">
+    3. Page Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-user-data" class="md-nav__link">
+    4. User Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-catalog-data" class="md-nav__link">
+    5. Catalog Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-content-zones-global" class="md-nav__link">
+    6. Content Zones - Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-dom-listeners" class="md-nav__link">
+    7. DOM Listeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-content-zones-page-type" class="md-nav__link">
+    8. Content Zones - Page Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-pagetypes-home" class="md-nav__link">
+    9. pageTypes: "home"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-match-validation" class="md-nav__link">
+    Page Match Validation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-validation-using-the-event-stream-report" class="md-nav__link">
+    Event Validation Using the Event Stream Report
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Validation Using the Event Stream Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-event-stream-report" class="md-nav__link">
+    Accessing the Event Stream Report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-event-processing-and-display-in-the-event-stream" class="md-nav__link">
+    Example: Event Processing and Display in the Event Stream
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Event Processing and Display in the Event Stream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#javascript-listener-for-email-sign-up" class="md-nav__link">
+    JavaScript Listener for Email Sign-Up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-ui-for-email-sign-up" class="md-nav__link">
+    Site UI for Email Sign-Up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-displayed-in-the-event-stream-report" class="md-nav__link">
+    Events Displayed in the Event Stream Report
+  </a>
+  
+    <nav class="md-nav" aria-label="Events Displayed in the Event Stream Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-stream-search" class="md-nav__link">
+    Event Stream Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-stream-table" class="md-nav__link">
+    Event Stream Table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-anonymous-to-known-user" class="md-nav__link">
+    From Anonymous to Known User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#individual-event-details" class="md-nav__link">
+    Individual Event Details
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-validation-using-chrome-browser-developer-tools" class="md-nav__link">
+    Event Validation Using Chrome Browser Developer Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Validation Using Chrome Browser Developer Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-page-load-events" class="md-nav__link">
+    Viewing Page Load Events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-individual-event-configurations" class="md-nav__link">
+    Validating Individual Event Configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Sitemap Event Validation</h1>
+                
+                <p>A Sitemap sends events to Interaction Studio based on the actions of the website visitors (users). There are several ways to validate whether the Sitemap configuration is properly recognizing the targeted user actions and sending the corresponding events. </p>
+<h2 id="sitemap-events">Sitemap Events<a class="headerlink" href="#sitemap-events" title="Permanent link">&para;</a></h2>
+<p>Sitemap events are HTTP requests sent to Interaction Studio's Event API endpoint that describe the context of the page or a specific action a user performed on the site. Some examples include:</p>
+<ul>
+<li>Visiting a page</li>
+<li>Viewing a catalog item</li>
+<li>Submitting a form</li>
+<li>Adding an item to a shopping cart</li>
+<li>Purchasing an item</li>
+<li>Clicking a designated page area</li>
+</ul>
+<h2 id="sitemap-event-validation-tools-and-methods">Sitemap Event Validation Tools and Methods<a class="headerlink" href="#sitemap-event-validation-tools-and-methods" title="Permanent link">&para;</a></h2>
+<p>The tools and methods Sitemap developers can use to validate Sitemap events include:</p>
+<ul>
+<li><a href="#event-validation-using-the-sitemap-editor">Interaction Studio Sitemap Editor</a></li>
+<li><a href="#event-validation-using-the-event-stream-report">Interaction Studio Event Stream Report</a></li>
+<li><a href="#event-validation-using-chrome-browser-developer-tools">Chrome Browser Developer Tools</a></li>
+</ul>
+<p>The remainder of this article provides guidance for using each of these tools to validate a Sitemap.</p>
+<h2 id="event-validation-using-the-sitemap-editor">Event Validation Using the Sitemap Editor<a class="headerlink" href="#event-validation-using-the-sitemap-editor" title="Permanent link">&para;</a></h2>
+<p>As you develop a Sitemap, you can use the Sitemap Editor as described in the following sections to confirm that the JavaScript describing your events is valid and configured properly. </p>
+<h3 id="sitemap-js-tab-code-check">Sitemap JS Tab Code Check<a class="headerlink" href="#sitemap-js-tab-code-check" title="Permanent link">&para;</a></h3>
+<p>The <strong>Sitemap JS</strong> tab where you enter your Sitemap JavaScript has a built-in code validator that will flag the presence of JavaScript syntax errors as highlighted in the following figure.</p>
+<p><img alt="Sitemap JS Code Errors" src="../sitemap-js-code-errors.png" /></p>
+<p>The <strong>Logs</strong> tab provides messages related to the JavaScript code errors flagged by the Sitemap JS code editor. However, you may want to use a more robust JavaScript validation tool to investigate JavaScript syntax issues and code execution errors flagged in the Sitemap JS code editor.</p>
+<h3 id="current-page-object-validation">Current Page Object Validation<a class="headerlink" href="#current-page-object-validation" title="Permanent link">&para;</a></h3>
+<p>The <strong>Current Page</strong> tab of the Sitemap Editor is shown below: </p>
+<p><img alt="Sitemap JS Code Errors" src="../sitemap-current-page-objects-empty.png" />
+The <strong>Current Page</strong> tab will display all Sitemap objects configured and executed on the current page shown in the browser, including: </p>
+<ul>
+<li><strong>Page Type:</strong> Name of the configured page type of the currently displayed page</li>
+<li><strong>User Data:</strong> ID of the current user browsing the page and any user-triggered events that are configured on the page. The user ID can be the user ID that is randomly generated for anonymous site visitors or a named user ID.</li>
+<li><strong>Catalog Data:</strong> Names of Catalog objects configured on the current page.</li>
+<li><strong>Content Zones:</strong> Names of Content Zone objects configured on the current page.</li>
+<li><strong>DOM Listeners:</strong> Names of JavaScript DOM listeners configured on the current page.</li>
+</ul>
+<h4 id="current-page-object-examples">Current Page Object Examples<a class="headerlink" href="#current-page-object-examples" title="Permanent link">&para;</a></h4>
+<p>The following figure shows an example of how Sitemap objects display in the <strong>Current Page</strong> tab with key functional areas indicated by numbers. The following sections describe the purpose and function of each area and are numbered corresponding to the numbers on the figure.</p>
+<p><img alt="Sitemap Current Page Objects" src="../sitemap-current-page-objects-populated_markup-w720px.png" /></p>
+<h5 id="1-current-page-site-home-page">1. Current Page (Site Home Page)<a class="headerlink" href="#1-current-page-site-home-page" title="Permanent link">&para;</a></h5>
+<p>This area displays the current page of the target site that the Sitemap editor is targeting. The objects displayed in the <strong>Current Page</strong> tab will be the objects configured for the page type displayed here. In the above example, the browser used by the Sitemap editor is on the <strong>Home</strong> page of the target site, and has a <code>pageTypes</code> object called "home" configured in the Sitemap (<strong>9</strong>). </p>
+<h5 id="2-execute-button">2. Execute (button)<a class="headerlink" href="#2-execute-button" title="Permanent link">&para;</a></h5>
+<p>Clicking the <strong>Execute</strong> button runs and validates the JavaScript entered in the <strong>Sitemap JS</strong> editor. Sitemap objects that resolve with the current page type or global configuration will display in the <strong>Current Page</strong> tab. Objects with invalid JavaScript will not display in the <em>Current Page</em> tab.</p>
+<h5 id="3-page-type">3. Page Type<a class="headerlink" href="#3-page-type" title="Permanent link">&para;</a></h5>
+<p>This area displays the page type that matches the results of the <code>isMatch</code> function configured for the currently displayed page type. In the above example, the site <strong>Home</strong> page type (<strong>1</strong>) is matched by the <code>isMatch</code> function configured for the page type named <code>home</code> in the Sitemap (<strong>9</strong>).</p>
+<h5 id="4-user-data">4. User Data<a class="headerlink" href="#4-user-data" title="Permanent link">&para;</a></h5>
+<p>This area displays the user ID of the user visiting the current page as well as any user-triggered events configured in the Sitemap. The above example shows an anonymous user ID.</p>
+<h5 id="5-catalog-data">5. Catalog Data<a class="headerlink" href="#5-catalog-data" title="Permanent link">&para;</a></h5>
+<p>This area displays any <code>catalog</code> objects configured in the <strong>Sitemap JS</strong> for the currently displayed page. In the above <strong>Home</strong> page example, no <code>catalog</code> objects have been configured.</p>
+<h5 id="6-content-zones-global">6. Content Zones - Global<a class="headerlink" href="#6-content-zones-global" title="Permanent link">&para;</a></h5>
+<p>The above example shows that this Sitemap has two global Content Zones that are properly configured to display in the <strong>Current Page</strong> tab. Global content zones will be active in all configured page types.</p>
+<h5 id="7-dom-listeners">7. DOM Listeners<a class="headerlink" href="#7-dom-listeners" title="Permanent link">&para;</a></h5>
+<p>The above example shows that this Sitemap has a <code>listener</code> in the global configuration that that is properly configured to display in the <strong>DOM Listeners</strong> section of the <strong>Current Page</strong> tab. This <code>listener</code> will send an event to Interaction Studio when a user signs up for an email subscription.</p>
+<h5 id="8-content-zones-page-type">8. Content Zones - Page Type<a class="headerlink" href="#8-content-zones-page-type" title="Permanent link">&para;</a></h5>
+<p>The above example shows that this Sitemap has three Content Zones that are properly configured to display in the <strong>Current Page</strong> tab when the Sitemap editor is on the <code>home</code> page type.</p>
+<h5 id="9-pagetypes-home">9. pageTypes: "home"<a class="headerlink" href="#9-pagetypes-home" title="Permanent link">&para;</a></h5>
+<p>The above example shows that this Sitemap has a "home" page type configured to display in the <strong>Page Type</strong> section of the <strong>Current Page</strong> tab (<strong>3</strong>) when the Sitemap editor is on the <code>home</code> page type.</p>
+<h3 id="page-match-validation">Page Match Validation<a class="headerlink" href="#page-match-validation" title="Permanent link">&para;</a></h3>
+<p>The <strong>Page Matches</strong> tab displays the currently matched page type as well as all other page types configured in the Sitemap. The currently matched page displays with a "checkmark" icon, while the other configured page types display with a "backslash" icon to indicate they were not matched as the current page. </p>
+<p>The following figure shows an example of the <strong>Page Matches</strong> tab where the <strong>home</strong> page is the currently matched page as well as several other pages that are configured in the Sitemap JS editor but are not matched as the current page.</p>
+<p><img alt="Page Matches in Sitemap" src="../sitemap-page-matches-w720px.png" /></p>
+<h2 id="event-validation-using-the-event-stream-report">Event Validation Using the Event Stream Report<a class="headerlink" href="#event-validation-using-the-event-stream-report" title="Permanent link">&para;</a></h2>
+<p>The Interaction Studio <strong>Event Stream</strong> report displays all events received by Interaction Studio, including events sent from the Sitemap as well as from other sources. </p>
+<h3 id="accessing-the-event-stream-report">Accessing the Event Stream Report<a class="headerlink" href="#accessing-the-event-stream-report" title="Permanent link">&para;</a></h3>
+<p>To access the <em>Event Stream</em> report, do the following:
+1. Login to Interaction Studio.</p>
+<pre><code>![Interaction Studio Login](salesforce-interaction-studio-login.png)
+</code></pre>
+<ol>
+<li>
+<p>In the <strong>Dashboard</strong>, use the dataset pull-down menu select the dataset that contains the events you want to see.</p>
+<p><img alt="Selecting the dataset" src="../salesforce-interaction-studio-select-dataset.png" /> </p>
+</li>
+<li>
+<p>Hover over <strong>Reports</strong> on the left menu to display the reports popup menu, and select <strong>Event Stream</strong> from the <em>Activity</em> section of the menu.</p>
+<p><img alt="Accessing the Event Stream Report" src="../salesforce-interaction-studio-accessing-event-stream.png" /></p>
+</li>
+</ol>
+<h3 id="example-event-processing-and-display-in-the-event-stream">Example: Event Processing and Display in the Event Stream<a class="headerlink" href="#example-event-processing-and-display-in-the-event-stream" title="Permanent link">&para;</a></h3>
+<p>The Sitemap JavaScript is configured to send events to Interaction Studio based on the actions by site visitors. This section presents an example based of an anonymous user who decides to sign up for emails from the company (thus becoming "known"), and then chooses to browse the Men's section of the website.</p>
+<h4 id="javascript-listener-for-email-sign-up">JavaScript Listener for Email Sign-Up<a class="headerlink" href="#javascript-listener-for-email-sign-up" title="Permanent link">&para;</a></h4>
+<p>The following shows an example of a JavaScript listener configured to send an event when a user signs up for email. The sign-up form appears on the bottom of every page in the site so this listener should be configured as part of the <code>global</code> configuration.</p>
+<pre><code>        listeners: [
+            Evergage.listener("submit", ".email-signup", () =&gt; {
+                const email = Evergage.cashDom("#dwfrm_mcsubscribe_email").val();
+                if (email) {
+                    Evergage.sendEvent({action: "Email Sign Up - Footer", user: {id: email} });
+                }
+            }),
+        ]
+</code></pre>
+<h4 id="site-ui-for-email-sign-up">Site UI for Email Sign-Up<a class="headerlink" href="#site-ui-for-email-sign-up" title="Permanent link">&para;</a></h4>
+<p>The following shows an example of a site email sign-up form being completed by "Joe Customer". With the JavaScript listener configured as shown in the preceding section, an event will be sent to Interaction Studio and show up in the <em>Event Stream</em> when a user provides their email address and clicks the submit button (<strong>-&gt;</strong>). </p>
+<p><img alt="Email Sign-Up Form" src="../sitemap-email-signup-w640px.png" /></p>
+<h4 id="events-displayed-in-the-event-stream-report">Events Displayed in the Event Stream Report<a class="headerlink" href="#events-displayed-in-the-event-stream-report" title="Permanent link">&para;</a></h4>
+<p>If the email signup listener is properly configured in the Sitemap, when "Joe Customer" provides his email and clicks <strong>Submit</strong>, the event will show up immediately in the Interaction Studio <em>Event Stream</em> report. This report provides the following information and functionality:</p>
+<ul>
+<li>Event stream search</li>
+<li>Event stream table</li>
+<li>Event details for individual events</li>
+</ul>
+<p>The following figure shows an example of the events sent to Interaction Studio before and after Joe Customer submitted his email in the email sign-up form. The following sections describe the information and functionality provided by the <em>Event Stream</em> report.</p>
+<blockquote>
+<p><strong>Note:</strong> See <a href="https://doc.evergage.com/display/EKB/Understand+the+Event+Stream">Understanding the Event Stream</a> for more information on the available functionality in the Event Stream report.</p>
+</blockquote>
+<p><img alt="Viewing Event Details" src="../salesforce-interaction-studio-viewing-event-details.png" /></p>
+<h5 id="event-stream-search">Event Stream Search<a class="headerlink" href="#event-stream-search" title="Permanent link">&para;</a></h5>
+<p>In the Event Stream search area, you can search for and filter the Event Stream table to display only events that were generated by a specific UserID/User Name or email address. This is done as follows:</p>
+<ol>
+<li>In the <strong>keyword</strong> field, enter text that matches characters in the user name or email address for the user whose events you want to see. </li>
+<li>As soon as you enter characters that match an existing user name or email address, the matching user name(s) will display. </li>
+<li>Click the desired user. The Event Stream table will now display only the events for that user. </li>
+<li>If you want to see only events of a specific type, click the <strong>Event Type</strong> pull-down menu and select the desired type.</li>
+</ol>
+<h5 id="event-stream-table">Event Stream Table<a class="headerlink" href="#event-stream-table" title="Permanent link">&para;</a></h5>
+<p>The <em>Event Stream</em> table lists event data for all events triggered by the Sitemap and other event sources from other systems in the Interaction Studio integration. The data in the <em>Event Stream</em> table is refreshed every 15 seconds and includes:
+* <strong>Timestamp:</strong> Time or date that the event occurred. Events triggered on the current day will have a timestamp of how many minutes/hours ago the event was triggered. Events triggered the day before the current day will have a timestamp of "yesterday". Earlier events will have a timestamp of the date the event was triggered. 
+* <strong>User Name or Email:</strong> User name or email address of the user who triggered the event.
+* <strong>Action or URL:</strong> Name of the action for which the event was triggered or the URL of the page which the user visited that triggered the event. </p>
+<p><em>Modifying the Event Stream Data View</em></p>
+<p>The <em>Event Stream</em> table provides the following functionality to modify how the data in the table displays:
+* Click a column heading in the <em>Event Stream</em> table to sort the table by the data in that field. 
+* Click the same column heading more than once to toggle between an ascending/descending data sort.
+* Click an individual event entry in the table to display the details for that event as described in the following section.</p>
+<h5 id="from-anonymous-to-known-user">From Anonymous to Known User<a class="headerlink" href="#from-anonymous-to-known-user" title="Permanent link">&para;</a></h5>
+<p>The example shown in the following figure shows what happens after "Joe Customer" submits his email address. The anonymous user <code>7ddc1195...</code> changes to the known user <code>joe.customer@email.com</code>. This happens any time an anonymous user identifies themselves through an action like email submission or log in. Interaction Studio associates the anonymous ID with the known user and adds the browsing behavior of the anonymous ID to the <a href="https://doc.evergage.com/display/EKB/Unified+Customer+Profile">Unified Customer Profile</a> of the known user. A known user may have many associated anonymous IDs (and more than one known user name) depending on their browsing habits on the site. </p>
+<p><img alt="Event Stream Known User Example" src="../salesforce-interaction-studio-event-stream-known-user-example.png" /></p>
+<blockquote>
+<p><strong>Note:</strong> The figure above is presented for example only. In large environments with hundreds or thousands of simultaneous visitors you will not be able to visually associate the anonymous user ID with their known user name.</p>
+</blockquote>
+<h5 id="individual-event-details">Individual Event Details<a class="headerlink" href="#individual-event-details" title="Permanent link">&para;</a></h5>
+<p>When you click an individual event in the Event Stream table, the details for that event will display in the <strong>Event Detail</strong> area to the right of the Event Stream table. </p>
+<p><img alt="Individual Event Details" src="../salesforce-interaction-studio-event-stream-event-detail-section.png" /></p>
+<p>As shown in the above figure, the details provided in the <strong>Event Detail</strong> area for the selected individual event include:</p>
+<ul>
+<li><strong>Timestamp:</strong> Date and time that the event was triggered.</li>
+<li><strong>User ID:</strong> User name, email address, or anonymous user ID of the user who triggered the event.</li>
+<li><strong>URL:</strong> Page on which the user generated the event. </li>
+<li><strong>Client IP:</strong> IP address of the user client that generated the event.</li>
+<li><strong>User Agent:</strong> User Agent (UA) string sent in the HTTP header with browser requests that typically identifies the browser type, browser version, and browser host operating system. </li>
+<li><strong>Beacon Version:</strong> Version of the JavaScript Beacon that sent the event.</li>
+<li><strong>contentZones:</strong> Content Zone in the Sitemap on which the event was generated. The above figure shows an event that was triggered when a user clicked in a Sitemap Content Zone called <code>global_infobar_top_of_page</code>.</li>
+<li><strong>pageType:</strong> The type of page that the user accessed. The above figure shows the event of a user accessing the "Men's" category page of a retailer. This page has no configured page type in the Sitemap, so the pageType value is <code>default</code>.</li>
+<li><strong>channel:</strong> The engagement channel that generated the event. For Sitemap-generated events, the channel will always be <code>Web</code>.</li>
+<li><strong>.scv:</strong> The Sitemap Configuration Version (SCV) is incremented every time changes to the Sitemap are saved. This value is used internally by Interaction Studio to prevent conflicts with events sent from earlier Sitemap versions. </li>
+</ul>
+<h2 id="event-validation-using-chrome-browser-developer-tools">Event Validation Using Chrome Browser Developer Tools<a class="headerlink" href="#event-validation-using-chrome-browser-developer-tools" title="Permanent link">&para;</a></h2>
+<p>Sitemap developers can also validate Sitemap events using the Google Chrome browser's built-in developer tools as described in the following sections.</p>
+<h3 id="viewing-page-load-events">Viewing Page Load Events<a class="headerlink" href="#viewing-page-load-events" title="Permanent link">&para;</a></h3>
+<p>The simplest way to view events that are triggered by page load is to run the <code>Evergage.getCurrentPage</code> command from the Chrome <strong>Console</strong> developer panel. However, this command will not display events that are triggered after page load. To run this command, do the following:</p>
+<ol>
+<li>Close out of the Interaction Studio Sitemap Editor.</li>
+<li>Browse to the site page containing the events you want to validate.</li>
+<li>Open the Chrome Developer Tools and navigate to the <strong>Console</strong> panel.</li>
+<li>
+<p>Run the following command:</p>
+<p><code>Evergage.getCurrentPage()</code></p>
+</li>
+</ol>
+<p>The following figure shows an example of the results of running the <code>Evergage.getCurrentPage</code> command.</p>
+<p><img alt="Get Current Page Command" src="../sitemap-evergage-get-current-page-command-results.png" /></p>
+<h3 id="validating-individual-event-configurations">Validating Individual Event Configurations<a class="headerlink" href="#validating-individual-event-configurations" title="Permanent link">&para;</a></h3>
+<p>In the Chrome <strong>Network</strong> developer panel, you can see all events generated on the current page, including those generated after page load. This can be done as follows:</p>
+<ol>
+<li>Close out of the Interaction Studio Sitemap Editor.</li>
+<li>Browse to the site page containing the events you want to validate.</li>
+<li>Take an action on the page that you expect to generate an event.</li>
+<li>Open the Chrome Developer Tools and navigate to the <strong>Network</strong> panel.</li>
+<li>Find and select the event. The event will have the name of your dataset followed by a question mark (?) and the word "event".</li>
+<li>
+<p>Select the event and select the <strong>Headers</strong> panel to view the event. Events are sent from the Sitemap to Interaction Studio as JSON GET requests. The events are converted to Base 64 and appended to the request URL as shown in the following figure. </p>
+<p><img alt="Event GET Request" src="../sitemap-chrome-tools-network-get-request-url-720px.png" /></p>
+</li>
+<li>
+<p>Copy the event GET request starting immediately after the <code>event=</code> to the end as highlighted in the figure below.</p>
+<p><img alt="Copying an Event" src="../sitemap-chrome-tools-network-get-request-url-base64.png" /></p>
+</li>
+<li>
+<p>Navigate to the Chrome <strong>Console</strong> developer tool. Run the <code>atob</code> command to convert the event back to JavaScript objects. You can run the <code>JSON.parse</code> command in combination with the <code>atob</code> command to return the event JavaScript formatted. The syntax for running this command is as follows:</p>
+<p><code>JSON.parse(atob("&lt;Event text in Base 64&gt;"))</code> </p>
+<p>The following figure shows an example of this command and the results returned.</p>
+<p><img alt="JSON.parse atob command" src="../sitemap-chrome-tools-console-json-parse-atob.png" /></p>
+</li>
+<li>
+<p>Review the event and confirm it contains the expected objects.</p>
+</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../site-impact-approach/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interaction Studio Site Impact Approach" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Interaction Studio Site Impact Approach
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../site-map-getting-started/" class="md-footer__link md-footer__link--next" aria-label="Next: Get Started with Sitemapping" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Get Started with Sitemapping
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

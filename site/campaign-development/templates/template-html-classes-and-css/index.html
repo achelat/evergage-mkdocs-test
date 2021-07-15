@@ -1,0 +1,3392 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://developer.evergage.com/campaign-development/templates/template-html-classes-and-css/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Web Template CSS - Salesforce Interaction Studio Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#html-classes-and-css-styles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Salesforce Interaction Studio Developer Documentation" class="md-header__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Salesforce Interaction Studio Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web Template CSS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Salesforce Interaction Studio Developer Documentation" class="md-nav__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    Salesforce Interaction Studio Developer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About us
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Additional apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional apis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Additional apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../additional-apis/additional-apis/" class="md-nav__link">
+        Additional Interaction Studio APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../additional-apis/user-look-up-deletion-api/" class="md-nav__link">
+        User Look-Up & Deletion API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Campaign development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/" class="md-nav__link">
+        Campaign Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Advanced use case apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Advanced use case apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced use case apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-use-case-apis/advanced-use-case-apis/" class="md-nav__link">
+        Advanced Use-Case APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2_2">
+        Is trends
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Is trends" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Is trends
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-use-case-apis/is-trends/is-trends/" class="md-nav__link">
+        ISTrends
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_3" type="checkbox" id="__nav_4_2_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_3">
+        Web surveys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web surveys" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web surveys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-use-case-apis/web-surveys/web-surveys/" class="md-nav__link">
+        Web Surveys
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Campaign template apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign template apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign template apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-template-apis/campaign-template-apis/" class="md-nav__link">
+        Campaign Template APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      <label class="md-nav__link" for="__nav_4_3_2">
+        Corvus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Corvus" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corvus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-template-apis/corvus/corvus/" class="md-nav__link">
+        Corvus
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_3" type="checkbox" id="__nav_4_3_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3_3">
+        Recommendations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Recommendations" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-template-apis/recommendations/recommendations/" class="md-nav__link">
+        Recommendations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Email campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Email campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Email campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../email-campaigns-and-templates/capture-email-campaign-url/" class="md-nav__link">
+        Capture an Open-Time Email Campaign URL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../email-campaigns-and-templates/overview/" class="md-nav__link">
+        Open-time Email Campaigns and Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../email-campaigns-and-templates/render-non-western-characters/" class="md-nav__link">
+        Render Non-Western Characters in OTE Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../email-campaigns-and-templates/third-party-tracking-for-email-campaigns/" class="md-nav__link">
+        Add Third Party Tracking Parameters to Open-Time Email Campaigns
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Server side campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Server side campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Server side campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../server-side-campaigns-and-templates/contentzones/" class="md-nav__link">
+        Server Side Campaigns and Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../server-side-campaigns-and-templates/einstein-decisions/" class="md-nav__link">
+        Einstein Decisions - Server-Side Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../server-side-campaigns-and-templates/mutiplecampaigns/" class="md-nav__link">
+        Multiple Server Side Campaign Responses in a Single Call
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../server-side-campaigns-and-templates/server-side-templates/" class="md-nav__link">
+        Server-Side Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" checked>
+      
+      <label class="md-nav__link" for="__nav_4_6">
+        Templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../campaign-stats/" class="md-nav__link">
+        Campaign Stats Tracking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modify-global-templates/" class="md-nav__link">
+        Modify Global templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template-client-javascript/" class="md-nav__link">
+        Template Client JavaScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template-global-templates/" class="md-nav__link">
+        Get Started with Global Web Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template-handlebars/" class="md-nav__link">
+        Web Template Handlebars
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Web Template CSS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Web Template CSS
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#html-classes-and-css-styles" class="md-nav__link">
+    HTML Classes and CSS Styles
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML Classes and CSS Styles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jumbotron-classes" class="md-nav__link">
+    Jumbotron Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-recommendation-classes" class="md-nav__link">
+    Product Recommendation Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-recommendation-classes" class="md-nav__link">
+    Content Recommendation Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-classes" class="md-nav__link">
+    Form Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modal-classes" class="md-nav__link">
+    Modal Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popup-classes" class="md-nav__link">
+    Popup Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carousel-classes" class="md-nav__link">
+    Carousel Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button-classes" class="md-nav__link">
+    Button Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heading-classes" class="md-nav__link">
+    Heading Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-classes" class="md-nav__link">
+    Display Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typography-classes" class="md-nav__link">
+    Typography Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-classes" class="md-nav__link">
+    Other Classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template-response-simulator/" class="md-nav__link">
+        Template Response Simulator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template-server-typescript/" class="md-nav__link">
+        Template Server TypeScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      <label class="md-nav__link" for="__nav_4_7">
+        Web campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Web campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/display-utilities/" class="md-nav__link">
+        Web Template Display Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/flicker-defender/" class="md-nav__link">
+        Flicker Defender
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/template-development-checklist/" class="md-nav__link">
+        Web Template Building Best Practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/templates-style-guide-and-coding-conventions/" class="md-nav__link">
+        Web Templates Style Guide and Coding Conventions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/web-campaign-and-template/" class="md-nav__link">
+        Web Campaigns & Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-campaigns-and-templates/web-campaign-debugger/" class="md-nav__link">
+        Campaign Debugger
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Data analytics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data analytics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Data analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-analytics/data-analytics/" class="md-nav__link">
+        Interaction Studio Data Analytics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-analytics/data-dictionary/" class="md-nav__link">
+        Data Dictionary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-analytics/data-warehouse/" class="md-nav__link">
+        Data Warehouse
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-analytics/scratch-schema/" class="md-nav__link">
+        Scratch Schema
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Data ingestion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data ingestion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data ingestion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-ingestion/data-ingestion/" class="md-nav__link">
+        Ingesting Data into Interaction Studio
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Data model
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data model" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Data model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-model/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-model/catalog/" class="md-nav__link">
+        Catalog
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-model/data-model/" class="md-nav__link">
+        Data Modeling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-model/datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Develop overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Develop overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Develop overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../develop-overview/develop-overview/" class="md-nav__link">
+        Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../develop-overview/developer-role-responsibilities/" class="md-nav__link">
+        Developer Role and Responsibilities
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Event api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Event api" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Event api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event-api/event-api-overview/" class="md-nav__link">
+        Interaction Studio Event API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event-api/event-api-response/" class="md-nav__link">
+        Event API Responses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event-api/event-api-specifications/" class="md-nav__link">
+        Event API Requests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Gears
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gears" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Gears
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/favorites/" class="md-nav__link">
+        Favorites Gear
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/gears/" class="md-nav__link">
+        Gears
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/components/" class="md-nav__link">
+        Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/components/contextual-rule/" class="md-nav__link">
+        Contextual Rule Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/components/lifecycle/" class="md-nav__link">
+        Lifecycle Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/components/oauth/" class="md-nav__link">
+        OAuth Component
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Metadata
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Metadata" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Metadata
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/metadata/gear-metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_5" type="checkbox" id="__nav_10_5" >
+      
+      <label class="md-nav__link" for="__nav_10_5">
+        System services
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="System services" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          System services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/system-services/" class="md-nav__link">
+        System Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/system-services/filesystem/" class="md-nav__link">
+        Filesystem Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gears/system-services/http/" class="md-nav__link">
+        HTTP Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Interface config
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interface config" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Interface config
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/arrays/" class="md-nav__link">
+        Array Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/config/" class="md-nav__link">
+        Custom Interface & Template Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/decorators/" class="md-nav__link">
+        Decorators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/importexport/" class="md-nav__link">
+        Importing And Exporting Configurables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/static-values/" class="md-nav__link">
+        Static Values
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" type="checkbox" id="__nav_11_6" >
+      
+      <label class="md-nav__link" for="__nav_11_6">
+        Properties
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Properties" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_6">
+          <span class="md-nav__icon md-icon"></span>
+          Properties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/boolean/" class="md-nav__link">
+        Boolean Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/color/" class="md-nav__link">
+        Color Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/complex/" class="md-nav__link">
+        Complex Object Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/datetime/" class="md-nav__link">
+        DateTime Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/multi-select/" class="md-nav__link">
+        Multi Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/number/" class="md-nav__link">
+        Number Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/select/" class="md-nav__link">
+        Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/string/" class="md-nav__link">
+        String Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface-config/properties/typed-list/" class="md-nav__link">
+        Typed list
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Mobile integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mobile integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mobile-integ/mobile-overview/" class="md-nav__link">
+        Interaction Studio Mobile Integrations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Web integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Web integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/best-practices-data-capture/" class="md-nav__link">
+        Best Practices for Data Capture Using Site Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/comparison-shopping/" class="md-nav__link">
+        Comparison Shopping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/contentzones/" class="md-nav__link">
+        Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/item-actions/" class="md-nav__link">
+        Item Actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/multisite-strategy/" class="md-nav__link">
+        Multisite Implementation Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/pageTypes/" class="md-nav__link">
+        Page Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/site-impact-approach/" class="md-nav__link">
+        Interaction Studio Site Impact Approach
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/site-map-event-validation/" class="md-nav__link">
+        Sitemap Event Validation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/site-map-getting-started/" class="md-nav__link">
+        Get Started with Sitemapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/site-map-user-account-attributes/" class="md-nav__link">
+        Capturing User and Account Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/sitemap-implementation-notes/" class="md-nav__link">
+        Sitemap Implementation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/sitemap/" class="md-nav__link">
+        Sitemap Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/user-identity-mapping/" class="md-nav__link">
+        User Identity Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/validate-beacon-deployment/" class="md-nav__link">
+        Validate JavaScript Beacon Deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/web-integration-planning/" class="md-nav__link">
+        Plan a Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/web-integration/" class="md-nav__link">
+        Interaction Studio Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_17" type="checkbox" id="__nav_13_17" >
+      
+      <label class="md-nav__link" for="__nav_13_17">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_17">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/examples/" class="md-nav__link">
+        Example Sitemaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/examples/b2b/" class="md-nav__link">
+        Example B2B Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/examples/ecommerce/" class="md-nav__link">
+        Example Ecommerce Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-integ/examples/financial-services/" class="md-nav__link">
+        Example Financial Services Sitemap
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#html-classes-and-css-styles" class="md-nav__link">
+    HTML Classes and CSS Styles
+  </a>
+  
+    <nav class="md-nav" aria-label="HTML Classes and CSS Styles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jumbotron-classes" class="md-nav__link">
+    Jumbotron Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-recommendation-classes" class="md-nav__link">
+    Product Recommendation Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-recommendation-classes" class="md-nav__link">
+    Content Recommendation Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-classes" class="md-nav__link">
+    Form Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modal-classes" class="md-nav__link">
+    Modal Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popup-classes" class="md-nav__link">
+    Popup Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carousel-classes" class="md-nav__link">
+    Carousel Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button-classes" class="md-nav__link">
+    Button Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heading-classes" class="md-nav__link">
+    Heading Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-classes" class="md-nav__link">
+    Display Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typography-classes" class="md-nav__link">
+    Typography Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-classes" class="md-nav__link">
+    Other Classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Web Template CSS</h1>
+                
+                <p>Interaction Studio web templates support any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> styling for the target browsers of your website.</p>
+<h2 id="html-classes-and-css-styles">HTML Classes and CSS Styles<a class="headerlink" href="#html-classes-and-css-styles" title="Permanent link">&para;</a></h2>
+<p>This article presents suggested <code>evg-</code> prefixed HTML class names and descriptions of their intended purpose, as well as examples of CSS styling. If more classes than those listed here are needed, refer to <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">Bootstrap classes</a> for ideas. It is advised to prefix all classes with <code>evg-</code> so they do not conflict with styling already on your website.</p>
+<h3 id="jumbotron-classes">Jumbotron Classes<a class="headerlink" href="#jumbotron-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-jumbotron</td>
+    <td>The parent container class of a jumbotron-style hero banner.</td>
+    <td>
+<pre lang="css">
+.evg-jumbotron {
+    position: relative;
+    z-index: 2;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+    background-size: cover;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-cta</td>
+    <td>Applies styling for call-to-action buttons.</td>
+    <td>-</td>
+  </tr>
+</table>
+
+<h3 id="product-recommendation-classes">Product Recommendation Classes<a class="headerlink" href="#product-recommendation-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr">
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-product-recommendations</td>
+    <td>The parent container class of a product recommendations block. Applies styling for the layout of all product recommendations.</td>
+    <td>
+<pre lang="css">
+.evg-product-recommendations {
+    position: relative;
+    z-index: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: auto;
+    height: 100%;
+    padding: 0;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-product-recommendation</td>
+    <td>The container class of a single product recommendation. Applies styling for the layout of the content within each product recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-product-recommendation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    width: auto;
+    margin: 0;
+    padding: 0 .5rem;
+    text-align: center;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-product-image</td>
+    <td>Applies styling for the product image for each product recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-product-image {
+    width: 80%;
+    height: auto;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-product-details</td>
+    <td>Applies styling for the body of each product recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-product-details {
+    width: 100%;
+    height: 100%;
+    min-height: 9rem;
+    padding: .5rem 0;
+  }
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-product-name</td>
+    <td>Applies styling for the product name of each product recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-product-name {
+    display: block;
+    max-width: 90%;
+    min-height: 2.5rem;
+    margin: auto auto .25rem;
+    color: #393939;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    text-decoration: none;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-product-description</td>
+    <td>Applies styling for the product description of each product recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-product-description {
+    overflow: hidden;
+    width: 95%;
+    max-height: 2rem;
+    margin: 0 auto;
+    font-size: .85rem;
+    line-height: 1rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-product-price</td>
+    <td>Applies styling for the product price of each product recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-product-price {
+    margin-bottom: .5rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-product-rating</td>
+    <td>Applies styling for the product rating of each product recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-product-rating {
+    width: 5rem;
+    margin: 0 auto .5rem auto;
+    text-align: left;
+    text-decoration: none;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-star-empty</td>
+    <td>Applies styling for the empty rating stars of each product recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-star-empty {
+    color: #dee3e8;
+    background-color: #ffffff;
+    text-align: left;
+    text-decoration: none;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-star-fill</td>
+    <td>Applies styling for filled rating stars of each product recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-star-fill {
+    position: relative;
+    overflow: hidden;
+    margin-top: -1.4em;
+    color: #ce763c;
+    background-color: transparent;
+}
+</pre>
+    </td>
+  </tr>
+</table>
+
+<h3 id="content-recommendation-classes">Content Recommendation Classes<a class="headerlink" href="#content-recommendation-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-content-recommendations</td>
+    <td>The parent container class of a content recommendations block. Applies styling for the layout of all content recommendations.</td>
+    <td>
+<pre lang="css">
+.evg-content-recommendations {
+    position: relative;
+    z-index: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    width: auto;
+    max-width: 960px;
+    margin: 0 auto;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-content-recommendation</td>
+    <td>The container class of a single content recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-content-recommendation {
+    margin: 1.5rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-content-image</td>
+    <td>Applies styling for the content image of each content recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-content-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-content-details</td>
+    <td>Applies styling for the body of each content recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-content-details {
+    overflow: hidden;
+    width: 100%;
+    padding: 1rem;
+    background-color: #fff;
+    text-align: left;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-content-title</td>
+    <td>Applies styling for the content title of each content recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-content-title {
+    overflow: hidden;
+    height: 2.5rem;
+    margin: 0 auto .75rem auto;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+    text-decoration: none;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-content-description</td>
+    <td>Applies styling for the content description of each content recommendation.</td>
+    <td>
+<pre lang="css">
+.evg-content-description {
+    overflow: hidden;
+    height: 8rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+</pre>
+    </td>
+  </tr>
+</table>
+
+<h3 id="form-classes">Form Classes<a class="headerlink" href="#form-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-form</td>
+    <td>The parent container class of a form.</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>.evg-error-msg</td>
+    <td>Applies styling for error message texts.</td>
+    <td>
+<pre lang="css">
+.evg-error-msg {
+    color: #ff0000;
+    font-size: 1rem;
+}
+</pre>
+</td>
+  </tr>
+  <tr>
+    <td>.evg-opt-out-msg</td>
+    <td>Applies styling for an opt-out message.</td>
+    <td>
+<pre lang="css">
+.evg-opt-out-msg {
+    font-size: 1rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-email</td>
+    <td>Applies styling for an email input field.</td>
+    <td>
+<pre lang="css">
+.evg-email {
+    color: #ff0000;
+    font-size: 1rem;
+}
+</pre>
+</td>
+  </tr>
+</table>
+
+<h3 id="modal-classes">Modal Classes<a class="headerlink" href="#modal-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-modal</td>
+    <td>The parent container class of a modal.</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>.evg-overlay</td>
+    <td>Applies a semi-transparent layer over the page, behind a popup or a modal.</td>
+    <td>
+<pre lang="css">
+.evg-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .3;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+</pre>
+    </td>
+  </tr>
+</table>
+
+<h3 id="popup-classes">Popup Classes<a class="headerlink" href="#popup-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-popup</td>
+    <td>The parent container class of a popup.</td>
+    <td>
+<pre lang="css">
+.evg-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    background-color: #fff;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateX(-50%) translateY(-50%);
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-cta</td>
+    <td>Applies styling for call-to-action buttons.</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>.evg-overlay</td>
+    <td>Applies a semi-transparent layer over the page, behind a popup or a modal.</td>
+    <td>
+<pre lang="css">
+.evg-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .3;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-main-panel</td>
+    <td>The container class of the main panel of a popup. Applies styling for the layout of the content within the panel.</td>
+    <td>
+<pre lang="css">
+.evg-main-panel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;    
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-confirm-panel</td>
+    <td>The container class of the secondary confirmation panel of a popup. Applies styling for the layout of the content within the panel.</td>
+    <td>
+<pre lang="css">
+.evg-confirm-panel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;    
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+</pre>
+    </td>
+  </tr>
+</table>
+
+<h3 id="carousel-classes">Carousel Classes<a class="headerlink" href="#carousel-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-carousel</td>
+    <td>The parent container class of a carousel.</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>.evg-carousel-slide</td>
+    <td>The container class of a single carousel slide.</td>
+    <td>-</td>
+  </tr>
+</table>
+
+<h3 id="button-classes">Button Classes<a class="headerlink" href="#button-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-btn</td>
+    <td>Applies basic styling to the button, including spacing and sizing. Use class on button, anchor, or input elements.</td>
+    <td>
+<pre lang="css">
+.evg-btn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: .5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 3rem;
+    color: #215ca0;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 
+        color .15s ease-in-out, 
+        background-color .15s ease-in-out, 
+        border-color .15s ease-in-out, 
+        box-shadow .15s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-btn-primary</td>
+    <td>Applies a solid primary color background to the button, adding more visual weight.</td>
+    <td>
+<pre lang="css">
+.evg-btn-primary {
+    color: #ffffff;
+    border-color: #215ca0;
+    background-color: #215ca0;
+    transition: background-color .15s, color .15s;
+}
+</pre>
+Hover state:
+<pre lang="css">
+.evg-btn-primary:hover {
+    color: #ffffff;
+    border-color: #1c4e88;
+    background-color: #1c4e88;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-btn-secondary</td>
+    <td>Applies a solid secondary color background to the button, adding more visual weight.</td>
+    <td>
+<pre lang="css">
+.evg-btn-secondary {
+    color: #ffffff;
+    border-color: #6c757d;
+    background-color: #6c757d;
+    transition: background-color .15s, color .15s;
+}
+</pre>
+Hover state:
+<pre lang="css">
+.evg-btn-secondary:hover {
+    color: #ffffff;
+    border-color: #59595c;
+    background-color: #59595c;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-btn-outline-primary</td>
+    <td>Removes the background color on any button (transparent) and colors the text and border using the primary color.</td>
+    <td>
+<pre lang="css">
+.evg-btn-outline-primary {
+    color: #215ca0;
+    border-color: #215ca0;
+    transition: background-color .15s, color .15s;
+}
+</pre>
+Hover state:
+<pre lang="css">
+.evg-btn-outline-primary:hover {
+    color: #ffffff;
+    border-color: #215ca0;
+    background-color: #215ca0;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-btn-outline-secondary</td>
+    <td>Removes the background color on any button (transparent) and colors the text and border using the secondary color.</td>
+    <td>
+<pre lang="css">
+.evg-btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+    transition: background-color .15s, color .15s;
+}
+</pre>
+Hover state:
+<pre lang="css">
+.evg-btn-outline-secondary:hover {
+    color: #ffffff;
+    border-color: #6c757d;
+    background-color: #6c757d;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-btn-sm</td>
+    <td>Decreases the default button size.</td>
+    <td>
+<pre lang="css">
+.evg-btn-sm {
+    padding: .25rem .75rem;
+    font-size: .875rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-btn-lg</td>
+    <td>Increases the default button size.</td>
+    <td>
+<pre lang="css">
+.evg-btn-lg {
+    padding: .5rem 2rem;
+    font-size: 1.25rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-btn-dismissal</td>
+    <td>Styles the button into a "X" symbol.
+    Whenever possible, use this class on a `button` element with an `aria-label="Close"`.</td>
+  <td>
+<pre lang="css">
+.evg-btn-dismissal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 .5rem;
+    border: 1px solid transparent;
+    background-color: transparent;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+}
+</pre>
+    </td>
+  </tr>
+</table>
+
+<h3 id="heading-classes">Heading Classes<a class="headerlink" href="#heading-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-header</td>
+    <td>Applies unique styling for headers.</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>.evg-subheader</td>
+    <td>Applies unique styling for subheaders.</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>.evg-h1</td>
+    <td>Applies styling for a level 1 heading.</td>
+    <td>
+<pre lang="css">
+.evg-h1 {
+    font-size: 2.5rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-h2</td>
+    <td>Applies styling for a level 2 heading.</td>
+    <td>
+<pre lang="css">
+.evg-h2 {
+    font-size: 2rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-h3</td>
+    <td>Applies styling for a level 3 heading.</td>
+    <td>
+<pre lang="css">
+.evg-h3 {
+    font-size: 1.75rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-h4</td>
+    <td>Applies styling for a level 4 heading.</td>
+    <td>
+<pre lang="css">
+.evg-h4 {
+    font-size: 1.5rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-h5</td>
+    <td>Applies styling for a level 5 heading.</td>
+    <td>
+<pre lang="css">
+.evg-h5 {
+    font-size: 1.25rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-h6</td>
+    <td>Applies styling for a level 6 heading.</td>
+    <td>
+<pre lang="css">
+.evg-h6 {
+    font-size: 1rem;
+}
+</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Note: Use <code>role="heading" aria-level="&lt;heading level number&gt;"</code> if you use non-semantic tags like a <code>div</code> to ensure that the headings are accessible. </p>
+<h3 id="display-classes">Display Classes<a class="headerlink" href="#display-classes" title="Permanent link">&para;</a></h3>
+<p>Classes for headers outside of the main page content, like jumbotron display headers. Use these classes to increase the font size of headings. </p>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-display-1</td>
+    <td>Increases size of the heading to the largest level.</td>
+    <td>
+<pre lang="css">
+.evg-display-1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-display-2</td>
+    <td>Increases size of the heading to the second largest level.</td>
+    <td>
+<pre lang="css">
+.evg-display-2 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-display-3</td>
+    <td>Increases size of the heading to the third largest level.</td>
+    <td>
+<pre lang="css">
+.evg-display-3 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-display-4</td>
+    <td>Increases size of the heading to the fourth largest level.</td>
+    <td>
+<pre lang="css">
+.evg-display-4 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+</pre>
+    </td>
+  </tr>
+</table>
+
+<h3 id="typography-classes">Typography Classes<a class="headerlink" href="#typography-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-text-primary</td>
+    <td>Changes text color to the primary color.</td>
+    <td>
+<pre lang="css">
+.evg-text-primary {
+    color: #343a40;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-text-secondary</td>
+    <td>Changes text color to the secondary color.</td>
+    <td>
+<pre lang="css">
+.evg-text-secondary {
+    color: #6c757d;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-text-sm</td>
+    <td>Decreases size of text within the main content (non-heading) of the page.</td>
+    <td>
+<pre lang="css">
+.evg-text-sm {
+    font-size: .85rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-text-lg</td>
+    <td>Increases size of text within the main content (non-heading) of the page.</td>
+    <td>
+<pre lang="css">
+.evg-text-lg {
+    font-size: 1.25rem;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-dark-on-light</td>
+    <td>Applies a <em>dark text over light background</em> color theme. Use to change the text color in the foreground and the color of the background</td>
+    <td>
+<pre lang="css">
+.evg-element1.evg-dark-on-light {
+    color: #343a40;
+}
+.evg-element2.evg-dark-on-light {
+    background-color: #fff;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-light-on-dark</td>
+    <td>Applies a <em>light text over dark background</em> color theme. Use to change the text color in the foreground and the color of the background</td>
+    <td>
+<pre lang="css">
+.evg-element1.evg-light-on-dark {
+    color: #fff;
+}
+.evg-element2.evg-light-on-dark {
+    background-color: #343a40;
+}
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>.evg-link</td>
+    <td>Applies styling for text links.</td>
+    <td>
+<pre lang="css">
+.evg-element1.evg-light-on-dark {
+    color: #fff;
+}
+.evg-element2.evg-light-on-dark {
+    background-color: #343a40;
+}
+</pre>
+    </td>
+  </tr>
+</table>
+
+<h3 id="other-classes">Other Classes<a class="headerlink" href="#other-classes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Purpose</th>
+    <th>Example CSS</th>
+  </tr>
+  <tr>
+    <td>.evg-hide</td>
+    <td>Class for hiding elements.</td>
+    <td>
+<pre lang="css">
+.evg-hide {
+    display: none;
+}
+</pre>
+    </td>
+  </tr>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../template-handlebars/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Web Template Handlebars" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Web Template Handlebars
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../template-response-simulator/" class="md-footer__link md-footer__link--next" aria-label="Next: Template Response Simulator" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Template Response Simulator
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

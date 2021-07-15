@@ -1,0 +1,7619 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://developer.evergage.com/data-analytics/data-dictionary/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Data Dictionary - Salesforce Interaction Studio Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#toc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-header__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Salesforce Interaction Studio Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Dictionary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="salesforce" data-md-color-primary="" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Salesforce Interaction Studio Developer Documentation" class="md-nav__button md-logo" aria-label="Salesforce Interaction Studio Developer Documentation" data-md-component="logo">
+      
+  <img src="../../media/interaction-studio-logo.png" alt="logo">
+
+    </a>
+    Salesforce Interaction Studio Developer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About us
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Additional apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional apis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Additional apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/additional-apis/" class="md-nav__link">
+        Additional Interaction Studio APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-apis/user-look-up-deletion-api/" class="md-nav__link">
+        User Look-Up & Deletion API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Campaign development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-development/" class="md-nav__link">
+        Campaign Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Advanced use case apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Advanced use case apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced use case apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/advanced-use-case-apis/" class="md-nav__link">
+        Advanced Use-Case APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2_2">
+        Is trends
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Is trends" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Is trends
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/is-trends/is-trends/" class="md-nav__link">
+        ISTrends
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_3" type="checkbox" id="__nav_4_2_3" >
+      
+      <label class="md-nav__link" for="__nav_4_2_3">
+        Web surveys
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web surveys" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Web surveys
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/advanced-use-case-apis/web-surveys/web-surveys/" class="md-nav__link">
+        Web Surveys
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Campaign template apis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Campaign template apis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Campaign template apis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/campaign-template-apis/" class="md-nav__link">
+        Campaign Template APIs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      <label class="md-nav__link" for="__nav_4_3_2">
+        Corvus
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Corvus" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corvus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/corvus/corvus/" class="md-nav__link">
+        Corvus
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_3" type="checkbox" id="__nav_4_3_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3_3">
+        Recommendations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Recommendations" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/campaign-template-apis/recommendations/recommendations/" class="md-nav__link">
+        Recommendations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Email campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Email campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Email campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/capture-email-campaign-url/" class="md-nav__link">
+        Capture an Open-Time Email Campaign URL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/overview/" class="md-nav__link">
+        Open-time Email Campaigns and Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/render-non-western-characters/" class="md-nav__link">
+        Render Non-Western Characters in OTE Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/email-campaigns-and-templates/third-party-tracking-for-email-campaigns/" class="md-nav__link">
+        Add Third Party Tracking Parameters to Open-Time Email Campaigns
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Server side campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Server side campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Server side campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/contentzones/" class="md-nav__link">
+        Server Side Campaigns and Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/einstein-decisions/" class="md-nav__link">
+        Einstein Decisions - Server-Side Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/mutiplecampaigns/" class="md-nav__link">
+        Multiple Server Side Campaign Responses in a Single Call
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/server-side-campaigns-and-templates/server-side-templates/" class="md-nav__link">
+        Server-Side Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      <label class="md-nav__link" for="__nav_4_6">
+        Templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/campaign-stats/" class="md-nav__link">
+        Campaign Stats Tracking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/modify-global-templates/" class="md-nav__link">
+        Modify Global templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-client-javascript/" class="md-nav__link">
+        Template Client JavaScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-global-templates/" class="md-nav__link">
+        Get Started with Global Web Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-handlebars/" class="md-nav__link">
+        Web Template Handlebars
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-html-classes-and-css/" class="md-nav__link">
+        Web Template CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-response-simulator/" class="md-nav__link">
+        Template Response Simulator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/template-server-typescript/" class="md-nav__link">
+        Template Server TypeScript
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/templates/templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      <label class="md-nav__link" for="__nav_4_7">
+        Web campaigns and templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web campaigns and templates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Web campaigns and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/display-utilities/" class="md-nav__link">
+        Web Template Display Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/flicker-defender/" class="md-nav__link">
+        Flicker Defender
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/template-development-checklist/" class="md-nav__link">
+        Web Template Building Best Practices
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/templates-style-guide-and-coding-conventions/" class="md-nav__link">
+        Web Templates Style Guide and Coding Conventions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-and-template/" class="md-nav__link">
+        Web Campaigns & Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaign-development/web-campaigns-and-templates/web-campaign-debugger/" class="md-nav__link">
+        Campaign Debugger
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Data analytics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data analytics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Data analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-analytics/" class="md-nav__link">
+        Interaction Studio Data Analytics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Dictionary
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Data Dictionary
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#toc" class="md-nav__link">
+    TOC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-campaign" class="md-nav__link">
+    Table campaign
+  </a>
+  
+    <nav class="md-nav" aria-label="Table campaign">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-category" class="md-nav__link">
+    Table category
+  </a>
+  
+    <nav class="md-nav" aria-label="Table category">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_1" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_1" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_1" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-country" class="md-nav__link">
+    Table country
+  </a>
+  
+    <nav class="md-nav" aria-label="Table country">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_2" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_2" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-dimension" class="md-nav__link">
+    Table dimension
+  </a>
+  
+    <nav class="md-nav" aria-label="Table dimension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_3" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_2" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_3" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-experience" class="md-nav__link">
+    Table experience
+  </a>
+  
+    <nav class="md-nav" aria-label="Table experience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_4" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_3" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_4" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-goal_completion_attribution" class="md-nav__link">
+    Table goal_completion_attribution
+  </a>
+  
+    <nav class="md-nav" aria-label="Table goal_completion_attribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_5" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_5" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-goal_completion_attribution_promoted_item" class="md-nav__link">
+    Table goal_completion_attribution_promoted_item
+  </a>
+  
+    <nav class="md-nav" aria-label="Table goal_completion_attribution_promoted_item">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_6" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_6" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-goal_completion_line_item" class="md-nav__link">
+    Table goal_completion_line_item
+  </a>
+  
+    <nav class="md-nav" aria-label="Table goal_completion_line_item">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_7" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_7" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-location" class="md-nav__link">
+    Table location
+  </a>
+  
+    <nav class="md-nav" aria-label="Table location">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_8" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-order_line_item" class="md-nav__link">
+    Table order_line_item
+  </a>
+  
+    <nav class="md-nav" aria-label="Table order_line_item">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_9" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-order_line_item_attribute" class="md-nav__link">
+    Table order_line_item_attribute
+  </a>
+  
+    <nav class="md-nav" aria-label="Table order_line_item_attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_10" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-product" class="md-nav__link">
+    Table product
+  </a>
+  
+    <nav class="md-nav" aria-label="Table product">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_11" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_4" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-product_attribute" class="md-nav__link">
+    Table product_attribute
+  </a>
+  
+    <nav class="md-nav" aria-label="Table product_attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_12" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-product_category" class="md-nav__link">
+    Table product_category
+  </a>
+  
+    <nav class="md-nav" aria-label="Table product_category">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_13" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-product_dimension" class="md-nav__link">
+    Table product_dimension
+  </a>
+  
+    <nav class="md-nav" aria-label="Table product_dimension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_14" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-segment" class="md-nav__link">
+    Table segment
+  </a>
+  
+    <nav class="md-nav" aria-label="Table segment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_15" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_5" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-segment_membership" class="md-nav__link">
+    Table segment_membership
+  </a>
+  
+    <nav class="md-nav" aria-label="Table segment_membership">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_16" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-survey_question" class="md-nav__link">
+    Table survey_question
+  </a>
+  
+    <nav class="md-nav" aria-label="Table survey_question">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_17" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-survey_response" class="md-nav__link">
+    Table survey_response
+  </a>
+  
+    <nav class="md-nav" aria-label="Table survey_response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_18" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user" class="md-nav__link">
+    Table user
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_19" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_6" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_alias" class="md-nav__link">
+    Table user_alias
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_alias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_20" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_attribute" class="md-nav__link">
+    Table user_attribute
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_21" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_campaign_state" class="md-nav__link">
+    Table user_campaign_state
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_campaign_state">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_22" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_click" class="md-nav__link">
+    Table user_click
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_click">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_23" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat" class="md-nav__link">
+    Table user_daily_stat
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_24" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat_action" class="md-nav__link">
+    Table user_daily_stat_action
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat_action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_25" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat_item_stat_category" class="md-nav__link">
+    Table user_daily_stat_item_stat_category
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat_item_stat_category">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_26" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat_item_stat_dimension" class="md-nav__link">
+    Table user_daily_stat_item_stat_dimension
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat_item_stat_dimension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_27" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat_item_stat_product" class="md-nav__link">
+    Table user_daily_stat_item_stat_product
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat_item_stat_product">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_28" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_8" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat_item_stat_promotion" class="md-nav__link">
+    Table user_daily_stat_item_stat_promotion
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat_item_stat_promotion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_29" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_dismissal" class="md-nav__link">
+    Table user_dismissal
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_dismissal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_30" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_engagement_history" class="md-nav__link">
+    Table user_engagement_history
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_engagement_history">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_31" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_goal_completion" class="md-nav__link">
+    Table user_goal_completion
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_goal_completion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_32" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_impression" class="md-nav__link">
+    Table user_impression
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_impression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_33" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_order" class="md-nav__link">
+    Table user_order
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_34" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_7" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_order_attribute" class="md-nav__link">
+    Table user_order_attribute
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_order_attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_35" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_search" class="md-nav__link">
+    Table user_search
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_36" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_user_visit_lookup" class="md-nav__link">
+    Table user_user_visit_lookup
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_user_visit_lookup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_37" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_visit" class="md-nav__link">
+    Table user_visit
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_visit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_38" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_8" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_visit_detail" class="md-nav__link">
+    Table user_visit_detail
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_visit_detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_39" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-warehouse/" class="md-nav__link">
+        Data Warehouse
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scratch-schema/" class="md-nav__link">
+        Scratch Schema
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Data ingestion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data ingestion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data ingestion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-ingestion/data-ingestion/" class="md-nav__link">
+        Ingesting Data into Interaction Studio
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Data model
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data model" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Data model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/attributes/" class="md-nav__link">
+        Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/catalog/" class="md-nav__link">
+        Catalog
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/data-model/" class="md-nav__link">
+        Data Modeling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-model/datasets/" class="md-nav__link">
+        Datasets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Develop overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Develop overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Develop overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/develop-overview/" class="md-nav__link">
+        Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop-overview/developer-role-responsibilities/" class="md-nav__link">
+        Developer Role and Responsibilities
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Event api
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Event api" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Event api
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-overview/" class="md-nav__link">
+        Interaction Studio Event API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-response/" class="md-nav__link">
+        Event API Responses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-api/event-api-specifications/" class="md-nav__link">
+        Event API Requests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Gears
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gears" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Gears
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/favorites/" class="md-nav__link">
+        Favorites Gear
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/gears/" class="md-nav__link">
+        Gears
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Components
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/" class="md-nav__link">
+        Components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/contextual-rule/" class="md-nav__link">
+        Contextual Rule Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/lifecycle/" class="md-nav__link">
+        Lifecycle Component
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/components/oauth/" class="md-nav__link">
+        OAuth Component
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Metadata
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Metadata" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Metadata
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/metadata/gear-metadata/" class="md-nav__link">
+        Metadata
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_5" type="checkbox" id="__nav_10_5" >
+      
+      <label class="md-nav__link" for="__nav_10_5">
+        System services
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="System services" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_5">
+          <span class="md-nav__icon md-icon"></span>
+          System services
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/" class="md-nav__link">
+        System Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/filesystem/" class="md-nav__link">
+        Filesystem Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gears/system-services/http/" class="md-nav__link">
+        HTTP Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Interface config
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interface config" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Interface config
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/arrays/" class="md-nav__link">
+        Array Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/config/" class="md-nav__link">
+        Custom Interface & Template Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/decorators/" class="md-nav__link">
+        Decorators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/importexport/" class="md-nav__link">
+        Importing And Exporting Configurables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/static-values/" class="md-nav__link">
+        Static Values
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" type="checkbox" id="__nav_11_6" >
+      
+      <label class="md-nav__link" for="__nav_11_6">
+        Properties
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Properties" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_6">
+          <span class="md-nav__icon md-icon"></span>
+          Properties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/boolean/" class="md-nav__link">
+        Boolean Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/color/" class="md-nav__link">
+        Color Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/complex/" class="md-nav__link">
+        Complex Object Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/datetime/" class="md-nav__link">
+        DateTime Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/multi-select/" class="md-nav__link">
+        Multi Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/number/" class="md-nav__link">
+        Number Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/select/" class="md-nav__link">
+        Select Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/string/" class="md-nav__link">
+        String Property
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface-config/properties/typed-list/" class="md-nav__link">
+        Typed list
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Mobile integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mobile integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mobile-integ/mobile-overview/" class="md-nav__link">
+        Interaction Studio Mobile Integrations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Web integ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web integ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Web integ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/best-practices-data-capture/" class="md-nav__link">
+        Best Practices for Data Capture Using Site Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/comparison-shopping/" class="md-nav__link">
+        Comparison Shopping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/contentzones/" class="md-nav__link">
+        Content Zones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/item-actions/" class="md-nav__link">
+        Item Actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/multisite-strategy/" class="md-nav__link">
+        Multisite Implementation Strategy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/pageTypes/" class="md-nav__link">
+        Page Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/site-impact-approach/" class="md-nav__link">
+        Interaction Studio Site Impact Approach
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/site-map-event-validation/" class="md-nav__link">
+        Sitemap Event Validation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/site-map-getting-started/" class="md-nav__link">
+        Get Started with Sitemapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/site-map-user-account-attributes/" class="md-nav__link">
+        Capturing User and Account Attributes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/sitemap-implementation-notes/" class="md-nav__link">
+        Sitemap Implementation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/sitemap/" class="md-nav__link">
+        Sitemap Development in Interaction Studio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/user-identity-mapping/" class="md-nav__link">
+        User Identity Mapping
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/validate-beacon-deployment/" class="md-nav__link">
+        Validate JavaScript Beacon Deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/web-integration-planning/" class="md-nav__link">
+        Plan a Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/web-integration/" class="md-nav__link">
+        Interaction Studio Web Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_17" type="checkbox" id="__nav_13_17" >
+      
+      <label class="md-nav__link" for="__nav_13_17">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_13_17">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/examples/" class="md-nav__link">
+        Example Sitemaps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/examples/b2b/" class="md-nav__link">
+        Example B2B Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/examples/ecommerce/" class="md-nav__link">
+        Example Ecommerce Sitemap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-integ/examples/financial-services/" class="md-nav__link">
+        Example Financial Services Sitemap
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#toc" class="md-nav__link">
+    TOC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-campaign" class="md-nav__link">
+    Table campaign
+  </a>
+  
+    <nav class="md-nav" aria-label="Table campaign">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-category" class="md-nav__link">
+    Table category
+  </a>
+  
+    <nav class="md-nav" aria-label="Table category">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_1" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_1" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_1" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-country" class="md-nav__link">
+    Table country
+  </a>
+  
+    <nav class="md-nav" aria-label="Table country">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_2" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_2" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-dimension" class="md-nav__link">
+    Table dimension
+  </a>
+  
+    <nav class="md-nav" aria-label="Table dimension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_3" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_2" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_3" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-experience" class="md-nav__link">
+    Table experience
+  </a>
+  
+    <nav class="md-nav" aria-label="Table experience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_4" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_3" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_4" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-goal_completion_attribution" class="md-nav__link">
+    Table goal_completion_attribution
+  </a>
+  
+    <nav class="md-nav" aria-label="Table goal_completion_attribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_5" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_5" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-goal_completion_attribution_promoted_item" class="md-nav__link">
+    Table goal_completion_attribution_promoted_item
+  </a>
+  
+    <nav class="md-nav" aria-label="Table goal_completion_attribution_promoted_item">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_6" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_6" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-goal_completion_line_item" class="md-nav__link">
+    Table goal_completion_line_item
+  </a>
+  
+    <nav class="md-nav" aria-label="Table goal_completion_line_item">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_7" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_7" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-location" class="md-nav__link">
+    Table location
+  </a>
+  
+    <nav class="md-nav" aria-label="Table location">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_8" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-order_line_item" class="md-nav__link">
+    Table order_line_item
+  </a>
+  
+    <nav class="md-nav" aria-label="Table order_line_item">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_9" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-order_line_item_attribute" class="md-nav__link">
+    Table order_line_item_attribute
+  </a>
+  
+    <nav class="md-nav" aria-label="Table order_line_item_attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_10" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-product" class="md-nav__link">
+    Table product
+  </a>
+  
+    <nav class="md-nav" aria-label="Table product">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_11" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_4" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-product_attribute" class="md-nav__link">
+    Table product_attribute
+  </a>
+  
+    <nav class="md-nav" aria-label="Table product_attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_12" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-product_category" class="md-nav__link">
+    Table product_category
+  </a>
+  
+    <nav class="md-nav" aria-label="Table product_category">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_13" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-product_dimension" class="md-nav__link">
+    Table product_dimension
+  </a>
+  
+    <nav class="md-nav" aria-label="Table product_dimension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_14" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-segment" class="md-nav__link">
+    Table segment
+  </a>
+  
+    <nav class="md-nav" aria-label="Table segment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_15" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_5" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-segment_membership" class="md-nav__link">
+    Table segment_membership
+  </a>
+  
+    <nav class="md-nav" aria-label="Table segment_membership">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_16" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-survey_question" class="md-nav__link">
+    Table survey_question
+  </a>
+  
+    <nav class="md-nav" aria-label="Table survey_question">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_17" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-survey_response" class="md-nav__link">
+    Table survey_response
+  </a>
+  
+    <nav class="md-nav" aria-label="Table survey_response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_18" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user" class="md-nav__link">
+    Table user
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_19" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_6" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_alias" class="md-nav__link">
+    Table user_alias
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_alias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_20" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_attribute" class="md-nav__link">
+    Table user_attribute
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_21" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_campaign_state" class="md-nav__link">
+    Table user_campaign_state
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_campaign_state">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_22" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_click" class="md-nav__link">
+    Table user_click
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_click">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_23" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat" class="md-nav__link">
+    Table user_daily_stat
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_24" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat_action" class="md-nav__link">
+    Table user_daily_stat_action
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat_action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_25" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat_item_stat_category" class="md-nav__link">
+    Table user_daily_stat_item_stat_category
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat_item_stat_category">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_26" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat_item_stat_dimension" class="md-nav__link">
+    Table user_daily_stat_item_stat_dimension
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat_item_stat_dimension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_27" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat_item_stat_product" class="md-nav__link">
+    Table user_daily_stat_item_stat_product
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat_item_stat_product">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_28" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query_8" class="md-nav__link">
+    Example Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_daily_stat_item_stat_promotion" class="md-nav__link">
+    Table user_daily_stat_item_stat_promotion
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_daily_stat_item_stat_promotion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_29" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_dismissal" class="md-nav__link">
+    Table user_dismissal
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_dismissal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_30" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_engagement_history" class="md-nav__link">
+    Table user_engagement_history
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_engagement_history">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_31" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_goal_completion" class="md-nav__link">
+    Table user_goal_completion
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_goal_completion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_32" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_impression" class="md-nav__link">
+    Table user_impression
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_impression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_33" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_order" class="md-nav__link">
+    Table user_order
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_34" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_7" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_order_attribute" class="md-nav__link">
+    Table user_order_attribute
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_order_attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_35" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_search" class="md-nav__link">
+    Table user_search
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_36" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_user_visit_lookup" class="md-nav__link">
+    Table user_user_visit_lookup
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_user_visit_lookup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_37" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_visit" class="md-nav__link">
+    Table user_visit
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_visit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_38" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenced-by_8" class="md-nav__link">
+    Referenced by:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-user_visit_detail" class="md-nav__link">
+    Table user_visit_detail
+  </a>
+  
+    <nav class="md-nav" aria-label="Table user_visit_detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexes_39" class="md-nav__link">
+    Indexes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Data Dictionary</h1>
+                
+                <h2 id="toc">TOC<a class="headerlink" href="#toc" title="Permanent link">&para;</a></h2>
+<p><a href="#table-campaign">campaign</a> | <a href="#table-category">category</a> | <a href="#table-country">country</a> | <a href="#table-dimension">dimension</a> | <a href="#table-experience">experience</a> | <a href="#table-goal_completion_attribution">goal_completion_attribution</a> | <a href="#table-goal_completion_attribution_promoted_item">goal_completion_attribution_promoted_item</a> | <a href="#table-goal_completion_line_item">goal_completion_line_item</a> | <a href="#table-location">location</a> | <a href="#table-order_line_item">order_line_item</a> | <a href="#table-order_line_item_attribute">order_line_item_attribute</a> | <a href="#table-product">product</a> | <a href="#table-product_attribute">product_attribute</a> | <a href="#table-product_category">product_category</a> | <a href="#table-product_dimension">product_dimension</a> | <a href="#table-segment">segment</a> | <a href="#table-segment_membership">segment_membership</a> | <a href="#table-survey_question">survey_question</a> | <a href="#table-survey_response">survey_response</a> | <a href="#table-user">user</a> | <a href="#table-user_alias">user_alias</a> | <a href="#table-user_attribute">user_attribute</a> | <a href="#table-user_campaign_state">user_campaign_state</a> | <a href="#table-user_click">user_click</a> | <a href="#table-user_daily_stat">user_daily_stat</a> | <a href="#table-user_daily_stat_action">user_daily_stat_action</a> | <a href="#table-user_daily_stat_item_stat_category">user_daily_stat_item_stat_category</a> | <a href="#table-user_daily_stat_item_stat_dimension">user_daily_stat_item_stat_dimension</a> | <a href="#table-user_daily_stat_item_stat_product">user_daily_stat_item_stat_product</a> | <a href="#table-user_daily_stat_item_stat_promotion">user_daily_stat_item_stat_promotion</a> | <a href="#table-user_dismissal">user_dismissal</a> | <a href="#table-user_engagement_history">user_engagement_history</a> | <a href="#table-user_goal_completion">user_goal_completion</a> | <a href="#table-user_impression">user_impression</a> | <a href="#table-user_order">user_order</a> | <a href="#table-user_order_attribute">user_order_attribute</a> | <a href="#table-user_search">user_search</a> | <a href="#table-user_user_visit_lookup">user_user_visit_lookup</a> | <a href="#table-user_visit">user_visit</a> | <a href="#table-user_visit_detail">user_visit_detail</a></p>
+<h2 id="table-campaign"><em>Table campaign</em><a class="headerlink" href="#table-campaign" title="Permanent link">&para;</a></h2>
+<p>Campaigns contain experiences you design to personalize the interaction a visitor has with your website or application.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Char(5)</td>
+<td>Unique identifier for a campaign</td>
+<td></td>
+</tr>
+<tr>
+<td>"type"</td>
+<td>Varchar(32)</td>
+<td>Campaign type implies marketing channel</td>
+<td>Web, MobileData, TriggeredEmail</td>
+</tr>
+<tr>
+<td>created_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the campaign was created</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the campaign was most recently updated</td>
+<td></td>
+</tr>
+<tr>
+<td>last_published_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the campaign was most recently published</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar(100)</td>
+<td>Name of the campaign</td>
+<td></td>
+</tr>
+<tr>
+<td>state</td>
+<td>Varchar(100)</td>
+<td>Campaign state</td>
+<td>Published, Testing, Disabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes">Indexes:<a class="headerlink" href="#indexes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY campaign_pkey ON campaign USING btree (id)</li>
+</ul>
+<h3 id="referenced-by">Referenced by:<a class="headerlink" href="#referenced-by" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TABLE "experience" CONSTRAINT "experience_campaign_id_fkey" FOREIGN KEY (campaign_id) REFERENCES campaign(id)</li>
+<li>TABLE "user_campaign_state" CONSTRAINT "user_campaign_state_campaign_id_fkey" FOREIGN KEY (campaign_id) REFERENCES campaign(id)</li>
+</ul>
+<h3 id="example-query">Example Query<a class="headerlink" href="#example-query" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">
+/* Find campaigns published in the recent 7 days */
+SELECT id,
+       name
+FROM campaign
+WHERE last_published_ts &gt;= CURRENT_DATE - 7;
+
+</code></pre>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-category"><em>Table category</em><a class="headerlink" href="#table-category" title="Permanent link">&para;</a></h2>
+<p>In a hierarchical catalog, items belong to a category. This table stores the category IDs and names. In Interaction Studio, there is more than one way to represent a hierarchy. First, categories can be fully specified by the category ID itself (for example, "womensapparel|denim|highrise"). A hierarchy can be derived from the path. Second, you can use the parent_id field in the category. Products can belong to many categories. How you build categories will depend on your integration, but the data structure supports both approaches.</p>
+<p>Encoding the hierarchy in the ID is simpler. The parent ID can be used to handle the case when the hierarchy is sometimes not available but the short, non-hierarchical ID is consistently available in the various channels and systems that refer to the categories.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the category</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar(200)</td>
+<td>Name of the category</td>
+<td></td>
+</tr>
+<tr>
+<td>is_department</td>
+<td>Boolean</td>
+<td>True when the category is a department (a higher level entity in the category hierarchy)</td>
+<td></td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>Varchar(200)</td>
+<td>Parent category ID of this category</td>
+<td></td>
+</tr>
+<tr>
+<td>created_ts</td>
+<td>Timestamp without time zone</td>
+<td>Date and time the category was created in the operational store, UTC</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>Date and time of the most recent update in the operation store, UTC (as of the recent DW import)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_1">Indexes:<a class="headerlink" href="#indexes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY category_pkey ON category USING btree (id)</li>
+</ul>
+<h3 id="referenced-by_1">Referenced by:<a class="headerlink" href="#referenced-by_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TABLE "product_category" CONSTRAINT "product_category_category_id_fkey" FOREIGN KEY (category_id) REFERENCES category(id)</li>
+<li>TABLE "user_daily_stat_item_stat_category" CONSTRAINT "user_daily_stat_item_stat_category_category_id_fkey" FOREIGN KEY (category_id) REFERENCES category(id)</li>
+</ul>
+<h3 id="example-query_1">Example Query<a class="headerlink" href="#example-query_1" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">
+/* Get the number of products in each category */
+SELECT c.name,
+       count(1) AS num_products
+FROM product_category pc
+         LEFT OUTER JOIN category c ON c.id = pc.category_id
+GROUP BY 1
+ORDER BY count(1) DESC
+
+</code></pre>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-country"><em>Table country</em><a class="headerlink" href="#table-country" title="Permanent link">&para;</a></h2>
+<p>Country lookup table. Provides iso_2 and iso_3 codes and continent information. See: https://www.iban.com/country-codes for more information.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the country</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar(100)</td>
+<td>Name of the country</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>Date and time of the most recent update to the table</td>
+<td></td>
+</tr>
+<tr>
+<td>iso_2_code</td>
+<td>Char(2)</td>
+<td>2-character country code</td>
+<td>AW, GB, US</td>
+</tr>
+<tr>
+<td>iso_3_code</td>
+<td>Char(3)</td>
+<td>3-character country code</td>
+<td>ABW, GBR</td>
+</tr>
+<tr>
+<td>has_regions</td>
+<td>Boolean</td>
+<td>True if the country has regions</td>
+<td></td>
+</tr>
+<tr>
+<td>continent_code</td>
+<td>Varchar(100)</td>
+<td>Numeric continent code</td>
+<td>0, 1, 2, 3, 4, 5, 6, 7</td>
+</tr>
+<tr>
+<td>continent_iso_2_code</td>
+<td>Char(2)</td>
+<td>ISO-2 standard code for a continent</td>
+<td>NA, AS, EU</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_2">Indexes:<a class="headerlink" href="#indexes_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY country_pkey ON country USING btree (id)</li>
+</ul>
+<h3 id="example-query_2">Example Query<a class="headerlink" href="#example-query_2" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">
+/* count the number of visits by country */
+SELECT c.name,
+       count(1) as num_visits
+FROM country c
+         LEFT OUTER JOIN user_visit_detail v ON c.id = v.country_code
+GROUP BY 1
+ORDER BY count(1) DESC;
+
+</code></pre>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-dimension"><em>Table dimension</em><a class="headerlink" href="#table-dimension" title="Permanent link">&para;</a></h2>
+<p>Dimensions are name-value pairs associated with items (usually products). Typical defaults are brand, color, style, and gender. Custom dimensions are also available. The combination of (id, dimension_type) is unique</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Varchar(200)</td>
+<td>Identifier for this dimension. The combination of id and dimension_type uniquely identify a dimension.</td>
+<td></td>
+</tr>
+<tr>
+<td>dimension_type</td>
+<td>Varchar(200)</td>
+<td>Built-in and custom types are supported. Dimension types are capitalized.</td>
+<td>Brand, Gender, Color, Style</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar(200)</td>
+<td>The label used when displaying the dimension</td>
+<td>Gucci, Mens</td>
+</tr>
+<tr>
+<td>created_ts</td>
+<td>Timestamp without time zone</td>
+<td>Date and time the dimension was created</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>Date and time this dimension was most recently updated</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_3">Indexes:<a class="headerlink" href="#indexes_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX dimension_id_key ON dimension USING btree (id, dimension_type)</li>
+</ul>
+<h3 id="referenced-by_2">Referenced by:<a class="headerlink" href="#referenced-by_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TABLE "product_dimension" CONSTRAINT "product_dimension_dimension_id_fkey" FOREIGN KEY (dimension_id, dimension_type) REFERENCES dimension(id, dimension_type)</li>
+</ul>
+<h3 id="example-query_3">Example Query<a class="headerlink" href="#example-query_3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">
+/* Get frequency and recency for stored dimension values */
+SELECT dimension_type,
+       count(1) AS num_names,
+       max(updated_ts) AS most_recent_update
+FROM dimension
+GROUP BY 1;
+
+</code></pre>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-experience"><em>Table experience</em><a class="headerlink" href="#table-experience" title="Permanent link">&para;</a></h2>
+<p>Campaigns contain experiences. You can create different personalization results within the same campaign using experiences. For example, suppose you wish to create a campaign for first time visitors to your site, but you want to show a different message to visitors from Boston and San Francisco because you have events coming up in those two cities. You would create 3 experiences in the same campaign: one for visitors from Boston, one for visitors from San Francisco, and one for visitors from everywhere else. Then, you can use rules to restrict the visibility of these experiences to the target group of visitors.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Char(5)</td>
+<td>Unique identifier for this experience</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar(100)</td>
+<td>Name of the experience</td>
+<td></td>
+</tr>
+<tr>
+<td>display_mode</td>
+<td>Varchar(100)</td>
+<td>Presentation detail about the experience.</td>
+<td>Personalize, Redirect</td>
+</tr>
+<tr>
+<td>campaign_id</td>
+<td>Char(5)</td>
+<td>Associated Campaign ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_4">Indexes:<a class="headerlink" href="#indexes_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY experience_pkey ON experience USING btree (id)</li>
+</ul>
+<h3 id="referenced-by_3">Referenced by:<a class="headerlink" href="#referenced-by_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TABLE "goal_completion_attribution" CONSTRAINT "goal_completion_attribution_experience_id_fkey" FOREIGN KEY (experience_id) REFERENCES experience(id)</li>
+<li>TABLE "goal_completion_attribution_promoted_item" CONSTRAINT "goal_completion_attribution_promoted_item_experience_id_fkey" FOREIGN KEY (experience_id) REFERENCES experience(id)</li>
+<li>TABLE "user_click" CONSTRAINT "user_click_experience_id_fkey" FOREIGN KEY (experience_id) REFERENCES experience(id)</li>
+<li>TABLE "user_dismissal" CONSTRAINT "user_dismissal_experience_id_fkey" FOREIGN KEY (experience_id) REFERENCES experience(id)</li>
+<li>TABLE "user_impression" CONSTRAINT "user_impression_experience_id_fkey" FOREIGN KEY (experience_id) REFERENCES experience(id)</li>
+</ul>
+<h3 id="example-query_4">Example Query<a class="headerlink" href="#example-query_4" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">
+/* Get a list of campaigns and experiences that are published */
+SELECT c.name AS campaign_name,
+       e.name AS experience_name
+FROM campaign c
+         INNER JOIN experience e ON c.id = e.campaign_id
+WHERE c.state = 'Published';
+
+</code></pre>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-goal_completion_attribution"><em>Table goal_completion_attribution</em><a class="headerlink" href="#table-goal_completion_attribution" title="Permanent link">&para;</a></h2>
+<p>Stores the timestamp for the campaign goal in UTC. This table is important when reconstructing or analyzing campaign performance. Use the last_age_seconds field to decide whether to attribute a goal completion to a campaign.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>User who satisfied the goal criteria</td>
+<td></td>
+</tr>
+<tr>
+<td>goal_ts</td>
+<td>Timestamp without time zone</td>
+<td>Timestamp of the goal completion in UTC</td>
+<td></td>
+</tr>
+<tr>
+<td>goal_id</td>
+<td>Varchar(256)</td>
+<td>One of: segment id or purchase (p)</td>
+<td>p</td>
+</tr>
+<tr>
+<td>experience_id</td>
+<td>Varchar(256)</td>
+<td>The experience associated with the goal completion</td>
+<td></td>
+</tr>
+<tr>
+<td>user_group</td>
+<td>Char(1)</td>
+<td>Per experience test (D) and control (C)</td>
+<td>C, D</td>
+</tr>
+<tr>
+<td>promotion_id</td>
+<td>Varchar(200)</td>
+<td>The promotion associated with the goal completion</td>
+<td></td>
+</tr>
+<tr>
+<td>direct_revenue</td>
+<td>Numeric(18,4)</td>
+<td>Revenue associated with the promoted item of the goal</td>
+<td></td>
+</tr>
+<tr>
+<td>event_type</td>
+<td>Varchar(50)</td>
+<td>The event type</td>
+<td>click, send, impression</td>
+</tr>
+<tr>
+<td>first_age_seconds</td>
+<td>Integer</td>
+<td>First age is the time between the first attributable event and the goal time.</td>
+<td></td>
+</tr>
+<tr>
+<td>first_time_ts</td>
+<td>Timestamp without time zone</td>
+<td>Timestamp for the first attributable event, UTC</td>
+<td></td>
+</tr>
+<tr>
+<td>last_age_seconds</td>
+<td>Integer</td>
+<td>Last age is the time between the most recent attributable event and the goal time.</td>
+<td></td>
+</tr>
+<tr>
+<td>last_time_ts</td>
+<td>Timestamp without time zone</td>
+<td>Timestamp for the most recent attributable event, UTC</td>
+<td></td>
+</tr>
+<tr>
+<td>browser</td>
+<td>Varchar(256)</td>
+<td>Client browser application</td>
+<td>Safari, Chrome, Firefox, IE, other</td>
+</tr>
+<tr>
+<td>device</td>
+<td>Varchar(256)</td>
+<td>Client hardware device</td>
+<td>mobile, computer, tablet, other</td>
+</tr>
+<tr>
+<td>engagement</td>
+<td>Varchar(256)</td>
+<td>Engagement for the associated user</td>
+<td>low, medium, high</td>
+</tr>
+<tr>
+<td>has_purchased</td>
+<td>Boolean</td>
+<td>Set when the user makes a purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>is_anonymous</td>
+<td>Boolean</td>
+<td>True when the user is not named (identified)</td>
+<td></td>
+</tr>
+<tr>
+<td>is_firsttime</td>
+<td>Boolean</td>
+<td>True when the completion represents a first encounter with a visitor</td>
+<td></td>
+</tr>
+<tr>
+<td>os</td>
+<td>Varchar(256)</td>
+<td>Operating system - x is "Mac OS X"</td>
+<td>x, windows, linux, ios, android, other</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>Varchar(256)</td>
+<td>Platform used in the goal completion (email, web)</td>
+<td>Email, Web</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Varchar(256)</td>
+<td>For web events, source is Web. For customers who use the mobile sdk, each mobile app would be a separate source.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_5">Indexes:<a class="headerlink" href="#indexes_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX goal_completion_attribution_user_id_key ON goal_completion_attribution USING btree (user_id, goal_id, goal_ts, experience_id, user_group, event_type)</li>
+</ul>
+<h3 id="example-query_5">Example Query<a class="headerlink" href="#example-query_5" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">
+/* count the users eligible for goal completion with a 1-day window */
+
+SELECT count(DISTINCT user_id)
+FROM goal_completion_attribution
+WHERE experience_id = '{EXPERIENCE_ID}'
+    AND event_type = 'impression'
+    AND last_age_seconds &gt; 60 * 60 * 24;
+
+
+</code></pre>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-goal_completion_attribution_promoted_item"><em>Table goal_completion_attribution_promoted_item</em><a class="headerlink" href="#table-goal_completion_attribution_promoted_item" title="Permanent link">&para;</a></h2>
+<p>If a goal completion has an associated promoted item, you find it in this table. Use (user_id, goal_id, goal_ts) to join back to the other goal tables.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>User associated with the goal completion</td>
+<td></td>
+</tr>
+<tr>
+<td>goal_ts</td>
+<td>Timestamp without time zone</td>
+<td>Timestamp of the goal completion in UTC</td>
+<td></td>
+</tr>
+<tr>
+<td>goal_id</td>
+<td>Varchar(256)</td>
+<td>The goal id stores different value types; for segment goals, the goal id is the segment id; for purchase goals, the goal id is the character 'p'.</td>
+<td>p</td>
+</tr>
+<tr>
+<td>experience_id</td>
+<td>Varchar(256)</td>
+<td>Experience associated with the goal completion</td>
+<td></td>
+</tr>
+<tr>
+<td>user_group</td>
+<td>Char(1)</td>
+<td>Per experience control (C) and test (D)</td>
+<td>C, D</td>
+</tr>
+<tr>
+<td>item_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifier for the promoted item</td>
+<td></td>
+</tr>
+<tr>
+<td>item_type</td>
+<td>Varchar(256)</td>
+<td>For example, "p" to indicate product</td>
+<td>p</td>
+</tr>
+<tr>
+<td>attributes</td>
+<td>Varchar(256)</td>
+<td>A list of attributes for the promoted item. The underlying data is JSON, stored here as a string.</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC Date and time of the most recent update of this promoted item attribution</td>
+<td></td>
+</tr>
+<tr>
+<td>revenue</td>
+<td>Numeric(18,4)</td>
+<td>Revenue resulting from the goal completion</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_6">Indexes:<a class="headerlink" href="#indexes_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX goal_completion_attribution_promoted_item_user_id_key ON goal_completion_attribution_promoted_item USING btree (user_id, goal_id, goal_ts, experience_id, user_group, item_type, item_id)</li>
+</ul>
+<h3 id="example-query_6">Example Query<a class="headerlink" href="#example-query_6" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">
+/* Get total revenue, users, and products associated with goal completions for an experience */
+
+SELECT sum(revenue) AS total_revenue,
+       count(DISTINCT user_id) AS num_users,
+       count(DISTINCT item_id) AS num_products
+FROM goal_completion_attribution_promoted_item
+WHERE experience_id = '{EXPERIENCE_ID}';
+
+
+</code></pre>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-goal_completion_line_item"><em>Table goal_completion_line_item</em><a class="headerlink" href="#table-goal_completion_line_item" title="Permanent link">&para;</a></h2>
+<p>For goal completions that are associated with a purchase, this table stores the line items associated with that purchase.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>User associated with the order</td>
+<td></td>
+</tr>
+<tr>
+<td>goal_ts</td>
+<td>Timestamp without time zone</td>
+<td>Timestamp of the goal completion in UTC</td>
+<td></td>
+</tr>
+<tr>
+<td>goal_id</td>
+<td>Varchar(256)</td>
+<td>"p" for purchase or a segment id</td>
+<td>p</td>
+</tr>
+<tr>
+<td>line_item_num</td>
+<td>Smallint</td>
+<td>Datawarehouse internal enumeration (does not have an analog in the operational store)</td>
+<td></td>
+</tr>
+<tr>
+<td>item_id</td>
+<td>Varchar(256)</td>
+<td>Line item</td>
+<td></td>
+</tr>
+<tr>
+<td>item_type</td>
+<td>Varchar(256)</td>
+<td>Typically 'p' for product</td>
+<td>p</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Numeric(18,4)</td>
+<td>Item price</td>
+<td></td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>Smallint</td>
+<td>Item quantity</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_7">Indexes:<a class="headerlink" href="#indexes_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX goal_completion_line_item_user_id_key ON goal_completion_line_item USING btree (user_id, goal_id, goal_ts, line_item_num)</li>
+</ul>
+<h3 id="example-query_7">Example Query<a class="headerlink" href="#example-query_7" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">
+/* average revenue per line item in goals */
+SELECT avg(price * quantity)
+FROM goal_completion_line_item;
+
+
+</code></pre>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-location"><em>Table location</em><a class="headerlink" href="#table-location" title="Permanent link">&para;</a></h2>
+<p>Use this table to de-reference geographical information stored at the visit or user level, (e.g., city_code, metro_code, postal_code, latitude, or longitude) and convert it to human-readable labels.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the location</td>
+<td></td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>Numeric(9,6)</td>
+<td>Latitude associated with the location</td>
+<td>40.7134, 37.0547</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>Numeric(9,6)</td>
+<td>Longitude associated with the location</td>
+<td>-111.889, -91.5281</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td>Varchar(10)</td>
+<td>Postal code associated with the location</td>
+<td>02143</td>
+</tr>
+<tr>
+<td>city_code</td>
+<td>Integer</td>
+<td>Code for the city associated with the location</td>
+<td></td>
+</tr>
+<tr>
+<td>city_name</td>
+<td>Varchar(100)</td>
+<td>Name of the city associated with the location</td>
+<td></td>
+</tr>
+<tr>
+<td>metro_code</td>
+<td>Integer</td>
+<td>Metro code associated with the location. Metro codes for US are Nielsen DMA codes</td>
+<td></td>
+</tr>
+<tr>
+<td>region_code</td>
+<td>Varchar(10)</td>
+<td>Region code associated with the location</td>
+<td>UT, WI</td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>Varchar(100)</td>
+<td>2-letter Country code associated with the location</td>
+<td>US, IT, KR</td>
+</tr>
+<tr>
+<td>continent_code</td>
+<td>Varchar(100)</td>
+<td>2-letter continent code associated with the location</td>
+<td>NA, SA</td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the most recent update to the location</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_8">Indexes:<a class="headerlink" href="#indexes_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY location_pkey ON "location" USING btree (id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-order_line_item"><em>Table order_line_item</em><a class="headerlink" href="#table-order_line_item" title="Permanent link">&para;</a></h2>
+<p>Stores the line items for a given order. Use (user_id, order_id) when joining back to order.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>User id associated with the order</td>
+<td></td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifier for the order associated with the line item</td>
+<td></td>
+</tr>
+<tr>
+<td>line_item_num</td>
+<td>Smallint</td>
+<td>Datawarehouse internal enumeration (does not have an analog in the operational store)</td>
+<td></td>
+</tr>
+<tr>
+<td>item_type</td>
+<td>Varchar(256)</td>
+<td>Type of item. Usually product.</td>
+<td></td>
+</tr>
+<tr>
+<td>item_id</td>
+<td>Varchar(256)</td>
+<td>The item (usually product) associated with the order</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>Numeric(18,4)</td>
+<td>Unit price</td>
+<td></td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>Smallint</td>
+<td>Item quantity for this line item</td>
+<td></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Varchar(256)</td>
+<td>Currency associated with the order</td>
+<td></td>
+</tr>
+<tr>
+<td>sku</td>
+<td>Varchar(256)</td>
+<td>Stock Keeping Unit associated with the line item</td>
+<td></td>
+</tr>
+<tr>
+<td>order_created_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time when the order was created</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_9">Indexes:<a class="headerlink" href="#indexes_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY order_line_item_pkey ON order_line_item USING btree (user_id, order_id, item_id, order_created_ts, line_item_num)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-order_line_item_attribute"><em>Table order_line_item_attribute</em><a class="headerlink" href="#table-order_line_item_attribute" title="Permanent link">&para;</a></h2>
+<p>Provides attribute name-value pairs associated with line items, as well as provenance.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>User associated with the order</td>
+<td></td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>Varchar(256)</td>
+<td>Unique order identifier</td>
+<td></td>
+</tr>
+<tr>
+<td>line_item_num</td>
+<td>Smallint</td>
+<td>Generated in DW, a 1-based sequence value for this line item</td>
+<td></td>
+</tr>
+<tr>
+<td>item_type</td>
+<td>Varchar(256)</td>
+<td>Type type of item</td>
+<td></td>
+</tr>
+<tr>
+<td>item_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifier for the associated item</td>
+<td></td>
+</tr>
+<tr>
+<td>attribute_name</td>
+<td>Varchar(256)</td>
+<td>The name of the attribute</td>
+<td>quantity_shipped</td>
+</tr>
+<tr>
+<td>attribute_value</td>
+<td>Varchar(256)</td>
+<td>The value of the attribute</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_origin</td>
+<td>Varchar(256)</td>
+<td>The name of the entity that issues or creates the initial attribute value.</td>
+<td>CRM, PointOfSaleSystem, FulfillmentSystem, LoyaltySystem</td>
+</tr>
+<tr>
+<td>value_metadata_provider</td>
+<td>Varchar(256)</td>
+<td>The name of the entity that is providing the attribute.</td>
+<td>CsvUserEtlJob:user-20190528.csv.gz</td>
+</tr>
+<tr>
+<td>value_metadata_gear_id</td>
+<td>Varchar(256)</td>
+<td>ID of the Interaction Studio gear that updated the attribute, or null if it was not updated by a gear</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_last_updated_ts</td>
+<td>Varchar(256)</td>
+<td>UTC date and time when the attribute was last updated</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_last_verified_ts</td>
+<td>Varchar(256)</td>
+<td>UTC date and time when the attribute value was last verified as being true and belonging to the specified individual</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_classification</td>
+<td>Varchar(256)</td>
+<td>Metadata relevant or pertaining to the security classification of a given attribute's value</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_10">Indexes:<a class="headerlink" href="#indexes_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY order_line_item_attribute_pkey ON order_line_item_attribute USING btree (user_id, order_id, item_type, item_id, line_item_num, attribute_name)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-product"><em>Table product</em><a class="headerlink" href="#table-product" title="Permanent link">&para;</a></h2>
+<p>Stores product name and price.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the product</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar(200)</td>
+<td>Name of the product</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>Varchar(500)</td>
+<td>Description of the product</td>
+<td></td>
+</tr>
+<tr>
+<td>list_price</td>
+<td>Real</td>
+<td>The list price of the product</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>Real</td>
+<td>Unit price displayed to an anonymous user when promoting the product</td>
+<td></td>
+</tr>
+<tr>
+<td>created_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the product created in Interaction Studio system</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the product was most recently updated in the Interaction Studio system</td>
+<td></td>
+</tr>
+<tr>
+<td>promotion_state</td>
+<td>Varchar(50)</td>
+<td>Metadata concerning product eligibility and prioritization</td>
+<td>Excluded, Prioritized</td>
+</tr>
+<tr>
+<td>url</td>
+<td>Varchar(2048)</td>
+<td>URL for the product</td>
+<td></td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>Varchar(2048)</td>
+<td>URL for the product image</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_11">Indexes:<a class="headerlink" href="#indexes_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY product_pkey ON product USING btree (id)</li>
+</ul>
+<h3 id="referenced-by_4">Referenced by:<a class="headerlink" href="#referenced-by_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TABLE "product_attribute" CONSTRAINT "product_attribute_product_id_fkey" FOREIGN KEY (product_id) REFERENCES product(id)</li>
+<li>TABLE "product_category" CONSTRAINT "product_category_product_id_fkey" FOREIGN KEY (product_id) REFERENCES product(id)</li>
+<li>TABLE "product_dimension" CONSTRAINT "product_dimension_product_id_fkey" FOREIGN KEY (product_id) REFERENCES product(id)</li>
+<li>TABLE "user_daily_stat_item_stat_product" CONSTRAINT "user_daily_stat_item_stat_product_product_id_fkey" FOREIGN KEY (product_id) REFERENCES product(id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-product_attribute"><em>Table product_attribute</em><a class="headerlink" href="#table-product_attribute" title="Permanent link">&para;</a></h2>
+<p>Stores attribute (name-value) data about products, as well as provenance for the attribute value.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the product</td>
+<td></td>
+</tr>
+<tr>
+<td>attribute_name</td>
+<td>Varchar(256)</td>
+<td>The name of the attribute</td>
+<td></td>
+</tr>
+<tr>
+<td>attribute_value</td>
+<td>Varchar(256)</td>
+<td>The value of the attribute</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_origin</td>
+<td>Varchar(256)</td>
+<td>The name of the entity that issues or creates the initial attribute value</td>
+<td></td>
+</tr>
+<tr>
+<td>Exampe values: CRM, PointOfSaleSystem, FulfillmentSystem, LoyaltySystem</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_provider</td>
+<td>Varchar(256)</td>
+<td>The name of the entity that is providing the attribute</td>
+<td>CsvUserEtlJob:user-20190528.csv.gz</td>
+</tr>
+<tr>
+<td>value_metadata_gear_id</td>
+<td>Varchar(256)</td>
+<td>ID of the Interaction Studio gear that updated the attribute, or null if it was not updated by a gear</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_last_updated_ts</td>
+<td>Varchar(256)</td>
+<td>UTC date and time when the attribute was last updated</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_last_verified_ts</td>
+<td>Varchar(256)</td>
+<td>UTC date and time when the attribute value was last verified as being true and belonging to the specified individual</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_classification</td>
+<td>Varchar(256)</td>
+<td>Metadata relevant or pertaining to the security classification of a given attribute's value</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_12">Indexes:<a class="headerlink" href="#indexes_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY product_attribute_pkey ON product_attribute USING btree (product_id, attribute_name)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-product_category"><em>Table product_category</em><a class="headerlink" href="#table-product_category" title="Permanent link">&para;</a></h2>
+<p>A product can belong to more than one (fully-qualified) category. This table stores product-category relationships.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_id</td>
+<td>Varchar(256)</td>
+<td>Unqiue identifier for the product</td>
+<td></td>
+</tr>
+<tr>
+<td>category_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifier for the category</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_13">Indexes:<a class="headerlink" href="#indexes_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX product_category_product_id_key ON product_category USING btree (product_id, category_id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-product_dimension"><em>Table product_dimension</em><a class="headerlink" href="#table-product_dimension" title="Permanent link">&para;</a></h2>
+<p>Logically the (dimension_type, dimension_id) are a name-value pair associated with a product. Common dimensions include gender, brand, and style. Custom dimensions are also available.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for a product</td>
+<td></td>
+</tr>
+<tr>
+<td>dimension_id</td>
+<td>Varchar(200)</td>
+<td>The value of a dimension</td>
+<td>Gucci, Red</td>
+</tr>
+<tr>
+<td>dimension_type</td>
+<td>Varchar(200)</td>
+<td>The name of a dimension. Dimension names are capitalized</td>
+<td>Brand, Gender, Style</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_14">Indexes:<a class="headerlink" href="#indexes_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX product_dimension_product_id_key ON product_dimension USING btree (product_id, dimension_type, dimension_id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-segment"><em>Table segment</em><a class="headerlink" href="#table-segment" title="Permanent link">&para;</a></h2>
+<p>An Interaction Studio segment is a real-time grouping of accounts or individuals based on a set of criteria you define. Segment updates in the operational store happen in real-time, so any membership changes occur immediately, even during the same visit. Exports to this table, if done at all, are done once per day. Segment export is enabled for individual segments by request, on the condition that the segment is small enough to export in this manner.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Varchar(10)</td>
+<td>Unique identifier for the segment</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar(200)</td>
+<td>Name of the segment</td>
+<td></td>
+</tr>
+<tr>
+<td>is_goal</td>
+<td>Boolean</td>
+<td>True when segment is associated with a goal.</td>
+<td></td>
+</tr>
+<tr>
+<td>entity_type</td>
+<td>Varchar(200)</td>
+<td>The type of entity associated with this segment</td>
+<td>Account, User</td>
+</tr>
+<tr>
+<td>created_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of creation</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of recent update</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_15">Indexes:<a class="headerlink" href="#indexes_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY segment_pkey ON segment USING btree (id)</li>
+</ul>
+<h3 id="referenced-by_5">Referenced by:<a class="headerlink" href="#referenced-by_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TABLE "segment_membership" CONSTRAINT "segment_membership_segment_id_fkey" FOREIGN KEY (segment_id) REFERENCES segment(id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-segment_membership"><em>Table segment_membership</em><a class="headerlink" href="#table-segment_membership" title="Permanent link">&para;</a></h2>
+<p>User-segment associations. For B2C, segments are associated with users.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Segment member</td>
+<td></td>
+</tr>
+<tr>
+<td>segment_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the segment</td>
+<td></td>
+</tr>
+<tr>
+<td>joined_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of segment join event</td>
+<td></td>
+</tr>
+<tr>
+<td>left_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of segment leave event</td>
+<td></td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>Boolean</td>
+<td>True if user is currently an active member of the segment</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_dt</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of most recent update</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_16">Indexes:<a class="headerlink" href="#indexes_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX segment_membership_user_id_key ON segment_membership USING btree (user_id, segment_id, joined_ts)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-survey_question"><em>Table survey_question</em><a class="headerlink" href="#table-survey_question" title="Permanent link">&para;</a></h2>
+<p>Survey questions and associated metadata</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>survey_id</td>
+<td>Varchar(6)</td>
+<td>Unique identifier for the survey</td>
+<td></td>
+</tr>
+<tr>
+<td>survey_name</td>
+<td>Varchar(200)</td>
+<td>Name of the survey</td>
+<td></td>
+</tr>
+<tr>
+<td>survey_updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the most recent update to the question</td>
+<td></td>
+</tr>
+<tr>
+<td>page_name</td>
+<td>Varchar(200)</td>
+<td>Page name on which the question appears</td>
+<td></td>
+</tr>
+<tr>
+<td>page_num</td>
+<td>Integer</td>
+<td>Internal sequence number for the page</td>
+<td></td>
+</tr>
+<tr>
+<td>element_name</td>
+<td>Varchar(200)</td>
+<td>Name of the element in which the question appears. Pages have many elements.</td>
+<td></td>
+</tr>
+<tr>
+<td>element_title</td>
+<td>Varchar(200)</td>
+<td>Title of the element in which the question appears</td>
+<td></td>
+</tr>
+<tr>
+<td>element_type</td>
+<td>Varchar(200)</td>
+<td>The type of element - text, radiobutton, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td>element_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the element in which the question appears</td>
+<td></td>
+</tr>
+<tr>
+<td>element_num</td>
+<td>Integer</td>
+<td>Internal sequence enumerating the elements on a page</td>
+<td></td>
+</tr>
+<tr>
+<td>question_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the question</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_17">Indexes:<a class="headerlink" href="#indexes_17" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX survey_question_survey_id_key ON survey_question USING btree (survey_id, question_id, element_id, page_num, element_num)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-survey_response"><em>Table survey_response</em><a class="headerlink" href="#table-survey_response" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>survey_id</td>
+<td>Varchar(6)</td>
+<td>Unique identifier for the survey</td>
+<td></td>
+</tr>
+<tr>
+<td>started_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the survery was started</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user taking the survey</td>
+<td></td>
+</tr>
+<tr>
+<td>question_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the survey question</td>
+<td></td>
+</tr>
+<tr>
+<td>survey_session</td>
+<td>Varchar(200)</td>
+<td>hash of survey_id, started_ts, user_id, which can help group questions into a session</td>
+<td></td>
+</tr>
+<tr>
+<td>response_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the response was made</td>
+<td></td>
+</tr>
+<tr>
+<td>answer</td>
+<td>Varchar(2048)</td>
+<td>Long text field that captures the survey answer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_18">Indexes:<a class="headerlink" href="#indexes_18" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX survey_response_user_id_key ON survey_response USING btree (user_id, survey_id, question_id, response_ts)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user"><em>Table user</em><a class="headerlink" href="#table-user" title="Permanent link">&para;</a></h2>
+<p>User is the center of the Interaction Studio data model. Much of the data about users is stored in tables other than this one; this table stores top-level information associated with a user. Fields prefixed with "loc_" refer to location informaton. Location codes can be looked up in the Location table. Fields prefixed with "or_" refer to the original referring event for this user.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Varchar(200)</td>
+<td>Unique id for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>id_mod_100</td>
+<td>Integer</td>
+<td>An offset from 0-99 used to create random partitions in the audience</td>
+<td></td>
+</tr>
+<tr>
+<td>first_activity_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the user was first observed</td>
+<td></td>
+</tr>
+<tr>
+<td>last_activity_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the user was most recently observed</td>
+<td></td>
+</tr>
+<tr>
+<td>engagement_score</td>
+<td>Integer</td>
+<td>The engagement score is an index that tracks how engaged your site visitors and application users are based on several different factors including visit information, actions, key performance indicators (KPIs), and segments. Higher values indicate deeper engagement.</td>
+<td></td>
+</tr>
+<tr>
+<td>engagement_dt</td>
+<td>Date</td>
+<td>The time the engagement score was computed.</td>
+<td></td>
+</tr>
+<tr>
+<td>created_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time this record was created</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_device_provided</td>
+<td>Boolean</td>
+<td>True if the location (loc_ fields) was provided by a device (e.g. obtained via a GPS retrieval), or false if this is an approximate location determined via geocoding of an IP address</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_ip_address</td>
+<td>Varchar(100)</td>
+<td>IP Address associated with the user location</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_continent_key</td>
+<td>Varchar(100)</td>
+<td>2-letter continent code associated with the user location</td>
+<td>NA, AS</td>
+</tr>
+<tr>
+<td>loc_country_code</td>
+<td>Char(2)</td>
+<td>An ISO 3166-1 alpha-2 (http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code (e.g. "US")location</td>
+<td>US</td>
+</tr>
+<tr>
+<td>loc_country_numeric_code</td>
+<td>Smallint</td>
+<td>ISO-3166-1 numeric country code (e.g. 840 for United States)</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_region_code</td>
+<td>Integer</td>
+<td>Location's region code. Note - does not correspond to location(region_code)</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_metro_code</td>
+<td>Integer</td>
+<td>Location's metro code, corresponds to location(metro_code) For the US, this will be the Nielsen Designated Market Area (DMA) code</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_city_code</td>
+<td>Integer</td>
+<td>Location's city code, corresponds to location(city_code)</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_postal_code</td>
+<td>Varchar(10)</td>
+<td>Location's postal code</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_isp</td>
+<td>Varchar(100)</td>
+<td>Internet Service Provider associated with a location</td>
+<td>Telstra Internet, Comcast, Verizon</td>
+</tr>
+<tr>
+<td>loc_organization</td>
+<td>Varchar(100)</td>
+<td>Organization associated with a location (can be null)</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_naics_code</td>
+<td>Integer</td>
+<td>NAICS industry code</td>
+<td></td>
+</tr>
+<tr>
+<td>or_medium</td>
+<td>Varchar(50)</td>
+<td>Original referrer medium - how the user first arrived</td>
+<td>SEARCH, EMAIL, SOCIAL, DIRECT</td>
+</tr>
+<tr>
+<td>or_referrer_source</td>
+<td>Varchar(50)</td>
+<td>Source of the original referrer</td>
+<td>Google, Bing, Yahoo!, Facebook, Pintrest</td>
+</tr>
+<tr>
+<td>or_query_terms</td>
+<td>Varchar(512)</td>
+<td>Search terms for user who first arrived via search</td>
+<td></td>
+</tr>
+<tr>
+<td>or_referrer_domain</td>
+<td>Varchar(100)</td>
+<td>Domain of the original referrer</td>
+<td>google.com, bing.com, google.de, facebook.com</td>
+</tr>
+<tr>
+<td>or_referrer_reverse_subdomain</td>
+<td>Varchar(200)</td>
+<td>Full host associated with the original referrer, reversed Used operationally</td>
+<td>mx.com.google.www</td>
+</tr>
+<tr>
+<td>is_anonymous</td>
+<td>Boolean</td>
+<td>True when this user is not identifiable</td>
+<td></td>
+</tr>
+<tr>
+<td>lifetime_value</td>
+<td>Real</td>
+<td>Total amount this user has spent</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_city</td>
+<td>Varchar(256)</td>
+<td>City name associated with the user's most recent location</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_latitude</td>
+<td>Real</td>
+<td>Latitude associated with the user's most recent location</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_longitude</td>
+<td>Real</td>
+<td>Longitude assocaited with the user's most recent location</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_timezone</td>
+<td>Varchar(256)</td>
+<td>Timezone associated with the user's most recent location</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the user was most recently updated</td>
+<td></td>
+</tr>
+<tr>
+<td>loc_state_province_code</td>
+<td>Varchar(256)</td>
+<td>Alphanumeric code associated with the user's most recent location</td>
+<td>KY, PAC</td>
+</tr>
+<tr>
+<td>or_referring_url</td>
+<td>Varchar(2048)</td>
+<td>URL associated with the original referrer</td>
+<td>https://www.google.com/</td>
+</tr>
+<tr>
+<td>or_landing_url</td>
+<td>Varchar(2048)</td>
+<td>URL of the first page the user saw</td>
+<td></td>
+</tr>
+<tr>
+<td>email_address</td>
+<td>Varchar(100)</td>
+<td>Email address associated with the user, if available</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_19">Indexes:<a class="headerlink" href="#indexes_19" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY user_pkey ON "user" USING btree (id)</li>
+</ul>
+<h3 id="referenced-by_6">Referenced by:<a class="headerlink" href="#referenced-by_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TABLE "goal_completion_attribution_promoted_item" CONSTRAINT "goal_completion_attribution_promoted_item_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "goal_completion_attribution" CONSTRAINT "goal_completion_attribution_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "goal_completion_line_item" CONSTRAINT "goal_completion_line_item_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "order_line_item_attribute" CONSTRAINT "order_line_item_attribute_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "order_line_item" CONSTRAINT "order_line_item_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "segment_membership" CONSTRAINT "segment_membership_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_alias" CONSTRAINT "user_alias_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_attribute" CONSTRAINT "user_attribute_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_campaign_state" CONSTRAINT "user_campaign_state_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_click" CONSTRAINT "user_click_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_daily_stat_action" CONSTRAINT "user_daily_stat_action_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_daily_stat_item_stat_category" CONSTRAINT "user_daily_stat_item_stat_category_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_daily_stat_item_stat_dimension" CONSTRAINT "user_daily_stat_item_stat_dimension_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_daily_stat_item_stat_product" CONSTRAINT "user_daily_stat_item_stat_product_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_daily_stat_item_stat_promotion" CONSTRAINT "user_daily_stat_item_stat_promotion_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_daily_stat" CONSTRAINT "user_daily_stat_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_dismissal" CONSTRAINT "user_dismissal_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_engagement_history" CONSTRAINT "user_engagement_history_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_goal_completion" CONSTRAINT "user_goal_completion_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_impression" CONSTRAINT "user_impression_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_order_attribute" CONSTRAINT "user_order_attribute_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_order" CONSTRAINT "user_order_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_search" CONSTRAINT "user_search_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+<li>TABLE "user_visit" CONSTRAINT "user_visit_user_id_fkey" FOREIGN KEY (user_id) REFERENCES "user"(id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_alias"><em>Table user_alias</em><a class="headerlink" href="#table-user_alias" title="Permanent link">&para;</a></h2>
+<p>This table contains the IDs of any anonymous users that have been merged into a given user. It will also contain any non-anonymous IDs they used to have. This occurs when userIDs are changed to a new format, or simply a new ID.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for a user</td>
+<td></td>
+</tr>
+<tr>
+<td>anon_alias</td>
+<td>Varchar(200)</td>
+<td>User Id associated with this user</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_20">Indexes:<a class="headerlink" href="#indexes_20" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_alias_user_id_key ON user_alias USING btree (user_id, anon_alias)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_attribute"><em>Table user_attribute</em><a class="headerlink" href="#table-user_attribute" title="Permanent link">&para;</a></h2>
+<p>Name-value pairs associated with a user (many different use cases - ids, segment support, etc.)</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time this attribute was most recently updated</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar(256)</td>
+<td>Name of the attribute</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>Varchar(256)</td>
+<td>Value of the attribute</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_21">Indexes:<a class="headerlink" href="#indexes_21" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY user_attribute_pkey ON user_attribute USING btree (user_id, name, updated_ts)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_campaign_state"><em>Table user_campaign_state</em><a class="headerlink" href="#table-user_campaign_state" title="Permanent link">&para;</a></h2>
+<p>Summary information about a user or campaign. This is a mirror of an operational table that provides current state to the platform for up-to-the-minute reporting or other applications; less useful in a warehouse context, but does provide the state at batch time. Can be used to quickly confirm membership or perform other ad hoc tasks which are later migrated to fully fleshed-out queries.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>campaign_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifier for the campaign</td>
+<td></td>
+</tr>
+<tr>
+<td>last_reset_time_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the most recent campaign reset</td>
+<td></td>
+</tr>
+<tr>
+<td>experience_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifier for the experience</td>
+<td></td>
+</tr>
+<tr>
+<td>user_group</td>
+<td>Varchar(256)</td>
+<td>The user group (control or test) associated with this user's experience</td>
+<td></td>
+</tr>
+<tr>
+<td>num_clicks</td>
+<td>Integer</td>
+<td>Total number of clicks</td>
+<td></td>
+</tr>
+<tr>
+<td>first_click_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the least recent click</td>
+<td></td>
+</tr>
+<tr>
+<td>last_click_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the most recent click</td>
+<td></td>
+</tr>
+<tr>
+<td>num_impressions</td>
+<td>Integer</td>
+<td>Total number of impressions</td>
+<td></td>
+</tr>
+<tr>
+<td>first_impression_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the least recent impression</td>
+<td></td>
+</tr>
+<tr>
+<td>last_impression_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the most recent impression</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_22">Indexes:<a class="headerlink" href="#indexes_22" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_campaign_state_user_id_key ON user_campaign_state USING btree (user_id, campaign_id, experience_id, user_group)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_click"><em>Table user_click</em><a class="headerlink" href="#table-user_click" title="Permanent link">&para;</a></h2>
+<p>Stores click events associated with a campaign at the visit level. Event_ts is associated with the most recent event.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>experience_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifier for the experience</td>
+<td></td>
+</tr>
+<tr>
+<td>event_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the most recent click in a session</td>
+<td></td>
+</tr>
+<tr>
+<td>user_group</td>
+<td>Char(1)</td>
+<td>The user group associated with the user and experience - control (C) or test (D)</td>
+<td></td>
+</tr>
+<tr>
+<td>browser</td>
+<td>Varchar(256)</td>
+<td>Client browser application</td>
+<td>Safari, Chrome, Firefox, IE, other</td>
+</tr>
+<tr>
+<td>device</td>
+<td>Varchar(256)</td>
+<td>Client hardware device</td>
+<td>mobile, computer, tablet, other</td>
+</tr>
+<tr>
+<td>engagement</td>
+<td>Varchar(256)</td>
+<td>Engagement for the associated user</td>
+<td>low, medium, high</td>
+</tr>
+<tr>
+<td>has_purchased</td>
+<td>Boolean</td>
+<td>Set when the user makes a purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>click_count</td>
+<td>Smallint</td>
+<td>Total number of clicks for the session</td>
+<td></td>
+</tr>
+<tr>
+<td>is_anonymous</td>
+<td>Boolean</td>
+<td>True when the user is not named (identified)</td>
+<td></td>
+</tr>
+<tr>
+<td>is_firsttime</td>
+<td>Boolean</td>
+<td>True when this is a user's first visit</td>
+<td></td>
+</tr>
+<tr>
+<td>os</td>
+<td>Varchar(256)</td>
+<td>Operating system - x is "Mac OS X"</td>
+<td>x, windows, linux, ios, android, other</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>Varchar(256)</td>
+<td>Platform associated with the click(s)</td>
+<td>Email, Web</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Varchar(256)</td>
+<td>For customers who use the mobile SDK, each mobile app would be listed as a separate source</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_23">Indexes:<a class="headerlink" href="#indexes_23" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY user_click_pkey ON user_click USING btree (user_id, experience_id, event_ts)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_daily_stat"><em>Table user_daily_stat</em><a class="headerlink" href="#table-user_daily_stat" title="Permanent link">&para;</a></h2>
+<p>Aggregation of events at the (user, day) grain</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stat_date</td>
+<td>Date</td>
+<td>Date of the stat aggregation for this user</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>visit_count</td>
+<td>Integer</td>
+<td>Number of times user visited on the stat_date</td>
+<td></td>
+</tr>
+<tr>
+<td>visit_millis</td>
+<td>Bigint</td>
+<td>Total visit duration, in milliseconds</td>
+<td></td>
+</tr>
+<tr>
+<td>total_actions</td>
+<td>Integer</td>
+<td>Number of actions performed by the user</td>
+<td></td>
+</tr>
+<tr>
+<td>num_pages</td>
+<td>Integer</td>
+<td>Number of pages the user viewed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_24">Indexes:<a class="headerlink" href="#indexes_24" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_daily_stat_stat_date_key ON user_daily_stat USING btree (stat_date, user_id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_daily_stat_action"><em>Table user_daily_stat_action</em><a class="headerlink" href="#table-user_daily_stat_action" title="Permanent link">&para;</a></h2>
+<p>Aggregation of events at the (user, day, action) grain</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stat_date</td>
+<td>Date</td>
+<td>Date of the stat aggregation for this user</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>action_id</td>
+<td>Varchar(200)</td>
+<td>Identifier for an action performed by the user</td>
+<td>Home, Search, View Category, View Product</td>
+</tr>
+<tr>
+<td>action_count</td>
+<td>Integer</td>
+<td>Total count of actions for this action on this day by the associated user</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_25">Indexes:<a class="headerlink" href="#indexes_25" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_daily_stat_action_stat_date_key ON user_daily_stat_action USING btree (stat_date, user_id, action_id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_daily_stat_item_stat_category"><em>Table user_daily_stat_item_stat_category</em><a class="headerlink" href="#table-user_daily_stat_item_stat_category" title="Permanent link">&para;</a></h2>
+<p>Aggregation of events at the (user, day, product category) grain</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stat_date</td>
+<td>Date</td>
+<td>Date associated with the stat</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>category_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifer for the category</td>
+<td></td>
+</tr>
+<tr>
+<td>cart_value</td>
+<td>Numeric(18,4)</td>
+<td>Total value of items in the cart for this day, category, user</td>
+<td></td>
+</tr>
+<tr>
+<td>num_cart_items</td>
+<td>Integer</td>
+<td>Count of items in the cart</td>
+<td></td>
+</tr>
+<tr>
+<td>num_purchases</td>
+<td>Integer</td>
+<td>Count of purchases</td>
+<td></td>
+</tr>
+<tr>
+<td>out_of_stock_views</td>
+<td>Integer</td>
+<td>Count of views of products that were out of stock</td>
+<td></td>
+</tr>
+<tr>
+<td>purchase_value</td>
+<td>Numeric(18,4)</td>
+<td>Total value of purchased made for this user, category, date</td>
+<td></td>
+</tr>
+<tr>
+<td>recommended_count</td>
+<td>Integer</td>
+<td>Number of items recommended to the user for this category</td>
+<td></td>
+</tr>
+<tr>
+<td>view_time_millis</td>
+<td>Integer</td>
+<td>Total view time for the category in milliseconds</td>
+<td></td>
+</tr>
+<tr>
+<td>view_value</td>
+<td>Numeric(18,4)</td>
+<td>The sum of the value of items viewed in this category</td>
+<td></td>
+</tr>
+<tr>
+<td>views</td>
+<td>Integer</td>
+<td>Number of views for this category, day, user</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_26">Indexes:<a class="headerlink" href="#indexes_26" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_daily_stat_item_stat_category_stat_date_key ON user_daily_stat_item_stat_category USING btree (stat_date, user_id, category_id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_daily_stat_item_stat_dimension"><em>Table user_daily_stat_item_stat_dimension</em><a class="headerlink" href="#table-user_daily_stat_item_stat_dimension" title="Permanent link">&para;</a></h2>
+<p>Aggregation of events at the (user, day, product dimension) grain</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stat_date</td>
+<td>Date</td>
+<td>Date associated with the stat</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>dimension_type</td>
+<td>Varchar(256)</td>
+<td>The name of a dimension. Dimension names are capitalized.</td>
+<td>Brand, Gender, Style, ItemClass</td>
+</tr>
+<tr>
+<td>dimension_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifer for the dimension</td>
+<td></td>
+</tr>
+<tr>
+<td>cart_value</td>
+<td>Numeric(18,4)</td>
+<td>Total value of items in the cart for this day, dimension, user</td>
+<td></td>
+</tr>
+<tr>
+<td>num_cart_items</td>
+<td>Integer</td>
+<td>Count of items in the cart</td>
+<td></td>
+</tr>
+<tr>
+<td>num_purchases</td>
+<td>Integer</td>
+<td>Count of purchases</td>
+<td></td>
+</tr>
+<tr>
+<td>out_of_stock_views</td>
+<td>Integer</td>
+<td>Count of views of products that were out of stock</td>
+<td></td>
+</tr>
+<tr>
+<td>purchase_value</td>
+<td>Numeric(18,4)</td>
+<td>Total value of purchased made for this user, dimension, date</td>
+<td></td>
+</tr>
+<tr>
+<td>recommended_count</td>
+<td>Integer</td>
+<td>Number of items recommended to the user for this dimension</td>
+<td></td>
+</tr>
+<tr>
+<td>view_time_millis</td>
+<td>Integer</td>
+<td>Total view time for the dimension in milliseconds</td>
+<td></td>
+</tr>
+<tr>
+<td>view_value</td>
+<td>Numeric(18,4)</td>
+<td>The sum of the value of items viewed in this dimension</td>
+<td></td>
+</tr>
+<tr>
+<td>views</td>
+<td>Integer</td>
+<td>Number of views for this dimension, day, user</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_27">Indexes:<a class="headerlink" href="#indexes_27" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_daily_stat_item_stat_dimension_stat_date_key ON user_daily_stat_item_stat_dimension USING btree (stat_date, user_id, dimension_type, dimension_id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_daily_stat_item_stat_product"><em>Table user_daily_stat_item_stat_product</em><a class="headerlink" href="#table-user_daily_stat_item_stat_product" title="Permanent link">&para;</a></h2>
+<p>Aggregation of events at the (user, day, product) grain</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stat_date</td>
+<td>Date</td>
+<td>Date associated with the stat</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifer for the product</td>
+<td></td>
+</tr>
+<tr>
+<td>cart_value</td>
+<td>Numeric(18,4)</td>
+<td>Total value of items in the cart for this day, product, user</td>
+<td></td>
+</tr>
+<tr>
+<td>num_cart_items</td>
+<td>Integer</td>
+<td>Count of items in the cart</td>
+<td></td>
+</tr>
+<tr>
+<td>num_purchases</td>
+<td>Integer</td>
+<td>Count of purchases</td>
+<td></td>
+</tr>
+<tr>
+<td>out_of_stock_views</td>
+<td>Integer</td>
+<td>Count of views of products that were out of stock</td>
+<td></td>
+</tr>
+<tr>
+<td>purchase_value</td>
+<td>Numeric(18,4)</td>
+<td>Total value of purchased made for this user, product, date</td>
+<td></td>
+</tr>
+<tr>
+<td>recommended_count</td>
+<td>Integer</td>
+<td>Number of items recommended to the user for this product</td>
+<td></td>
+</tr>
+<tr>
+<td>view_time_millis</td>
+<td>Integer</td>
+<td>Total view time for the product in milliseconds</td>
+<td></td>
+</tr>
+<tr>
+<td>view_value</td>
+<td>Numeric(18,4)</td>
+<td>The sum of the value of items viewed in this product</td>
+<td></td>
+</tr>
+<tr>
+<td>views</td>
+<td>Integer</td>
+<td>Number of views for this product, day, user</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_28">Indexes:<a class="headerlink" href="#indexes_28" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_daily_stat_item_stat_product_stat_date_key ON user_daily_stat_item_stat_product USING btree (stat_date, user_id, product_id)</li>
+</ul>
+<h3 id="example-query_8">Example Query<a class="headerlink" href="#example-query_8" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sql">
+/* top products using daily stats */
+SELECT
+    CASE WHEN pct_total &gt; 1
+             THEN a.name
+         ELSE 'ALL OTHERS' END                          AS name,
+    to_char(sum(revenue), 'FM$999,999,999,990D00') AS revenue,
+    to_char(sum(pct_total), 'FM99.99%')            AS pct_total,
+    sum(rnk)                                          rnk
+FROM
+    (
+        SELECT
+            p.name,
+            sum(a.num_purchases * purchase_value) revenue,
+            ratio_to_report(sum(a.num_purchases * purchase_value))
+            OVER () * 100             AS          pct_total,
+            row_number()
+            OVER (
+                ORDER BY revenue DESC ) AS          rnk
+        FROM
+            product p,
+            user_daily_stat_item_stat_product a
+        WHERE
+                p.id = a.product_id
+        GROUP BY 1
+        ORDER BY sum(a.num_purchases * purchase_value) DESC
+    ) a
+GROUP BY 1
+ORDER BY rnk
+
+</code></pre>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_daily_stat_item_stat_promotion"><em>Table user_daily_stat_item_stat_promotion</em><a class="headerlink" href="#table-user_daily_stat_item_stat_promotion" title="Permanent link">&para;</a></h2>
+<p>Aggregation of events at the (user, day, promotion) grain</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stat_date</td>
+<td>Date</td>
+<td>Date for the stat</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>promotion_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the promotion</td>
+<td></td>
+</tr>
+<tr>
+<td>cart_value</td>
+<td>Numeric(18,4)</td>
+<td>Total value of items in the cart for this day, promotion, user</td>
+<td></td>
+</tr>
+<tr>
+<td>num_cart_items</td>
+<td>Integer</td>
+<td>Count of items in the cart</td>
+<td></td>
+</tr>
+<tr>
+<td>num_purchases</td>
+<td>Integer</td>
+<td>Count of purchases</td>
+<td></td>
+</tr>
+<tr>
+<td>out_of_stock_views</td>
+<td>Integer</td>
+<td>Count of views of promotions associated with an out of stock product</td>
+<td></td>
+</tr>
+<tr>
+<td>purchase_value</td>
+<td>Numeric(18,4)</td>
+<td>Total value of purchases made for this user, promotion, date</td>
+<td></td>
+</tr>
+<tr>
+<td>recommended_count</td>
+<td>Integer</td>
+<td>Number of items recommended to the user for this promotion</td>
+<td></td>
+</tr>
+<tr>
+<td>view_time_millis</td>
+<td>Integer</td>
+<td>Total view time for the promotion in milliseconds</td>
+<td></td>
+</tr>
+<tr>
+<td>view_value</td>
+<td>Numeric(18,4)</td>
+<td>The sum of the value of promotions viewed</td>
+<td></td>
+</tr>
+<tr>
+<td>views</td>
+<td>Integer</td>
+<td>Number of views by this user for this promotion and day</td>
+<td></td>
+</tr>
+<tr>
+<td>eligible_for_serving</td>
+<td>Integer</td>
+<td>Number of times this promotion was eligible to be served</td>
+<td></td>
+</tr>
+<tr>
+<td>requested_for_serving</td>
+<td>Integer</td>
+<td>Number of times this promotion was requested to be served</td>
+<td></td>
+</tr>
+<tr>
+<td>served</td>
+<td>Integer</td>
+<td>Number of times this promotion was served</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_29">Indexes:<a class="headerlink" href="#indexes_29" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_daily_stat_item_stat_promotion_stat_date_key ON user_daily_stat_item_stat_promotion USING btree (stat_date, user_id, promotion_id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_dismissal"><em>Table user_dismissal</em><a class="headerlink" href="#table-user_dismissal" title="Permanent link">&para;</a></h2>
+<p>Stores dismissal events associated with a campaign at the visit level. Event_ts is associated with the most recent event.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>experience_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifier for the experience</td>
+<td></td>
+</tr>
+<tr>
+<td>event_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the most recent dismissal in a session.</td>
+<td></td>
+</tr>
+<tr>
+<td>user_group</td>
+<td>Char(1)</td>
+<td>The user group associated with the user and experience - control (C) or test (D)</td>
+<td></td>
+</tr>
+<tr>
+<td>browser</td>
+<td>Varchar(256)</td>
+<td>Client browser application</td>
+<td>Safari, Chrome, Firefox, IE, other</td>
+</tr>
+<tr>
+<td>device</td>
+<td>Varchar(256)</td>
+<td>Client hardware device</td>
+<td>mobile, computer, tablet, other</td>
+</tr>
+<tr>
+<td>engagement</td>
+<td>Varchar(256)</td>
+<td>Engagement for the associated user</td>
+<td>low, medium, high</td>
+</tr>
+<tr>
+<td>has_purchased</td>
+<td>Boolean</td>
+<td>Set when the user makes a purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>dismissal_count</td>
+<td>Smallint</td>
+<td>Total number of dismissals for the session</td>
+<td></td>
+</tr>
+<tr>
+<td>is_anonymous</td>
+<td>Boolean</td>
+<td>True when the user is not named (identified)</td>
+<td></td>
+</tr>
+<tr>
+<td>is_firsttime</td>
+<td>Boolean</td>
+<td>True when this is a user's first visit</td>
+<td></td>
+</tr>
+<tr>
+<td>os</td>
+<td>Varchar(256)</td>
+<td>Operating system - x is "Mac OS X"</td>
+<td>x, windows, linux, ios, android, other</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>Varchar(256)</td>
+<td>Platform associated with the dismissal(s)</td>
+<td>Email, Web</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Varchar(256)</td>
+<td>For customers who use the mobile sdk, each mobile app would be a separate source.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_30">Indexes:<a class="headerlink" href="#indexes_30" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY user_dismissal_pkey ON user_dismissal USING btree (user_id, experience_id, event_ts)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_engagement_history"><em>Table user_engagement_history</em><a class="headerlink" href="#table-user_engagement_history" title="Permanent link">&para;</a></h2>
+<p>Stores historical engagement values at the user grain</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for a user</td>
+<td></td>
+</tr>
+<tr>
+<td>"day"</td>
+<td>Date</td>
+<td>Date of the day tracked for engagement</td>
+<td></td>
+</tr>
+<tr>
+<td>score</td>
+<td>Integer</td>
+<td>Engagement score is an integer reflecting a percentage from 0-125 and the value depends on account configuration. See: https://doc.evergage.com/display/EKB/Understand+Engagement+Score+Calculation</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_31">Indexes:<a class="headerlink" href="#indexes_31" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_engagement_history_user_id_key ON user_engagement_history USING btree (user_id, "day")</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_goal_completion"><em>Table user_goal_completion</em><a class="headerlink" href="#table-user_goal_completion" title="Permanent link">&para;</a></h2>
+<p>Since goal completions often involve a purchase, purchase data is stored at the top level in this table and is empty for non-purchase goal completions</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>User who satisfied the goal criteria</td>
+<td></td>
+</tr>
+<tr>
+<td>goal_ts</td>
+<td>Timestamp without time zone</td>
+<td>Timestamp of the goal completion in UTC</td>
+<td></td>
+</tr>
+<tr>
+<td>goal_id</td>
+<td>Varchar(256)</td>
+<td>One of: segment id or purchase (p)</td>
+<td>p</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifier for the order. This comes from the customer.</td>
+<td></td>
+</tr>
+<tr>
+<td>order_currency</td>
+<td>Varchar(256)</td>
+<td>Currency used to purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>order_line_item_count</td>
+<td>Smallint</td>
+<td>Count of line items in the order</td>
+<td></td>
+</tr>
+<tr>
+<td>order_total_value</td>
+<td>Numeric(18,4)</td>
+<td>Sum of quantity * price for all line items</td>
+<td></td>
+</tr>
+<tr>
+<td>order_units_count</td>
+<td>Smallint</td>
+<td>Count of units in the order</td>
+<td></td>
+</tr>
+<tr>
+<td>order_visit_age_minutes</td>
+<td>Double precision</td>
+<td>Age of the vist at the time of the purchase goal completion</td>
+<td></td>
+</tr>
+<tr>
+<td>order_visit_time</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the visit during which this order was made</td>
+<td></td>
+</tr>
+<tr>
+<td>browser</td>
+<td>Varchar(256)</td>
+<td>Client browser application</td>
+<td>Safari, Chrome, Firefox, IE, other</td>
+</tr>
+<tr>
+<td>device</td>
+<td>Varchar(256)</td>
+<td>Client hardware device</td>
+<td>mobile, computer, tablet, other</td>
+</tr>
+<tr>
+<td>engagement</td>
+<td>Varchar(256)</td>
+<td>Engagement for the associated user</td>
+<td>low, medium, high</td>
+</tr>
+<tr>
+<td>has_purchased</td>
+<td>Boolean</td>
+<td>Set when the user makes a purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>is_anonymous</td>
+<td>Boolean</td>
+<td>True when the user is not named (identified)</td>
+<td></td>
+</tr>
+<tr>
+<td>is_first_time</td>
+<td>Boolean</td>
+<td>True when the completion represents a first encounter with a visitor</td>
+<td></td>
+</tr>
+<tr>
+<td>os</td>
+<td>Varchar(256)</td>
+<td>Operating system - x is "Mac OS X"</td>
+<td>x, windows, linux, ios, android, other</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>Varchar(256)</td>
+<td>Platform used in the goal completion (email, web)</td>
+<td>Email, Web</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Varchar(256)</td>
+<td>For customers who use the mobile sdk, each mobile app would be a separate source.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_32">Indexes:<a class="headerlink" href="#indexes_32" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_goal_completion_user_id_key ON user_goal_completion USING btree (user_id, goal_id, goal_ts)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_impression"><em>Table user_impression</em><a class="headerlink" href="#table-user_impression" title="Permanent link">&para;</a></h2>
+<p>Stores impression events associated with a campaign at the visit level. Event_ts is associated with the most recent event.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>experience_id</td>
+<td>Varchar(256)</td>
+<td>Unique identifier for the experience</td>
+<td></td>
+</tr>
+<tr>
+<td>event_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the most recent impression in a session.</td>
+<td></td>
+</tr>
+<tr>
+<td>user_group</td>
+<td>Char(1)</td>
+<td>The user group associated with the user and experience - control (C) or test (D)</td>
+<td></td>
+</tr>
+<tr>
+<td>browser</td>
+<td>Varchar(256)</td>
+<td>Client browser application</td>
+<td>Safari, Chrome, Firefox, IE, other</td>
+</tr>
+<tr>
+<td>device</td>
+<td>Varchar(256)</td>
+<td>Client hardware device</td>
+<td>mobile, computer, tablet, other</td>
+</tr>
+<tr>
+<td>engagement</td>
+<td>Varchar(256)</td>
+<td>Engagement for the associated user</td>
+<td>low, medium, high</td>
+</tr>
+<tr>
+<td>has_purchased</td>
+<td>Boolean</td>
+<td>Set when the user makes a purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>impression_count</td>
+<td>Smallint</td>
+<td>Total number of impressions for the session</td>
+<td></td>
+</tr>
+<tr>
+<td>is_anonymous</td>
+<td>Boolean</td>
+<td>True when the user is not named (identified)</td>
+<td></td>
+</tr>
+<tr>
+<td>is_firsttime</td>
+<td>Boolean</td>
+<td>True when this is a user's first visit</td>
+<td></td>
+</tr>
+<tr>
+<td>os</td>
+<td>Varchar(256)</td>
+<td>Operating system - x is "Mac OS X"</td>
+<td>x, windows, linux, ios, android, other</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>Varchar(256)</td>
+<td>Platform associated with the impression(s)</td>
+<td>Email, Web</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Varchar(256)</td>
+<td>For customers who use the mobile sdk, each mobile app would be a separate source.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_33">Indexes:<a class="headerlink" href="#indexes_33" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY user_impression_pkey ON user_impression USING btree (user_id, experience_id, event_ts)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_order"><em>Table user_order</em><a class="headerlink" href="#table-user_order" title="Permanent link">&para;</a></h2>
+<p>Stores purchases. Only purchased orders are kept in the Data Warehouse, nothing open</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Varchar(100)</td>
+<td>Unique identifier for the order. This comes from the customer.</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>Unique identifier for the user</td>
+<td></td>
+</tr>
+<tr>
+<td>order_num</td>
+<td>Smallint</td>
+<td>1-based sequence of orders for this user. Based on the array order in the operational store. (Not set by the customer)</td>
+<td></td>
+</tr>
+<tr>
+<td>visit_start_ts</td>
+<td>Timestamp without time zone</td>
+<td>Start time of the visit in which this order was placed</td>
+<td></td>
+</tr>
+<tr>
+<td>visit_num</td>
+<td>Integer</td>
+<td>Visit in which order create time falls w/in visit start/end.</td>
+<td></td>
+</tr>
+<tr>
+<td>created_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time at which the order was created</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the order was most recently updated</td>
+<td></td>
+</tr>
+<tr>
+<td>purchased_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the purchase was made</td>
+<td></td>
+</tr>
+<tr>
+<td>visit_age_at_purchase_ms</td>
+<td>Integer</td>
+<td>Age of the session, in milliseconds, at purchase time</td>
+<td></td>
+</tr>
+<tr>
+<td>num_items</td>
+<td>Integer</td>
+<td>Number of items in the order</td>
+<td></td>
+</tr>
+<tr>
+<td>num_units</td>
+<td>Integer</td>
+<td>Number of units (distinct items) in the order</td>
+<td></td>
+</tr>
+<tr>
+<td>total_value</td>
+<td>Numeric(18,4)</td>
+<td>Total value of the purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Varchar(200)</td>
+<td>Currency used to make the purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>Varchar(200)</td>
+<td>Purchased only, other states not stored in the warehoure. (Open, Purchased, Canceled).</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_34">Indexes:<a class="headerlink" href="#indexes_34" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY user_order_pkey ON user_order USING btree (id)</li>
+<li>UNIQUE INDEX user_order_user_id_key ON user_order USING btree (user_id, created_ts)</li>
+</ul>
+<h3 id="referenced-by_7">Referenced by:<a class="headerlink" href="#referenced-by_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TABLE "order_line_item_attribute" CONSTRAINT "order_line_item_attribute_order_id_fkey" FOREIGN KEY (order_id) REFERENCES user_order(id)</li>
+<li>TABLE "order_line_item" CONSTRAINT "order_line_item_order_id_fkey" FOREIGN KEY (order_id) REFERENCES user_order(id)</li>
+<li>TABLE "user_order_attribute" CONSTRAINT "user_order_attribute_order_id_fkey" FOREIGN KEY (order_id) REFERENCES user_order(id)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_order_attribute"><em>Table user_order_attribute</em><a class="headerlink" href="#table-user_order_attribute" title="Permanent link">&para;</a></h2>
+<p>Name-value pairs associated with an order</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_id</td>
+<td>Varchar(100)</td>
+<td>Unique identifier for the order</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>User who made the purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>order_num</td>
+<td>Smallint</td>
+<td>Internally generated 1-based sequence indicating which order this is</td>
+<td></td>
+</tr>
+<tr>
+<td>attribute_name</td>
+<td>Varchar(256)</td>
+<td>The name of the attribute</td>
+<td></td>
+</tr>
+<tr>
+<td>attribute_value</td>
+<td>Varchar(256)</td>
+<td>The value of the attribute</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_origin</td>
+<td>Varchar(256)</td>
+<td>The name of the entity that issues or creates the initial attribute value</td>
+<td></td>
+</tr>
+<tr>
+<td>Exampe values: CRM, PointOfSaleSystem, FulfillmentSystem, LoyaltySystem</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_provider</td>
+<td>Varchar(256)</td>
+<td>The name of the entity that is providing the attribute</td>
+<td>CsvUserEtlJob:user-20190528.csv.gz</td>
+</tr>
+<tr>
+<td>value_metadata_gear_id</td>
+<td>Varchar(256)</td>
+<td>ID of the Interaction Studio gear that updated the attribute, or null if it was not updated by a gear</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_last_updated_ts</td>
+<td>Varchar(256)</td>
+<td>UTC date and time when the attribute was last updated</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_last_verified_ts</td>
+<td>Varchar(256)</td>
+<td>UTC date and time when the attribute value was last verified as being true and belonging to the specified individual</td>
+<td></td>
+</tr>
+<tr>
+<td>value_metadata_classification</td>
+<td>Varchar(256)</td>
+<td>Metadata relevant or pertaining to the security classification of a given attribute's value</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_35">Indexes:<a class="headerlink" href="#indexes_35" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY user_order_attribute_pkey ON user_order_attribute USING btree (user_id, order_id, attribute_name)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_search"><em>Table user_search</em><a class="headerlink" href="#table-user_search" title="Permanent link">&para;</a></h2>
+<p>User search terms (some normalization / tokenization is performed)</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>User who performed the search</td>
+<td></td>
+</tr>
+<tr>
+<td>term</td>
+<td>Varchar(200)</td>
+<td>Search term (tokenized)</td>
+<td></td>
+</tr>
+<tr>
+<td>most_recent_search</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the most recent search for this term</td>
+<td></td>
+</tr>
+<tr>
+<td>product_clicks</td>
+<td>Integer</td>
+<td>Count of product clicks associated with the search</td>
+<td></td>
+</tr>
+<tr>
+<td>purchase_value</td>
+<td>Numeric(18,4)</td>
+<td>Total purchase value of orders associated with this search</td>
+<td></td>
+</tr>
+<tr>
+<td>search_count</td>
+<td>Integer</td>
+<td>Total number of searches for this term</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_36">Indexes:<a class="headerlink" href="#indexes_36" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY user_search_pkey ON user_search USING btree (user_id, term)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_user_visit_lookup"><em>Table user_user_visit_lookup</em><a class="headerlink" href="#table-user_user_visit_lookup" title="Permanent link">&para;</a></h2>
+<p>Use this table to join the user_visit_detail with other tables containing a user_id. The user_id in this table corresponds to the general notion of user_id in the database, and user(id). The user_visit_key is the user_id in the user_visit_detail table.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>User id from the user table</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id_hashed</td>
+<td>Varchar(200)</td>
+<td>Hashed user id from the user_visit_detail table</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_37">Indexes:<a class="headerlink" href="#indexes_37" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UNIQUE INDEX user_user_visit_lookup_user_id_key ON user_user_visit_lookup USING btree (user_id, user_id_hashed)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_visit"><em>Table user_visit</em><a class="headerlink" href="#table-user_visit" title="Permanent link">&para;</a></h2>
+<p>Stores information about the user visit</p>
+<p>Fields that only appear in user visit: referring_campaign_id, weather, previous_path, temperature, referrer, num_pageviews, num_events, last_event_ts, visit_num</p>
+<p>Fields that appear in both user visit and user visit detail: is_anonymous, browser, engagement, source, utm_parameters, device, is_firsttime, has_purchased, platform, start_ts, _dw_created_ts, os, user_id</p>
+<p>Note that the user_id user_visit_detail is a hash value of the user ID in this table; use user_user_lookup to join</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>Varchar(200)</td>
+<td>User id associated with the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>visit_num</td>
+<td>Smallint</td>
+<td>Internally generated sequence value in the visit history - which visit this was.</td>
+<td></td>
+</tr>
+<tr>
+<td>num_events</td>
+<td>Integer</td>
+<td>Count of events for the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>previous_path</td>
+<td>Varchar(100)</td>
+<td>The most recent page view action for this visit (operation field)</td>
+<td></td>
+</tr>
+<tr>
+<td>num_pageviews</td>
+<td>Integer</td>
+<td>Count of pages viewed in the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>referring_campaign_id</td>
+<td>Varchar(32)</td>
+<td>External campaign that drove the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>device</td>
+<td>Varchar(100)</td>
+<td>Client hardware device</td>
+<td>mobile, computer, tablet, other</td>
+</tr>
+<tr>
+<td>engagement</td>
+<td>Varchar(100)</td>
+<td>Engagement for the associated user</td>
+<td>low, medium, high</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Varchar(100)</td>
+<td>Operating system - x is "Mac OS X"</td>
+<td>x, windows, linux, ios, android, other</td>
+</tr>
+<tr>
+<td>browser</td>
+<td>Varchar(100)</td>
+<td>Client browser application</td>
+<td>Safari, Chrome, Firefox, IE, other</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>Varchar(100)</td>
+<td>Platform used in the goal completion (email, web)   E</td>
+<td>Email, Web</td>
+</tr>
+<tr>
+<td>temperature</td>
+<td>Varchar(100)</td>
+<td>Recorded temprature at the physical location of the user during the visit time</td>
+<td></td>
+</tr>
+<tr>
+<td>weather</td>
+<td>Varchar(100)</td>
+<td>Recorded weather at the physical location of the user during the visit time</td>
+<td></td>
+</tr>
+<tr>
+<td>referrer</td>
+<td>Varchar(2048)</td>
+<td>HTTP referrer for the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>start_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the visit began</td>
+<td></td>
+</tr>
+<tr>
+<td>last_event_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time of the most recent event in the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>utm_parameters</td>
+<td>Varchar(100)</td>
+<td>Urchin Tracking Module (UTM) parameters identify the marketing campaign that refers traffic to a specific website. These are the parameters associated with the visit's referrer</td>
+<td></td>
+</tr>
+<tr>
+<td>has_purchased</td>
+<td>Boolean</td>
+<td>Set when the user makes a purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>is_anonymous</td>
+<td>Boolean</td>
+<td>True when the user is not named (identified)</td>
+<td></td>
+</tr>
+<tr>
+<td>is_first_time</td>
+<td>Boolean</td>
+<td>True when this is the first visit</td>
+<td></td>
+</tr>
+<tr>
+<td>source</td>
+<td>Varchar(10)</td>
+<td>For customers who use the mobile sdk, each mobile app would be a separate source</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_38">Indexes:<a class="headerlink" href="#indexes_38" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY user_visit_pkey ON user_visit USING btree (user_id, start_ts)</li>
+<li>UNIQUE INDEX user_visit_user_id_key ON user_visit USING btree (user_id, visit_num)</li>
+</ul>
+<h3 id="referenced-by_8">Referenced by:<a class="headerlink" href="#referenced-by_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TABLE "user_order" CONSTRAINT "user_order_user_id_visit_num_fkey" FOREIGN KEY (user_id, visit_num) REFERENCES user_visit(user_id, visit_num)</li>
+<li>TABLE "user_order" CONSTRAINT "user_order_user_id_visit_start_ts_fkey" FOREIGN KEY (user_id, visit_start_ts) REFERENCES user_visit(user_id, start_ts)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+<h2 id="table-user_visit_detail"><em>Table user_visit_detail</em><a class="headerlink" href="#table-user_visit_detail" title="Permanent link">&para;</a></h2>
+<p>Stores additional information about the user visit - location and referrer are usually of interest.</p>
+<p>The following fields appear only in the visit detail, not the visit: region_code, referrer_domain, revenue, city_code, metro_code, longitude, industry_code, referring_campaign, country_code, action_count, page_view_count, referrer_subdomain, referrer_url, referrer_terms, referrer_source, latitude, duration_minutes, referrer_landing_url, referrer_medium</p>
+<p>Fields that appear in both this table and user_visit: is_anonymous, browser, engagement, source, utm_parameters, device, is_firsttime, has_purchased, platform, start_ts, _dw_created_ts, os, user_id</p>
+<p>Note the user_id in this table is a hash value on the user_id in user_visit</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id_hashed</td>
+<td>Varchar(200)</td>
+<td>Hashcode of the user_id (id from the user table) associated with this visit</td>
+<td></td>
+</tr>
+<tr>
+<td>start_ts</td>
+<td>Timestamp without time zone</td>
+<td>UTC date and time the visit started</td>
+<td></td>
+</tr>
+<tr>
+<td>referrer_medium</td>
+<td>Varchar(100)</td>
+<td>How the user first arrived</td>
+<td>SEARCH, EMAIL, SOCIAL, DIRECT</td>
+</tr>
+<tr>
+<td>referrer_source</td>
+<td>Varchar(100)</td>
+<td>Source of the visit</td>
+<td>Google, Bing, Yahoo!, Facebook, Pintrest</td>
+</tr>
+<tr>
+<td>referrer_terms</td>
+<td>Varchar(255)</td>
+<td>Search terms for associated with the referral</td>
+<td></td>
+</tr>
+<tr>
+<td>referrer_domain</td>
+<td>Varchar(100)</td>
+<td>Domain of the visit referrer</td>
+<td>google.com, bing.com, google.de, facebook.com</td>
+</tr>
+<tr>
+<td>referrer_subdomain</td>
+<td>Varchar(100)</td>
+<td>Referrer host with sub-domain</td>
+<td>www.google.com.mx</td>
+</tr>
+<tr>
+<td>referrer_url</td>
+<td>Varchar(2048)</td>
+<td>URL associated with the visit referrer</td>
+<td></td>
+</tr>
+<tr>
+<td>referrer_landing_url</td>
+<td>Varchar(2048)</td>
+<td>URL of the first page the user saw</td>
+<td></td>
+</tr>
+<tr>
+<td>utm_parameters</td>
+<td>Varchar(100)</td>
+<td>Urchin Tracking Module (UTM) parameters identify the marketing campaign that refers traffic to a specific website. These are the parameters associated with the visit's referrer</td>
+<td></td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>Numeric(9,6)</td>
+<td>Latitude associated with the visitor's physical location</td>
+<td></td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>Numeric(9,6)</td>
+<td>Longitude associated with the visitor's physical location</td>
+<td></td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>Varchar(100)</td>
+<td>2-letter Country code associated with the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>region_code</td>
+<td>Varchar(100)</td>
+<td>Region code associated with the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>metro_code</td>
+<td>Integer</td>
+<td>Metro code associated with the visit. Metro codes for US are Nielsen DMA codes</td>
+<td></td>
+</tr>
+<tr>
+<td>city_code</td>
+<td>Integer</td>
+<td>Code for the city associated with the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>industry_code</td>
+<td>Integer</td>
+<td>NAICS industry code</td>
+<td></td>
+</tr>
+<tr>
+<td>referring_campaign</td>
+<td>Varchar(32)</td>
+<td>External campaign that drove the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>device</td>
+<td>Varchar(100)</td>
+<td>Client hardware device</td>
+<td>mobile, computer, tablet, other</td>
+</tr>
+<tr>
+<td>engagement</td>
+<td>Varchar(100)</td>
+<td>Engagement for the associated user</td>
+<td>low, medium, high</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Varchar(100)</td>
+<td>Operating system - x is "Mac OS X"</td>
+<td>x, Windows, Linux, iOs, Android, other</td>
+</tr>
+<tr>
+<td>browser</td>
+<td>Varchar(100)</td>
+<td>Client browser application</td>
+<td>Safari, Chrome, Firefox, IE, other</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>Varchar(100)</td>
+<td>Platform (email, web)</td>
+<td>Email, Web, Mobile</td>
+</tr>
+<tr>
+<td>has_purchased</td>
+<td>Boolean</td>
+<td>Set when the user makes a purchase</td>
+<td></td>
+</tr>
+<tr>
+<td>is_anonymous</td>
+<td>Boolean</td>
+<td>True when the user is not named (identified)</td>
+<td></td>
+</tr>
+<tr>
+<td>is_first_time</td>
+<td>Boolean</td>
+<td>True when this is the first visit</td>
+<td></td>
+</tr>
+<tr>
+<td>source</td>
+<td>Varchar(10)</td>
+<td>For customers who use the mobile SDK, each mobile app would be a separate source</td>
+<td></td>
+</tr>
+<tr>
+<td>duration_minutes</td>
+<td>Double precision</td>
+<td>Time spent in the visit, in minutes</td>
+<td></td>
+</tr>
+<tr>
+<td>revenue</td>
+<td>Numeric(18,4)</td>
+<td>Total revenue associated with purchases made during the visit</td>
+<td></td>
+</tr>
+<tr>
+<td>action_count</td>
+<td>Integer</td>
+<td>Count of actions performed this visit</td>
+<td></td>
+</tr>
+<tr>
+<td>page_view_count</td>
+<td>Integer</td>
+<td>Count of pages viewed this visit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_39">Indexes:<a class="headerlink" href="#indexes_39" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PRIMARY KEY user_visit_detail_pkey ON user_visit_detail USING btree (user_id_hashed, start_ts)</li>
+</ul>
+<p><a href="#toc">back to top</a></p>
+<hr />
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../data-analytics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interaction Studio Data Analytics" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Interaction Studio Data Analytics
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../data-warehouse/" class="md-footer__link md-footer__link--next" aria-label="Next: Data Warehouse" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Data Warehouse
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>
